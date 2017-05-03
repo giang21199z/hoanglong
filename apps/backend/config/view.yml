@@ -1,0 +1,19 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [bootstrap.min.css, bootstrap-theme.min.css, blayout.css, jquery-confirm.css]
+
+  javascripts:    [jquery-3.1.1.min.js, bootstrap.min.js, blayout.js, ckeditor/ckeditor.js, jquery-confirm.js]
+
+  has_layout:     true
+  layout:         layout

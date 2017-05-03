@@ -1,0 +1,301 @@
+AboutUs:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: about_us
+  columns:
+    idabout_us:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    summary:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    content:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    image:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: about.jpg
+      notnull: false
+      autoincrement: false
+Category:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: category
+  columns:
+    idcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    News:
+      local: idcategory
+      foreign: category_idcategory
+      type: many
+Doctor:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: doctor
+  columns:
+    iddoctor:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    degree:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    summary:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    content:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    specialist_idspecialist:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    avatar:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: doctor.jpg
+      notnull: false
+      autoincrement: false
+  relations:
+    Specialist:
+      local: specialist_idspecialist
+      foreign: idspecialist
+      type: one
+FeedBack:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: feed_back
+  columns:
+    idfeed_back:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name_customer:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    address:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    avatar:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: avatar.jpg
+      notnull: false
+      autoincrement: false
+    content:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Gallery:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: gallery
+  columns:
+    idgallery:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    url:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: gallery.jpg
+      notnull: false
+      autoincrement: false
+News:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: news
+  columns:
+    idnews:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    images:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: news.jpg
+      notnull: false
+      autoincrement: false
+    title:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: title
+      notnull: false
+      autoincrement: false
+    summary:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    content:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    category_idcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    Category:
+      local: category_idcategory
+      foreign: idcategory
+      type: one
+Schedule:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: schedule
+  columns:
+    idschedule:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    fullname:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    age:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    time:
+      type: string(10)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    date:
+      type: string(10)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Specialist:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: specialist
+  columns:
+    idspecialist:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Doctor:
+      local: idspecialist
+      foreign: specialist_idspecialist
+      type: many
