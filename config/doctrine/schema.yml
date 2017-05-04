@@ -3,12 +3,27 @@ AboutUs:
   connection: doctrine
   tableName: about_us
   columns:
-    idabout_us:
+    idnews:
       type: integer(4)
       fixed: false
       unsigned: false
       primary: true
       autoincrement: true
+    images:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: news.jpg
+      notnull: false
+      autoincrement: false
+    title:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
     summary:
       type: string()
       fixed: false
@@ -23,18 +38,10 @@ AboutUs:
       primary: false
       notnull: false
       autoincrement: false
-    image:
-      type: string(120)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: about.jpg
-      notnull: false
-      autoincrement: false
-Category:
+CategoryNews:
   actAs: { Timestampable: ~ }
   connection: doctrine
-  tableName: category
+  tableName: category_news
   columns:
     idcategory:
       type: integer(4)
@@ -51,6 +58,29 @@ Category:
       autoincrement: false
   relations:
     News:
+      local: idcategory
+      foreign: category_idcategory
+      type: many
+CategoryService:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: category_service
+  columns:
+    idcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Service:
       local: idcategory
       foreign: category_idcategory
       type: many
@@ -152,6 +182,20 @@ FeedBack:
       primary: false
       notnull: false
       autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
 Gallery:
   actAs: { Timestampable: ~ }
   connection: doctrine
@@ -198,11 +242,10 @@ News:
       notnull: false
       autoincrement: false
     title:
-      type: string(120)
+      type: string()
       fixed: false
       unsigned: false
       primary: false
-      default: title
       notnull: false
       autoincrement: false
     summary:
@@ -226,7 +269,7 @@ News:
       primary: true
       autoincrement: false
   relations:
-    Category:
+    CategoryNews:
       local: category_idcategory
       foreign: idcategory
       type: one
@@ -256,14 +299,14 @@ Schedule:
       notnull: false
       autoincrement: false
     time:
-      type: string(10)
+      type: time
       fixed: false
       unsigned: false
       primary: false
       notnull: false
       autoincrement: false
     date:
-      type: string(10)
+      type: date
       fixed: false
       unsigned: false
       primary: false
@@ -276,6 +319,57 @@ Schedule:
       primary: false
       notnull: false
       autoincrement: false
+Service:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: service
+  columns:
+    idnews:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    images:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: news.jpg
+      notnull: false
+      autoincrement: false
+    title:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    summary:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    content:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    category_idcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    CategoryService:
+      local: category_idcategory
+      foreign: idcategory
+      type: one
 Specialist:
   actAs: { Timestampable: ~ }
   connection: doctrine

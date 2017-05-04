@@ -12,17 +12,23 @@ Doctrine_Manager::getInstance()->bindComponent('FeedBack', 'doctrine');
  * @property string $address
  * @property string $avatar
  * @property string $content
+ * @property timestamp $created_at
+ * @property timestamp $updated_at
  * 
- * @method integer  getIdfeedBack()    Returns the current record's "idfeed_back" value
- * @method string   getNameCustomer()  Returns the current record's "name_customer" value
- * @method string   getAddress()       Returns the current record's "address" value
- * @method string   getAvatar()        Returns the current record's "avatar" value
- * @method string   getContent()       Returns the current record's "content" value
- * @method FeedBack setIdfeedBack()    Sets the current record's "idfeed_back" value
- * @method FeedBack setNameCustomer()  Sets the current record's "name_customer" value
- * @method FeedBack setAddress()       Sets the current record's "address" value
- * @method FeedBack setAvatar()        Sets the current record's "avatar" value
- * @method FeedBack setContent()       Sets the current record's "content" value
+ * @method integer   getIdfeedBack()    Returns the current record's "idfeed_back" value
+ * @method string    getNameCustomer()  Returns the current record's "name_customer" value
+ * @method string    getAddress()       Returns the current record's "address" value
+ * @method string    getAvatar()        Returns the current record's "avatar" value
+ * @method string    getContent()       Returns the current record's "content" value
+ * @method timestamp getCreatedAt()     Returns the current record's "created_at" value
+ * @method timestamp getUpdatedAt()     Returns the current record's "updated_at" value
+ * @method FeedBack  setIdfeedBack()    Sets the current record's "idfeed_back" value
+ * @method FeedBack  setNameCustomer()  Sets the current record's "name_customer" value
+ * @method FeedBack  setAddress()       Sets the current record's "address" value
+ * @method FeedBack  setAvatar()        Sets the current record's "avatar" value
+ * @method FeedBack  setContent()       Sets the current record's "content" value
+ * @method FeedBack  setCreatedAt()     Sets the current record's "created_at" value
+ * @method FeedBack  setUpdatedAt()     Sets the current record's "updated_at" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -78,6 +84,24 @@ abstract class BaseFeedBack extends sfDoctrineRecord
              'notnull' => false,
              'autoincrement' => false,
              'length' => '',
+             ));
+        $this->hasColumn('created_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('updated_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
              ));
     }
 

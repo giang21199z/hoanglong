@@ -1,3 +1,84 @@
+feed_back:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                FeedBack
+    module:               feed_back
+    prefix_path:          /feed_back
+    column:               idfeed_back
+    with_wildcard_routes: true
+
+gallery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Gallery
+    module:               gallery
+    prefix_path:          /gallery
+    column:               idgallery
+    with_wildcard_routes: true
+
+schedule:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Schedule
+    module:               schedule
+    prefix_path:          /schedule
+    column:               idschedule
+    with_wildcard_routes: true
+
+about_us:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AboutUs
+    module:               aboutus
+    prefix_path:          /aboutus
+    column:               idnews
+    with_wildcard_routes: true
+
+doctor:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Doctor
+    module:               doctor
+    prefix_path:          /doctor
+    column:               iddoctor
+    with_wildcard_routes: true
+
+specialist:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Specialist
+    module:               specialist
+    prefix_path:          /specialist
+    column:               idspecialist
+    with_wildcard_routes: true
+
+service:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Service
+    module:               service
+    prefix_path:          /service
+    column:               idnews
+    with_wildcard_routes: true
+
+category_service:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoryService
+    module:               categoryService
+    prefix_path:          /categoryService
+    column:               idcategory
+    with_wildcard_routes: true
+
+category_news:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoryNews
+    module:               categoryNews
+    prefix_path:          /categoryNews
+    column:               idcategory
+    with_wildcard_routes: true
+
 upload_file:
   url:  /upload-file
   param:  { module: utils, action: index}
@@ -11,15 +92,6 @@ news:
     module:               news
     prefix_path:          /news
     column:               idnews
-    with_wildcard_routes: true
-
-category:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Category
-    module:               category
-    prefix_path:          /category
-    column:               idcategory
     with_wildcard_routes: true
 
 # You can find more information about this file on the symfony website:

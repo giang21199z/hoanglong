@@ -10,15 +10,15 @@ Doctrine_Manager::getInstance()->bindComponent('Schedule', 'doctrine');
  * @property integer $idschedule
  * @property string $fullname
  * @property integer $age
- * @property string $time
- * @property string $date
+ * @property time $time
+ * @property date $date
  * @property string $description
  * 
  * @method integer  getIdschedule()  Returns the current record's "idschedule" value
  * @method string   getFullname()    Returns the current record's "fullname" value
  * @method integer  getAge()         Returns the current record's "age" value
- * @method string   getTime()        Returns the current record's "time" value
- * @method string   getDate()        Returns the current record's "date" value
+ * @method time     getTime()        Returns the current record's "time" value
+ * @method date     getDate()        Returns the current record's "date" value
  * @method string   getDescription() Returns the current record's "description" value
  * @method Schedule setIdschedule()  Sets the current record's "idschedule" value
  * @method Schedule setFullname()    Sets the current record's "fullname" value
@@ -63,23 +63,21 @@ abstract class BaseSchedule extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 4,
              ));
-        $this->hasColumn('time', 'string', 10, array(
-             'type' => 'string',
+        $this->hasColumn('time', 'time', null, array(
+             'type' => 'time',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
-             'length' => 10,
              ));
-        $this->hasColumn('date', 'string', 10, array(
-             'type' => 'string',
+        $this->hasColumn('date', 'date', null, array(
+             'type' => 'date',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
-             'length' => 10,
              ));
         $this->hasColumn('description', 'string', null, array(
              'type' => 'string',

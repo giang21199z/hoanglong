@@ -12,5 +12,6 @@ class DoctorFormFilter extends BaseDoctorFormFilter
 {
   public function configure()
   {
+
   }
 }

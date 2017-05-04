@@ -4,9 +4,11 @@
 # # 
 # # See documentation for your ORM's *:data-load task for more information.
 # 
-Category:
-   Scient:
-     name: Tổng hợp
+CategoryNews:
+   HoangLongNews:
+     name: Tin tức Hoàng Long
+   ScientNews:
+     name: Tin tức Khoa Học
 #   kris:
 #     username: Kris.Wallsmith
 #     password: changeme

@@ -10,7 +10,25 @@
  */
 class AboutUsFormFilter extends BaseAboutUsFormFilter
 {
-  public function configure()
-  {
-  }
+    public function configure()
+    {
+        $this->setWidgets(array(
+            'title' => new sfWidgetFormFilterInput(),
+        ));
+
+        $this->setValidators(array(
+            'title' => new sfValidatorPass(array('required' => false)),
+        ));
+
+        foreach ($this->getWidgetSchema()->getFields() as $field) {
+            $field->setAttribute('class', 'form-control');
+            $field->setAttribute('style', 'width: 50%');
+            $field->addOption('with_empty', false);
+        }
+        $this->widgetSchema->setNameFormat('about_us_filters[%s]');
+
+        $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+        $this->setupInheritance();
+    }
 }

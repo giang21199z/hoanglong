@@ -13,22 +13,22 @@ Doctrine_Manager::getInstance()->bindComponent('News', 'doctrine');
  * @property string $summary
  * @property string $content
  * @property integer $category_idcategory
- * @property Category $Category
+ * @property CategoryNews $CategoryNews
  * 
- * @method integer  getIdnews()              Returns the current record's "idnews" value
- * @method string   getImages()              Returns the current record's "images" value
- * @method string   getTitle()               Returns the current record's "title" value
- * @method string   getSummary()             Returns the current record's "summary" value
- * @method string   getContent()             Returns the current record's "content" value
- * @method integer  getCategoryIdcategory()  Returns the current record's "category_idcategory" value
- * @method Category getCategory()            Returns the current record's "Category" value
- * @method News     setIdnews()              Sets the current record's "idnews" value
- * @method News     setImages()              Sets the current record's "images" value
- * @method News     setTitle()               Sets the current record's "title" value
- * @method News     setSummary()             Sets the current record's "summary" value
- * @method News     setContent()             Sets the current record's "content" value
- * @method News     setCategoryIdcategory()  Sets the current record's "category_idcategory" value
- * @method News     setCategory()            Sets the current record's "Category" value
+ * @method integer      getIdnews()              Returns the current record's "idnews" value
+ * @method string       getImages()              Returns the current record's "images" value
+ * @method string       getTitle()               Returns the current record's "title" value
+ * @method string       getSummary()             Returns the current record's "summary" value
+ * @method string       getContent()             Returns the current record's "content" value
+ * @method integer      getCategoryIdcategory()  Returns the current record's "category_idcategory" value
+ * @method CategoryNews getCategoryNews()        Returns the current record's "CategoryNews" value
+ * @method News         setIdnews()              Sets the current record's "idnews" value
+ * @method News         setImages()              Sets the current record's "images" value
+ * @method News         setTitle()               Sets the current record's "title" value
+ * @method News         setSummary()             Sets the current record's "summary" value
+ * @method News         setContent()             Sets the current record's "content" value
+ * @method News         setCategoryIdcategory()  Sets the current record's "category_idcategory" value
+ * @method News         setCategoryNews()        Sets the current record's "CategoryNews" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -58,15 +58,14 @@ abstract class BaseNews extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 120,
              ));
-        $this->hasColumn('title', 'string', 120, array(
+        $this->hasColumn('title', 'string', null, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
-             'default' => 'title',
              'notnull' => false,
              'autoincrement' => false,
-             'length' => 120,
+             'length' => '',
              ));
         $this->hasColumn('summary', 'string', null, array(
              'type' => 'string',
@@ -99,7 +98,7 @@ abstract class BaseNews extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Category', array(
+        $this->hasOne('CategoryNews', array(
              'local' => 'category_idcategory',
              'foreign' => 'idcategory'));
 

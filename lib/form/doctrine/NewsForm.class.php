@@ -13,7 +13,7 @@ class NewsForm extends BaseNewsForm
     public function configure()
     {
 
-        foreach (CategoryTable::getAllCategory() as $value) {
+        foreach (CategoryNewsTable::getAllCategory() as $value) {
 //            var_dump($value);
             $list_category[$value['idcategory']] = $value['name'];
         }

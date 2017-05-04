@@ -12,5 +12,20 @@ class GalleryFormFilter extends BaseGalleryFormFilter
 {
   public function configure()
   {
+      $this->setWidgets(array(
+          'name'       => new sfWidgetFormFilterInput(),
+          'url'        => new sfWidgetFormFilterInput(),
+      ));
+
+      $this->setValidators(array(
+          'name'       => new sfValidatorPass(array('required' => false)),
+          'url'        => new sfValidatorPass(array('required' => false)),
+      ));
+
+      $this->widgetSchema->setNameFormat('gallery_filters[%s]');
+
+      $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+      $this->setupInheritance();
   }
 }

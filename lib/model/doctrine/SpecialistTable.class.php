@@ -16,4 +16,13 @@ class SpecialistTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Specialist');
     }
+
+    public static function getAllCategory()
+    {
+        $query = SpecialistTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->fetchArray();
+        return $query;
+    }
 }
