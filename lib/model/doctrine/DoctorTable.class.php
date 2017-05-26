@@ -16,4 +16,12 @@ class DoctorTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Doctor');
     }
+    public static function getAllDoctor()
+    {
+        $query = DoctorTable::getInstance()
+            ->createQuery('c')
+            ->select('c.name as title')
+            ->fetchArray();
+        return $query;
+    }
 }

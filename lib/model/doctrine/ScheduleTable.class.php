@@ -16,4 +16,14 @@ class ScheduleTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Schedule');
     }
+
+    public static function getScheduleById($id)
+    {
+        $query = ScheduleTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idschedule = ?', $id)
+            ->fetchOne();
+        return $query;
+    }
 }

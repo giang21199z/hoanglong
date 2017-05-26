@@ -12,17 +12,32 @@ Doctrine_Manager::getInstance()->bindComponent('AboutUs', 'doctrine');
  * @property string $title
  * @property string $summary
  * @property string $content
+ * @property timestamp $created_at
+ * @property timestamp $updated_at
+ * @property integer $category_about_us_idcategory_about_us
+ * @property integer $priority
+ * @property CategoryAboutUs $CategoryAboutUs
  * 
- * @method integer getIdnews()  Returns the current record's "idnews" value
- * @method string  getImages()  Returns the current record's "images" value
- * @method string  getTitle()   Returns the current record's "title" value
- * @method string  getSummary() Returns the current record's "summary" value
- * @method string  getContent() Returns the current record's "content" value
- * @method AboutUs setIdnews()  Sets the current record's "idnews" value
- * @method AboutUs setImages()  Sets the current record's "images" value
- * @method AboutUs setTitle()   Sets the current record's "title" value
- * @method AboutUs setSummary() Sets the current record's "summary" value
- * @method AboutUs setContent() Sets the current record's "content" value
+ * @method integer         getIdnews()                                Returns the current record's "idnews" value
+ * @method string          getImages()                                Returns the current record's "images" value
+ * @method string          getTitle()                                 Returns the current record's "title" value
+ * @method string          getSummary()                               Returns the current record's "summary" value
+ * @method string          getContent()                               Returns the current record's "content" value
+ * @method timestamp       getCreatedAt()                             Returns the current record's "created_at" value
+ * @method timestamp       getUpdatedAt()                             Returns the current record's "updated_at" value
+ * @method integer         getCategoryAboutUsIdcategoryAboutUs()      Returns the current record's "category_about_us_idcategory_about_us" value
+ * @method integer         getPriority()                              Returns the current record's "priority" value
+ * @method CategoryAboutUs getCategoryAboutUs()                       Returns the current record's "CategoryAboutUs" value
+ * @method AboutUs         setIdnews()                                Sets the current record's "idnews" value
+ * @method AboutUs         setImages()                                Sets the current record's "images" value
+ * @method AboutUs         setTitle()                                 Sets the current record's "title" value
+ * @method AboutUs         setSummary()                               Sets the current record's "summary" value
+ * @method AboutUs         setContent()                               Sets the current record's "content" value
+ * @method AboutUs         setCreatedAt()                             Sets the current record's "created_at" value
+ * @method AboutUs         setUpdatedAt()                             Sets the current record's "updated_at" value
+ * @method AboutUs         setCategoryAboutUsIdcategoryAboutUs()      Sets the current record's "category_about_us_idcategory_about_us" value
+ * @method AboutUs         setPriority()                              Sets the current record's "priority" value
+ * @method AboutUs         setCategoryAboutUs()                       Sets the current record's "CategoryAboutUs" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -79,12 +94,49 @@ abstract class BaseAboutUs extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => '',
              ));
+        $this->hasColumn('created_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('updated_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('category_about_us_idcategory_about_us', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => true,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('priority', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '1',
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+        $this->hasOne('CategoryAboutUs', array(
+             'local' => 'category_about_us_idcategory_about_us',
+             'foreign' => 'idcategory_about_us'));
     }
 }

@@ -16,4 +16,13 @@ class NewsTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('News');
     }
+    public static function getAllNewsByCategory($id)
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.idnews, c.title, c.category_news_idcategory')
+            ->where('category_news_idcategory = ?',$id)
+            ->fetchArray();
+        return $query;
+    }
 }

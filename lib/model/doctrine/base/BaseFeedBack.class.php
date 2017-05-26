@@ -14,6 +14,7 @@ Doctrine_Manager::getInstance()->bindComponent('FeedBack', 'doctrine');
  * @property string $content
  * @property timestamp $created_at
  * @property timestamp $updated_at
+ * @property integer $priority
  * 
  * @method integer   getIdfeedBack()    Returns the current record's "idfeed_back" value
  * @method string    getNameCustomer()  Returns the current record's "name_customer" value
@@ -22,6 +23,7 @@ Doctrine_Manager::getInstance()->bindComponent('FeedBack', 'doctrine');
  * @method string    getContent()       Returns the current record's "content" value
  * @method timestamp getCreatedAt()     Returns the current record's "created_at" value
  * @method timestamp getUpdatedAt()     Returns the current record's "updated_at" value
+ * @method integer   getPriority()      Returns the current record's "priority" value
  * @method FeedBack  setIdfeedBack()    Sets the current record's "idfeed_back" value
  * @method FeedBack  setNameCustomer()  Sets the current record's "name_customer" value
  * @method FeedBack  setAddress()       Sets the current record's "address" value
@@ -29,6 +31,7 @@ Doctrine_Manager::getInstance()->bindComponent('FeedBack', 'doctrine');
  * @method FeedBack  setContent()       Sets the current record's "content" value
  * @method FeedBack  setCreatedAt()     Sets the current record's "created_at" value
  * @method FeedBack  setUpdatedAt()     Sets the current record's "updated_at" value
+ * @method FeedBack  setPriority()      Sets the current record's "priority" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -103,12 +106,21 @@ abstract class BaseFeedBack extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 25,
              ));
+        $this->hasColumn('priority', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '1',
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+        
     }
 }

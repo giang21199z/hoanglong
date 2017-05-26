@@ -15,9 +15,11 @@ abstract class BaseScheduleFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'fullname'    => new sfWidgetFormFilterInput(),
       'age'         => new sfWidgetFormFilterInput(),
-      'time'        => new sfWidgetFormFilterInput(),
+      'address'     => new sfWidgetFormFilterInput(),
+      'phone'       => new sfWidgetFormFilterInput(),
       'date'        => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'description' => new sfWidgetFormFilterInput(),
+      'status'      => new sfWidgetFormFilterInput(),
       'created_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -25,9 +27,11 @@ abstract class BaseScheduleFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'fullname'    => new sfValidatorPass(array('required' => false)),
       'age'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'time'        => new sfValidatorPass(array('required' => false)),
+      'address'     => new sfValidatorPass(array('required' => false)),
+      'phone'       => new sfValidatorPass(array('required' => false)),
       'date'        => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'description' => new sfValidatorPass(array('required' => false)),
+      'status'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -52,9 +56,11 @@ abstract class BaseScheduleFormFilter extends BaseFormFilterDoctrine
       'idschedule'  => 'Number',
       'fullname'    => 'Text',
       'age'         => 'Number',
-      'time'        => 'Text',
+      'address'     => 'Text',
+      'phone'       => 'Text',
       'date'        => 'Date',
       'description' => 'Text',
+      'status'      => 'Number',
       'created_at'  => 'Date',
       'updated_at'  => 'Date',
     );

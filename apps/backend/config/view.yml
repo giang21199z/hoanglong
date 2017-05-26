@@ -11,9 +11,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [bootstrap.min.css, bootstrap-theme.min.css, blayout.css, jquery-confirm.css]
+  stylesheets:    [bootstrap.min.css, bootstrap-theme.min.css, blayout.css, jquery-confirm.css, sweetalert.css, main.css]
 
-  javascripts:    [jquery-3.1.1.min.js, bootstrap.min.js, blayout.js, ckeditor/ckeditor.js, jquery-confirm.js]
+  javascripts:    [jquery-3.1.1.min.js, bootstrap.min.js, blayout.js, ckeditor/ckeditor.js, jquery-confirm.js, sweetalert.min.js]
 
   has_layout:     true
   layout:         layout

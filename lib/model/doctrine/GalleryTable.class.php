@@ -16,4 +16,13 @@ class GalleryTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Gallery');
     }
+    public static function getAllGalleryByCategory($id)
+    {
+        $query = GalleryTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('category_gallery_idcategory_about_us = ?',$id)
+            ->fetchArray();
+        return $query;
+    }
 }

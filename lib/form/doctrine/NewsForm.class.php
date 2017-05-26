@@ -15,7 +15,7 @@ class NewsForm extends BaseNewsForm
 
         foreach (CategoryNewsTable::getAllCategory() as $value) {
 //            var_dump($value);
-            $list_category[$value['idcategory']] = $value['name'];
+            $list_category[$value['idcategory_news']] = $value['name'];
         }
 
         $this->setWidgets(array(
@@ -23,7 +23,7 @@ class NewsForm extends BaseNewsForm
             'title' => new sfWidgetFormTextarea(),
             'summary' => new sfWidgetFormTextarea(),
             'content' => new sfWidgetFormTextarea(),
-            'category_idcategory' => new sfWidgetFormChoice(
+            'category_news_idcategory' => new sfWidgetFormChoice(
                 array(
                     'choices' => $list_category
                 )
@@ -44,7 +44,7 @@ class NewsForm extends BaseNewsForm
             'title' => new sfValidatorString(array('required' => false)),
             'summary' => new sfValidatorString(array('required' => false)),
             'content' => new sfValidatorString(array('required' => false)),
-            'category_idcategory' => new sfValidatorInteger(),
+            'category_news_idcategory' => new sfValidatorInteger(),
         ));
 
         foreach ($this->getWidgetSchema()->getFields() as $field) {

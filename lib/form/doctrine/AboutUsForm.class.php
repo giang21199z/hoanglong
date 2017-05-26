@@ -12,12 +12,23 @@ class AboutUsForm extends BaseAboutUsForm
 {
     public function configure()
     {
+        foreach (CategoryAboutUsTable::getAllCategory() as $value) {
+//            var_dump($value);
+            $list_category[$value['idcategory_about_us']] = $value['name'];
+        }
+
+
         $this->setWidgets(array(
             'idnews' => new sfWidgetFormInputHidden(),
             'images' => new sfWidgetFormInputFile(),
             'title' => new sfWidgetFormTextarea(),
             'summary' => new sfWidgetFormTextarea(),
             'content' => new sfWidgetFormTextarea(),
+            'category_about_us_idcategory_about_us' => new sfWidgetFormChoice(
+                array(
+                    'choices' => $list_category
+                )
+            ),
         ));
 
         $this->setValidators(array(
@@ -35,6 +46,7 @@ class AboutUsForm extends BaseAboutUsForm
             'title' => new sfValidatorString(array('required' => false)),
             'summary' => new sfValidatorString(array('required' => false)),
             'content' => new sfValidatorString(array('required' => false)),
+            'category_about_us_idcategory_about_us' => new sfValidatorInteger(),
         ));
 
         foreach ($this->getWidgetSchema()->getFields() as $field) {

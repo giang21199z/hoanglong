@@ -67,35 +67,41 @@
                     <!-- Main Menu -->
                     <div class="side-menu-container">
                         <ul class="nav navbar-nav">
-
-                            <li id="slide"><a href="<?php echo url_for('schedule')?>"><span
+                            <li id="slide"><a href="<?php echo url_for('menu') ?>"><span
+                                        class="glyphicon glyphicon-menu-hamburger"></span> Dashboard</a>
+                            </li>
+                            <li id="slide"><a href="<?php echo url_for('schedule') ?>"><span
                                         class="glyphicon glyphicon-time"></span> Khách hàng đặt lịch</a>
                             </li>
                             <li class="dropdown ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-expanded="true">
-                                    Quản lý tin tức
+                                    <span
+                                        class="glyphicon glyphicon-list-alt"></span>Quản lý tin tức
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li id="tour"><a href="<?php echo url_for('news')?>"><span
+                                    <li id="tour"><a href="<?php echo url_for('news') ?>"><span
                                                 class="glyphicon glyphicon-list-alt"></span> Tin tức</a></li>
+
                                     <li id="book-tour">
-                                        <a href="<?php echo url_for('category_news')?>"><span
+                                        <a href="<?php echo url_for('category_news') ?>"><span
                                                 class="glyphicon glyphicon-calendar"></span> Danh mục tin tức
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="dropdown ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-expanded="true">
-                                    Quản lý dịch vụ khám chữa bệnh
+                                    <span
+                                        class="glyphicon glyphicon-usd"></span>Quản lý dịch vụ khám chữa bệnh
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li id="tour"><a href="<?php echo url_for('service')?>"><span
+                                    <li id="tour"><a href="<?php echo url_for('service') ?>"><span
                                                 class="glyphicon glyphicon-search"></span> Dịch vụ</a></li>
                                     <li id="book-tour">
-                                        <a href="<?php echo url_for('category_service')?>"><span
+                                        <a href="<?php echo url_for('category_service') ?>"><span
                                                 class="glyphicon glyphicon-th"></span> Chuyên khoa
                                         </a>
                                     </li>
@@ -104,26 +110,55 @@
                             <li class="dropdown ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-expanded="true">
-                                    Quản lý bác sĩ
+                                    <span
+                                        class="glyphicon glyphicon-plus-sign"></span>Quản lý bác sĩ
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li id="tour"><a href="<?php echo url_for('doctor')?>"><span
+                                    <li id="tour"><a href="<?php echo url_for('doctor') ?>"><span
                                                 class="glyphicon glyphicon-plus"></span> Bác sĩ</a></li>
                                     <li id="book-tour">
-                                        <a href="<?php echo url_for('specialist')?>"><span
+                                        <a href="<?php echo url_for('specialist') ?>"><span
                                                 class="glyphicon glyphicon-record"></span> Chuyên khoa
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li id="slide"><a href="<?php echo url_for('about_us')?>"><span
-                                        class="glyphicon glyphicon-film"></span> Các bài viết giới thiệu</a>
+                            <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="true">
+                                    <span
+                                        class="glyphicon glyphicon-plus-sign"></span>Thông tin giới thiệu
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li id="slide"><a href="<?php echo url_for('about_us') ?>"><span
+                                                class="glyphicon glyphicon-film"></span> Các bài viết giới thiệu</a>
+                                    </li>
+                                    <li id="book-tour">
+                                        <a href="<?php echo url_for('category_about_us') ?>"><span
+                                                class="glyphicon glyphicon-record"></span> Category
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li id="slide"><a href="<?php echo url_for('feed_back')?>"><span
+                            <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="true">
+                                    <span
+                                        class="glyphicon glyphicon-picture"></span>Quản lý ảnh
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li id="slide"><a href="<?php echo url_for('gallery') ?>"><span
+                                                class="glyphicon glyphicon-picture"></span> Thư viện ảnh</a>
+                                    </li>
+                                    <li id="book-tour">
+                                        <a href="<?php echo url_for('category_gallery') ?>"><span
+                                                class="glyphicon glyphicon-record"></span> Quản lý thư mục ảnh
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="slide"><a href="<?php echo url_for('feed_back') ?>"><span
                                         class="glyphicon glyphicon-heart"></span> Quản lý nhận xét khách hàng</a>
-                            </li>
-                            <li id="slide"><a href="<?php echo url_for('gallery')?>"><span
-                                        class="glyphicon glyphicon-picture"></span> Thư viện ảnh</a>
                             </li>
                         </ul>
                     </div>

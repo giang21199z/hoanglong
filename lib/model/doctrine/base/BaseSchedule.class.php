@@ -10,22 +10,34 @@ Doctrine_Manager::getInstance()->bindComponent('Schedule', 'doctrine');
  * @property integer $idschedule
  * @property string $fullname
  * @property integer $age
- * @property time $time
+ * @property string $address
+ * @property string $phone
  * @property date $date
  * @property string $description
+ * @property integer $status
+ * @property timestamp $created_at
+ * @property timestamp $updated_at
  * 
- * @method integer  getIdschedule()  Returns the current record's "idschedule" value
- * @method string   getFullname()    Returns the current record's "fullname" value
- * @method integer  getAge()         Returns the current record's "age" value
- * @method time     getTime()        Returns the current record's "time" value
- * @method date     getDate()        Returns the current record's "date" value
- * @method string   getDescription() Returns the current record's "description" value
- * @method Schedule setIdschedule()  Sets the current record's "idschedule" value
- * @method Schedule setFullname()    Sets the current record's "fullname" value
- * @method Schedule setAge()         Sets the current record's "age" value
- * @method Schedule setTime()        Sets the current record's "time" value
- * @method Schedule setDate()        Sets the current record's "date" value
- * @method Schedule setDescription() Sets the current record's "description" value
+ * @method integer   getIdschedule()  Returns the current record's "idschedule" value
+ * @method string    getFullname()    Returns the current record's "fullname" value
+ * @method integer   getAge()         Returns the current record's "age" value
+ * @method string    getAddress()     Returns the current record's "address" value
+ * @method string    getPhone()       Returns the current record's "phone" value
+ * @method date      getDate()        Returns the current record's "date" value
+ * @method string    getDescription() Returns the current record's "description" value
+ * @method integer   getStatus()      Returns the current record's "status" value
+ * @method timestamp getCreatedAt()   Returns the current record's "created_at" value
+ * @method timestamp getUpdatedAt()   Returns the current record's "updated_at" value
+ * @method Schedule  setIdschedule()  Sets the current record's "idschedule" value
+ * @method Schedule  setFullname()    Sets the current record's "fullname" value
+ * @method Schedule  setAge()         Sets the current record's "age" value
+ * @method Schedule  setAddress()     Sets the current record's "address" value
+ * @method Schedule  setPhone()       Sets the current record's "phone" value
+ * @method Schedule  setDate()        Sets the current record's "date" value
+ * @method Schedule  setDescription() Sets the current record's "description" value
+ * @method Schedule  setStatus()      Sets the current record's "status" value
+ * @method Schedule  setCreatedAt()   Sets the current record's "created_at" value
+ * @method Schedule  setUpdatedAt()   Sets the current record's "updated_at" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -63,21 +75,32 @@ abstract class BaseSchedule extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 4,
              ));
-        $this->hasColumn('time', 'time', null, array(
-             'type' => 'time',
+        $this->hasColumn('address', 'string', null, array(
+             'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
+             'length' => '',
              ));
-        $this->hasColumn('date', 'date', null, array(
+        $this->hasColumn('phone', 'string', 15, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 15,
+             ));
+        $this->hasColumn('date', 'date', 25, array(
              'type' => 'date',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
+             'length' => 25,
              ));
         $this->hasColumn('description', 'string', null, array(
              'type' => 'string',
@@ -88,12 +111,39 @@ abstract class BaseSchedule extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => '',
              ));
+        $this->hasColumn('status', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '0',
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('created_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('updated_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+        
     }
 }

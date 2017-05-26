@@ -12,23 +12,32 @@ Doctrine_Manager::getInstance()->bindComponent('News', 'doctrine');
  * @property string $title
  * @property string $summary
  * @property string $content
- * @property integer $category_idcategory
+ * @property timestamp $created_at
+ * @property timestamp $updated_at
+ * @property integer $category_news_idcategory
+ * @property integer $priority
  * @property CategoryNews $CategoryNews
  * 
- * @method integer      getIdnews()              Returns the current record's "idnews" value
- * @method string       getImages()              Returns the current record's "images" value
- * @method string       getTitle()               Returns the current record's "title" value
- * @method string       getSummary()             Returns the current record's "summary" value
- * @method string       getContent()             Returns the current record's "content" value
- * @method integer      getCategoryIdcategory()  Returns the current record's "category_idcategory" value
- * @method CategoryNews getCategoryNews()        Returns the current record's "CategoryNews" value
- * @method News         setIdnews()              Sets the current record's "idnews" value
- * @method News         setImages()              Sets the current record's "images" value
- * @method News         setTitle()               Sets the current record's "title" value
- * @method News         setSummary()             Sets the current record's "summary" value
- * @method News         setContent()             Sets the current record's "content" value
- * @method News         setCategoryIdcategory()  Sets the current record's "category_idcategory" value
- * @method News         setCategoryNews()        Sets the current record's "CategoryNews" value
+ * @method integer      getIdnews()                   Returns the current record's "idnews" value
+ * @method string       getImages()                   Returns the current record's "images" value
+ * @method string       getTitle()                    Returns the current record's "title" value
+ * @method string       getSummary()                  Returns the current record's "summary" value
+ * @method string       getContent()                  Returns the current record's "content" value
+ * @method timestamp    getCreatedAt()                Returns the current record's "created_at" value
+ * @method timestamp    getUpdatedAt()                Returns the current record's "updated_at" value
+ * @method integer      getCategoryNewsIdcategory()   Returns the current record's "category_news_idcategory" value
+ * @method integer      getPriority()                 Returns the current record's "priority" value
+ * @method CategoryNews getCategoryNews()             Returns the current record's "CategoryNews" value
+ * @method News         setIdnews()                   Sets the current record's "idnews" value
+ * @method News         setImages()                   Sets the current record's "images" value
+ * @method News         setTitle()                    Sets the current record's "title" value
+ * @method News         setSummary()                  Sets the current record's "summary" value
+ * @method News         setContent()                  Sets the current record's "content" value
+ * @method News         setCreatedAt()                Sets the current record's "created_at" value
+ * @method News         setUpdatedAt()                Sets the current record's "updated_at" value
+ * @method News         setCategoryNewsIdcategory()   Sets the current record's "category_news_idcategory" value
+ * @method News         setPriority()                 Sets the current record's "priority" value
+ * @method News         setCategoryNews()             Sets the current record's "CategoryNews" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -85,11 +94,39 @@ abstract class BaseNews extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => '',
              ));
-        $this->hasColumn('category_idcategory', 'integer', 4, array(
+        $this->hasColumn('created_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('updated_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('category_news_idcategory', 'integer', 4, array(
              'type' => 'integer',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => true,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('priority', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '1',
+             'notnull' => false,
              'autoincrement' => false,
              'length' => 4,
              ));
@@ -99,10 +136,7 @@ abstract class BaseNews extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasOne('CategoryNews', array(
-             'local' => 'category_idcategory',
-             'foreign' => 'idcategory'));
-
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+             'local' => 'category_news_idcategory',
+             'foreign' => 'idcategory_news'));
     }
 }

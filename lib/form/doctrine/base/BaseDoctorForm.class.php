@@ -20,10 +20,11 @@ abstract class BaseDoctorForm extends BaseFormDoctrine
       'degree'                  => new sfWidgetFormTextarea(),
       'summary'                 => new sfWidgetFormTextarea(),
       'content'                 => new sfWidgetFormTextarea(),
-      'specialist_idspecialist' => new sfWidgetFormInputHidden(),
       'avatar'                  => new sfWidgetFormInputText(),
       'created_at'              => new sfWidgetFormDateTime(),
       'updated_at'              => new sfWidgetFormDateTime(),
+      'specialist_idspecialist' => new sfWidgetFormInputHidden(),
+      'priority'                => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -32,10 +33,11 @@ abstract class BaseDoctorForm extends BaseFormDoctrine
       'degree'                  => new sfValidatorString(array('required' => false)),
       'summary'                 => new sfValidatorString(array('required' => false)),
       'content'                 => new sfValidatorString(array('required' => false)),
-      'specialist_idspecialist' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('specialist_idspecialist')), 'empty_value' => $this->getObject()->get('specialist_idspecialist'), 'required' => false)),
       'avatar'                  => new sfValidatorString(array('max_length' => 120, 'required' => false)),
       'created_at'              => new sfValidatorDateTime(),
       'updated_at'              => new sfValidatorDateTime(),
+      'specialist_idspecialist' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('specialist_idspecialist')), 'empty_value' => $this->getObject()->get('specialist_idspecialist'), 'required' => false)),
+      'priority'                => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('doctor[%s]');

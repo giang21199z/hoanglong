@@ -1,3 +1,27 @@
+category_about_us:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoryAboutUs
+    module:               categoryAboutUs
+    prefix_path:          /categoryAboutUs
+    column:               idcategory_about_us
+    with_wildcard_routes: true
+
+category_gallery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoryGallery
+    module:               categoryGallery
+    prefix_path:          /categoryGallery
+    column:               idcategory_gallery
+    with_wildcard_routes: true
+
+update_status_schedule:
+  url:   /cap-nhat-trang-thai
+  param: { module: ajax, action: changeStatusSchedule }
+menu:
+  url:   /quan-ly-menu
+  param: { module: menu, action: index }
 feed_back:
   class: sfDoctrineRouteCollection
   options:
@@ -67,7 +91,7 @@ category_service:
     model:                CategoryService
     module:               categoryService
     prefix_path:          /categoryService
-    column:               idcategory
+    column:               idcategory_service
     with_wildcard_routes: true
 
 category_news:
@@ -76,7 +100,7 @@ category_news:
     model:                CategoryNews
     module:               categoryNews
     prefix_path:          /categoryNews
-    column:               idcategory
+    column:               idcategory_news
     with_wildcard_routes: true
 
 upload_file:

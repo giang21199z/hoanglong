@@ -22,6 +22,7 @@ abstract class BaseFeedBackForm extends BaseFormDoctrine
       'content'       => new sfWidgetFormTextarea(),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
+      'priority'      => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -32,6 +33,7 @@ abstract class BaseFeedBackForm extends BaseFormDoctrine
       'content'       => new sfValidatorString(array('required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
+      'priority'      => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('feed_back[%s]');

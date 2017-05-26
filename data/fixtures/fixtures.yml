@@ -3,12 +3,7 @@
 # # 020_articles.yml, etc) which will be loaded in alphabetical order.
 # # 
 # # See documentation for your ORM's *:data-load task for more information.
-# 
-CategoryNews:
-   HoangLongNews:
-     name: Tin tức Hoàng Long
-   ScientNews:
-     name: Tin tức Khoa Học
+#
 #   kris:
 #     username: Kris.Wallsmith
 #     password: changeme

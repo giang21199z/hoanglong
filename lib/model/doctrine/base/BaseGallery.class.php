@@ -10,13 +10,28 @@ Doctrine_Manager::getInstance()->bindComponent('Gallery', 'doctrine');
  * @property integer $idgallery
  * @property string $name
  * @property string $url
+ * @property timestamp $created_at
+ * @property timestamp $updated_at
+ * @property integer $category_gallery_idcategory_about_us
+ * @property integer $priority
+ * @property CategoryGallery $CategoryGallery
  * 
- * @method integer getIdgallery() Returns the current record's "idgallery" value
- * @method string  getName()      Returns the current record's "name" value
- * @method string  getUrl()       Returns the current record's "url" value
- * @method Gallery setIdgallery() Sets the current record's "idgallery" value
- * @method Gallery setName()      Sets the current record's "name" value
- * @method Gallery setUrl()       Sets the current record's "url" value
+ * @method integer         getIdgallery()                            Returns the current record's "idgallery" value
+ * @method string          getName()                                 Returns the current record's "name" value
+ * @method string          getUrl()                                  Returns the current record's "url" value
+ * @method timestamp       getCreatedAt()                            Returns the current record's "created_at" value
+ * @method timestamp       getUpdatedAt()                            Returns the current record's "updated_at" value
+ * @method integer         getCategoryGalleryIdcategoryAboutUs()     Returns the current record's "category_gallery_idcategory_about_us" value
+ * @method integer         getPriority()                             Returns the current record's "priority" value
+ * @method CategoryGallery getCategoryGallery()                      Returns the current record's "CategoryGallery" value
+ * @method Gallery         setIdgallery()                            Sets the current record's "idgallery" value
+ * @method Gallery         setName()                                 Sets the current record's "name" value
+ * @method Gallery         setUrl()                                  Sets the current record's "url" value
+ * @method Gallery         setCreatedAt()                            Sets the current record's "created_at" value
+ * @method Gallery         setUpdatedAt()                            Sets the current record's "updated_at" value
+ * @method Gallery         setCategoryGalleryIdcategoryAboutUs()     Sets the current record's "category_gallery_idcategory_about_us" value
+ * @method Gallery         setPriority()                             Sets the current record's "priority" value
+ * @method Gallery         setCategoryGallery()                      Sets the current record's "CategoryGallery" value
  * 
  * @package    hoanglong
  * @subpackage model
@@ -55,12 +70,49 @@ abstract class BaseGallery extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 120,
              ));
+        $this->hasColumn('created_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('updated_at', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 25,
+             ));
+        $this->hasColumn('category_gallery_idcategory_about_us', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => true,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('priority', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '1',
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+        $this->hasOne('CategoryGallery', array(
+             'local' => 'category_gallery_idcategory_about_us',
+             'foreign' => 'idcategory_gallery'));
     }
 }
