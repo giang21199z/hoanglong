@@ -33,4 +33,13 @@ class AboutUsTable extends Doctrine_Table
             ->fetchArray();
         return $query;
     }
+    public static function getAboutUsHomepage()
+    {
+        $query = AboutUsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.priority = 5')
+            ->fetchOne();
+        return $query;
+    }
 }

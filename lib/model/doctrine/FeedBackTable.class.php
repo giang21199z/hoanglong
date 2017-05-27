@@ -16,4 +16,13 @@ class FeedBackTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('FeedBack');
     }
+    public static function getFeedbackHomepage($limit = 3)
+    {
+        $query = FeedBackTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->limit($limit)
+            ->fetchArray();
+        return $query;
+    }
 }

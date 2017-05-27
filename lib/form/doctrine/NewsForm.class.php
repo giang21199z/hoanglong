@@ -28,6 +28,11 @@ class NewsForm extends BaseNewsForm
                     'choices' => $list_category
                 )
             ),
+            'priority' => new sfWidgetFormChoice(
+                array(
+                    'choices' => Constant::$Display_Homepage_Cbx
+                )
+            ),
         ));
 
         $this->setValidators(array(
@@ -45,6 +50,7 @@ class NewsForm extends BaseNewsForm
             'summary' => new sfValidatorString(array('required' => false)),
             'content' => new sfValidatorString(array('required' => false)),
             'category_news_idcategory' => new sfValidatorInteger(),
+            'priority' => new sfValidatorInteger(),
         ));
 
         foreach ($this->getWidgetSchema()->getFields() as $field) {

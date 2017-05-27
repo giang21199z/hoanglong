@@ -183,79 +183,7 @@
         <hr class="divider">
         Copyright &COPY; 2017 <a href="https://www.facebook.com/nguyendg21199z">Giang Nguyen. SMVC-SEV</a>
         </p>
-        <!--        --><?php
-        //        $json = file_get_contents('http://api.fixer.io/latest?base=USD');
-        //        $obj = json_decode($json);
-        //        echo $obj->rates->KRW;
-        //        ?>
     </footer>
 </div>
-<script>
-    $('#change-pass').click(function () {
-        $.confirm({
-            title: 'Change New Password!',
-            content: '' +
-            '<form action="" class="formName">' +
-            '<div class="form-group">' +
-            '<label>Type old password</label>' +
-            '<input type="text" placeholder="New password" class="old form-control" required />' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<label>Type a new password</label>' +
-            '<input type="text" placeholder="New password" class="name form-control" required />' +
-            '</div>' +
-            '</form>',
-            buttons: {
-                formSubmit: {
-                    text: 'Submit',
-                    btnClass: 'btn-blue',
-                    action: function () {
-                        var name = this.$content.find('.name').val();
-                        if (!name) {
-                            $.alert('Provide a valid password');
-                            return false;
-                        }
-                        var old = this.$content.find('.old').val();
-                        if (!old) {
-                            $.alert('Provide a valid password');
-                            return false;
-                        }
-                        $.ajax({
-                            type: 'POST',
-                            url: '#',
-                            data: {
-                                password: name,
-                                oldpass: old
-                            },
-                            success: function (data) {
-                                var data1 = JSON.parse(data);
-                                if (data1.status == 1) {
-                                    $.alert('Change password success!');
-                                } else {
-                                    $.alert('Wrong password!');
-                                }
-                            }
-                        }).done(function (data) {
-
-                        });
-                    }
-                },
-                cancel: function () {
-                    //close
-                },
-            },
-            onContentReady: function () {
-                // bind to events
-                var jc = this;
-                this.$content.find('form').on('submit', function (e) {
-                    // if the user submits the form by pressing enter in the field.
-                    e.preventDefault();
-                    jc.$$formSubmit.trigger('click'); // reference the button and click it
-                });
-            }
-        });
-
-    });
-</script>
 </body>
 </html>

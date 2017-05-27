@@ -16,6 +16,7 @@ generator:
       fields:
         category_idcategory: {label: Category}
         images: {label: Illustrating images}
+        priority: {label: Hiển thị trang chủ}
       list:
         title: Danh sách tin tức
         batch_actions:  {}
@@ -25,10 +26,10 @@ generator:
         object_actions:
           _edit:  {label: Detail}
           _delete:  {label: Del}
-        display: [title, summary, content, images, updated_at]
+        display: [title, summary, images, updated_at, priority]
       filter:
         display:  [title]
       form:
-        display: [title, summary, content, images, category_news_idcategory]
+        display: [title, summary, content, images, category_news_idcategory, priority]
       edit:    ~
       new:     ~

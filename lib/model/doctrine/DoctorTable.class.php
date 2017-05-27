@@ -20,8 +20,27 @@ class DoctorTable extends Doctrine_Table
     {
         $query = DoctorTable::getInstance()
             ->createQuery('c')
-            ->select('c.name as title')
+            ->select('c.*')
             ->fetchArray();
+        return $query;
+    }
+    public static function getDoctorHomepage($limit = 4)
+    {
+        $query = DoctorTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->limit($limit)
+            ->fetchArray();
+        return $query;
+    }
+    public static function getDoctorById($id)
+    {
+        $query = DoctorTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*, special.*')
+            ->leftJoin('c.Specialist as special')
+            ->where("c.iddoctor = ?",$id)
+            ->fetchOne();
         return $query;
     }
 }

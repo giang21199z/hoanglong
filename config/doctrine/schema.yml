@@ -546,7 +546,7 @@ Schedule:
       unsigned: false
       primary: false
       notnull: false
-      autoincrement: false
+      autoincrement: fals
     age:
       type: integer(4)
       fixed: false

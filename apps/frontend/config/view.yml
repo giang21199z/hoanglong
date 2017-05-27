@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    [main.css, /bootstrap/css/bootstrap.css, animations.css, style.css, custom.css, gallery.css, megamenu.css, sweetalert.css]
 
-  javascripts:    []
+  javascripts:    [/plugins/jquery.min.js, sweetalert.min.js]
 
   has_layout:     true
   layout:         layout

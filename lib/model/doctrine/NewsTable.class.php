@@ -25,4 +25,52 @@ class NewsTable extends Doctrine_Table
             ->fetchArray();
         return $query;
     }
+    public static function getNewsHomepage($limit = 4)
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->limit($limit)
+            ->fetchArray();
+        return $query;
+    }
+    public static function getNewsWhyChooseUs($limit = 3)
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->limit($limit)
+            ->where('c.priority = 2')
+            ->fetchArray();
+        return $query;
+    }
+    public static function getAllNews()
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->fetchArray();
+        return $query;
+    }
+    public static function getNewsById($id)
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idnews = ?',$id)
+            ->fetchOne();
+        return $query;
+    }
+
+    public static function getNewsRelatedWith($id, $limit = 4)
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idnews != ?',$id)
+            ->limit($limit)
+            ->orderBy('RAND()')
+            ->fetchArray();
+        return $query;
+    }
 }

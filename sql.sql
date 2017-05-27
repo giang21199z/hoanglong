@@ -172,7 +172,7 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `hoanglong_web`.`schedule`
+-- Table `hoanglong_web`.`ajax`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hoanglong_web`.`schedule` (
   `idschedule` INT(11) NOT NULL AUTO_INCREMENT,
