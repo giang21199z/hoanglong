@@ -261,12 +261,14 @@
             var fullname = $("#fullname").val();
             var age = $("#age").val();
             var phone = $("#phone").val();
+            var address= $("#address").val();
             var date = $("#date").val();
             var description = $("#description").val();
             var data = {
                 fullname: fullname,
                 age: age,
                 phone: phone,
+                address, address,
                 date: date,
                 description: description
             };
@@ -283,7 +285,7 @@
             singleDatePicker: true,
             showDropdowns: true,
             minDate: now
-        },
+        });
     });
 </script>
 </body>
