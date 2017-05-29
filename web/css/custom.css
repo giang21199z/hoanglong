@@ -1,0 +1,356 @@
+body{
+    font-style: normal;
+}
+.no-padding{
+    padding: 0px;
+}
+.no-padding-top{
+    padding-top: 0px;
+}
+.no-padding-bottom{
+    padding-bottom: 0px;
+}
+.no-padding-right{
+    padding-right: 0px;
+}
+.no-padding-left{
+    padding-left: 0px;
+}
+.no-padding-height{
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.no-padding-width{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.no-margin{
+      margin: 0px;
+}
+.no-margin-top{
+    margin-top: 0px;
+}
+.no-margin-bottom{
+    margin-bottom: 0px;
+}
+.no-margin-left{
+    margin-left: 0px;
+}
+.no-margin-right{
+    margin-right: 0px;
+}
+.no-margin-height{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.no-margin-width{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.infomation{
+    margin-top: 32px;
+}
+.infomation b {
+    color: #7c7c7c;
+    font-size: 12px;
+}
+.infomation p{
+    color: #85a92a;
+    font-size: 12px;
+}
+.infomation img{
+    width: 25px;
+    margin-top: 20px !important;
+}
+.infomation .icon-location{
+    width: 14px;
+}
+.infomation .col-xs-4 , .col-xs-3{
+    float: right;
+}
+.menu-header{
+    background: #b5d56a;
+}
+.menu-header ul li:hover{
+    /*background: #99cc33;*/
+    height: 45px;
+}
+.navbar{
+    height: 45px !important;
+}
+.title-banner h2{
+    font-size: 50px;
+}
+.menu-header ul li{
+    height: 45px;
+    color: #86a92b;
+    font-weight: 700;
+    text-align: center;
+}
+.icon-contact .fb:hover{
+     background: #b25555;
+ }
+.icon-contact .yt:hover{
+    background: #b25555;
+}
+.icon-contact .tw:hover{
+    background: #0a0a0a;
+}
+.icon-contact .g:hover{
+    background: #0a0a0a;
+}
+.left-content{
+    width: 840px;
+    float: left;
+    display: inline;
+    margin-top: -125px;
+    background: #ffffff;
+    padding-right: 45px;
+    padding-left: 45px;
+    box-shadow: -1px 3px 3px 0px #aaa;
+}
+.right-menu{
+    width: 330px;
+    float: left;
+    display: inline;
+    /*box-shadow: 0px 3px 3px 0px #aaa;*/
+}
+.new-title{
+    height: 125px;
+}
+.items-new{
+    margin-top: 40px;
+}
+.img-items{
+    display: inline;
+    float: left;
+}
+.content-items{
+    float: left;
+    display: inline;
+    width: 510px;
+    margin-left: 20px;
+    height: 220px;
+}
+
+.make-shu .form-control{
+    border: 0px;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 20px;
+}
+.right-item{
+    padding-left: 15px;
+}
+#footer{
+    margin-top: 45px;
+}
+.right-menu input, textarea, button{
+    margin-top: 15px !important;
+}
+h1{
+    margin-bottom: 0px;
+}
+
+.page-services img{
+height: 210px;
+    width: 100%;
+}
+.p-title{
+    font-size: 16px;
+    color: #85a92a ;
+}
+.page-services .p-title{
+    margin-top: 15px;
+}
+.page-services .p-description{
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+.page-services .item{
+    margin-bottom: 45px;
+}
+/* Page Our-team*/
+.page-ourteam .list-mem{
+margin-top: 25px;
+    margin-bottom: 45px;
+}
+.page-ourteam .list-mem img{
+    width: 190px;
+    height: 190px;
+    margin: 0px auto;
+}
+.page-ourteam .list-mem .name{
+    color: #85a92a ;
+    margin-top: 10px ;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.page-ourteam .list-mem .work{
+    color: #4b4b4b;
+    font-style: italic;
+}
+/* doctor-detail*/
+.doctor-detail .img-doc{
+    height: 285px;
+    width: 285px;
+}
+.doctor-detail .name-doc{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #85a92a;
+}
+.doctor-detail .birth-day{
+    font-style: italic;
+}
+.doctor-detail .history-doc{
+    margin-top: 65px;
+    float: left;
+    margin-bottom: 100px;
+}
+.doctor-detail .description{
+    font-size: 13px;
+}
+.title-image{
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+}
+/* doctor-detail2*/
+.new-detail2 .date{
+    font-size: 13px;
+    font-style: italic;
+}
+.new-detail2 .tille{
+    font-size: 28px;
+}
+.new-detail2 .description{
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.new-detail2 .arr-left .arrow-img{
+     width: 20px;
+     height: 35px;
+     float: left;
+     margin-top: 4px;
+ }
+.new-detail2 .arr-left span{
+    display: block;
+    float: left;
+    margin-left:15px;
+    color: #85a92a;
+    letter-spacing: 0.5px;
+}
+
+.new-detail2 .arr-right .arrow-img{
+    width: 20px;
+    height: 35px;
+    float: right;
+    margin-top: 4px;
+}
+.new-detail2 .arr-right span{
+    margin-top: 10px;
+    font-size: 16px;
+    display: block;
+    float: right;
+    margin-left:15px;
+    color: #85a92a;
+    letter-spacing: 0.5px;
+}
+.pre{
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.new-detail2 .right-item{
+    border-bottom : 0px;
+    letter-spacing: 1px; color:#4b4b4b ;
+    height: 125px ;
+    width:330px;
+    padding-left: 15px ;
+    font-size: 18px ;
+    padding-top: 20px;
+}
+.new-detail2 .right-item .img-new{
+    height: 90px;
+    width: 90px;
+    float: left;
+}
+.new-detail2 .right-item span{
+    float: left;
+    display: block;
+    font-size: 14px;
+    color: #85a92a;
+    padding-top: 10px;
+}
+.new-detail2 .right-item .date{
+    font-size: 12px;
+    font-style: italic;
+}
+.new-detail2 .item{
+    border-bottom : 1px solid #a0a0a0;
+}
+.schedule-btn{
+    box-shadow: -1px 3px 3px 0px #aaa;
+    width: 200px;
+    border-radius:10px;
+    margin-bottom:30px;
+    letter-spacing: 1px;
+    background: #ffffff;
+    color:#b9d96a ; height: 50px;
+    font-size: 18px
+}
+.schedule-btn p{
+    display: table-cell;
+    padding-left: 33px
+}
+#footer .map{
+    width: 410px;
+}
+#footer .map img{
+    width: 410px;
+    height: 250px;
+    display: block;
+    float: left;
+}
+#footer .about-hoanglong{
+ display: inline;
+    float: left;
+    width: 510px;
+    padding-right: 90px;
+    padding-left: 70px;
+    letter-spacing: 0.5px;
+}
+#footer hr{
+    width: 115px;
+    margin-left: 0px;
+    width: 115px;
+}
+#footer .about-hoanglong .description{
+    font-size: 13px;
+    line-height: 23px;
+    padding-left: 5px;
+    margin-top: 35px;
+}
+#footer .contact-us{
+    width: 230px;
+    float: left;
+    display: inline-block;
+}
+#footer .contact-us .img-location{
+    width: 16px;
+    height: 25px;
+    margin-top: 3px;
+}
+#footer .contact-us .img-clock{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+#footer .contact-us .img-clock{
+    width: 24px;
+    height: 24px;
+    margin-top: 3px;
+}
+#footer .contact-us .text{
+    font-size: 12px;
+}
