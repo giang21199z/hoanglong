@@ -6,6 +6,7 @@
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
 </head>
@@ -22,10 +23,12 @@
         <div class="row content">
             <div class="col-md-4">
                 <div class="logo smooth-scroll">
-                    <img src="/images/logo.png"
-                         style="margin-left: 15px; width: 60px ; height: 50px;margin-bottom: 10px; margin-top: 8px">
-                    <br>
-                    <img src="/images/text-logo.png" style="width: 75px; height: 26px">
+                    <a href="<?php echo url_for('homepage') ?>">
+                        <img src="/images/logo.png"
+                             style="margin-left: 15px; width: 60px ; height: 50px;margin-bottom: 10px; margin-top: 8px">
+                        <br>
+                        <img src="/images/text-logo.png" style="width: 75px; height: 26px">
+                    </a>
                 </div>
 
             </div>
@@ -94,7 +97,8 @@
                                         <ul class="dropdown-menu mega-dropdown-menu">
                                             <li class="col-sm-3">Giới thiệu chung</li>
                                             <li class="col-sm-3">Cơ sở hạ tầng</li>
-                                            <li class="col-sm-3">Đội ngũ bác sĩ</li>
+                                            <li class="col-sm-3"><a href="<?php echo url_for('doctor') ?>">Đội ngũ bác
+                                                    sĩ</a></li>
                                             <li class="col-sm-3">Báo chí</li>
                                         </ul>
                                     </li>
@@ -110,13 +114,13 @@
                                             <li class="col-sm-6">Liên kết bảo hiểm</li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown mega-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tin tức <span
-                                                class="caret"></span></a>
+                                    <li class="dropdown mega-dropdown dropdown-toggle">
+                                        <a href="<?php echo url_for('list_news') ?>">Tin tức <span
+                                                class="caret" data-toggle="dropdown"></span></a>
                                         <ul class="dropdown-menu mega-dropdown-menu">
                                             <li class="col-sm-4">Tin tức chuyên môn</li>
                                             <li class="col-sm-4">Tin tức y khoa</li>
-                                            <li class="col-sm-4">. Hội thảo chuyên ngành</li>
+                                            <li class="col-sm-4">Hội thảo chuyên ngành</li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
@@ -128,7 +132,7 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liên hệ </a>
+                                        <a href="<?php echo url_for('contact') ?>">Liên hệ </a>
                                     </li>
                                 </ul>
 
@@ -162,10 +166,11 @@
                     </p>
                     <hr>
                     <p class="description">
-                        Hoang Long Clinic is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Hoang Long Clinic là phòng khám chuyên điều trị các liên quan tới đường tiêu hóa, …
+                        Là một trong những phòng khám có uy tín và danh tiếng hiện nay tại TP Hà Nội.
+                        Phòng khám luôn áp dụng những thành quả của khoa học kỹ thuật y khoa tiên tiến ở trong nước cũng
+                        như trên thế giới.
+                        Phòng khám là nơi quy tụ nhiều chuyên gia, bác sĩ giỏi về lĩnh vực y tế chuyên môn đầu ngành.
                     </p>
                 </div>
                 <div class="row icon-contact text-center" style="font-size: 20px">
@@ -247,6 +252,9 @@
 
 <!--Menu Scripts-->
 <script type="text/javascript" src="js/megamenu.js"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 <script>
     $(document).ready(function () {
         $('#btn-make-schedule').click(function () {
@@ -254,23 +262,28 @@
             var age = $("#age").val();
             var phone = $("#phone").val();
             var date = $("#date").val();
-            var title = $("#title").val();
             var description = $("#description").val();
+            var data = {
+                fullname: fullname,
+                age: age,
+                phone: phone,
+                date: date,
+                description: description
+            };
             $.ajax({
                 type: 'POST',
                 url: '<?php echo url_for("make_schedue")?>',
-                data: {
-                    fullname: fullname,
-                    age: age,
-                    phone: phone,
-                    date: date,
-                    title: title,
-                    description: description
-                }
-            }).done(function () {
-                swal("Thành công", "", "success");
+                data: data
+            }).done(function ($msg) {
+                swal(JSON.parse($msg).message, "", "success");
             });
         });
+        var now = moment();
+        $('#date').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            minDate: now
+        },
     });
 </script>
 </body>

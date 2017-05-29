@@ -1,11 +1,20 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+contact:
+  url:   /lien-he-voi-chung-toi
+  param: { module: site, action: contact }
 make_schedue:
   url:   /make-schedule
   param: { module: ajax, action: createSchedule }
+doctor:
+  url:   /bac-si
+  param: { module: doctors, action: index}
 detail_doctor:
   url:   /bac-si/:iddoctor
   param: { module: doctors, action: detail, iddoctor: '' }
+list_news:
+  url:   /danh-sach-tin-tuc
+  param: { module: news, action: index }
 detail_news:
   url:   /tin-tuc-hoang-long/:idnews
   param: { module: news, action: detail, idnews: '' }
