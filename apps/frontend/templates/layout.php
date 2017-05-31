@@ -90,45 +90,45 @@
                     <nav class="navbar navbar-default" role="navigation">
                         <div class="container-fluid">
                             <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-                                <ul class="nav navbar-nav navbar-left menu">
+                                <ul class="nav navbar-nav navbar-left menu no-padding">
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu <span
                                                 class="caret"></span></a>
-                                        <ul class="dropdown-menu mega-dropdown-menu">
-                                            <li class="col-sm-3">Giới thiệu chung</li>
-                                            <li class="col-sm-3">Cơ sở hạ tầng</li>
-                                            <li class="col-sm-3"><a href="<?php echo url_for('doctor') ?>">Đội ngũ bác
-                                                    sĩ</a></li>
-                                            <li class="col-sm-3">Báo chí</li>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                            <li class="col-xs-3 no-padding"><p>Giới thiệu chung</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Cơ sở hạ tầng</p></li>
+                                            <li class="col-xs-3 no-padding"><a href="<?php echo url_for('doctor') ?>"><p>Đội ngũ bác
+                                                        sĩ</p></a></li>
+                                            <li class="col-xs-3 no-padding">Báo chí</li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dịch vụ<span
                                                 class="caret"></span></a>
-                                        <ul class="dropdown-menu mega-dropdown-menu">
-                                            <li class="col-sm-3">Nội soi chẩn đoán bệnh</li>
-                                            <li class="col-sm-3">Nội soi can thiệp</li>
-                                            <li class="col-sm-3">Chuẩn đoán hình ảnh</li>
-                                            <li class="col-sm-3">Thăm dò chức năng</li>
-                                            <li class="col-sm-6">Xét nghiệm</li>
-                                            <li class="col-sm-6">Liên kết bảo hiểm</li>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                            <li class="col-xs-3 no-padding"><p>Nội soi chẩn đoán bệnh</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Nội soi can thiệp</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Chuẩn đoán hình ảnh</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Thăm dò chức năng</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Xét nghiệm</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Liên kết bảo hiểm</p></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown dropdown-toggle">
-                                        <a href="<?php echo url_for('list_news') ?>">Tin tức <span
-                                                class="caret" data-toggle="dropdown"></span></a>
-                                        <ul class="dropdown-menu mega-dropdown-menu">
-                                            <li class="col-sm-4">Tin tức chuyên môn</li>
-                                            <li class="col-sm-4">Tin tức y khoa</li>
-                                            <li class="col-sm-4">Hội thảo chuyên ngành</li>
+                                        <a href="<?php echo url_for('list_news') ?>"><p>Tin tức <span
+                                                        class="caret" data-toggle="dropdown"></span></p> </a>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                            <li class="col-xs-3 no-padding"><p>Tin tức chuyên môn</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Tin tức y khoa</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Hội thảo chuyên ngành</p></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thư viện <span
                                                 class="caret"></span></a>
-                                        <ul class="dropdown-menu mega-dropdown-menu">
-                                            <li class="col-sm-6">Phòng khám</li>
-                                            <li class="col-sm-6">Sự kiện</li>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                            <li class="col-xs-3 no-padding"><p>Phòng khám</p></li>
+                                            <li class="col-xs-3 no-padding"><p>Sự kiện</p></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
@@ -137,7 +137,7 @@
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="#banner"><span> SCHEDULE</span></a></li>
+                                    <li style="background-color: #86a92b; "><a type="button"  data-toggle="modal" data-target="#myModal"><span> SCHEDULE</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -147,6 +147,35 @@
         </div>
     </div>
 </header>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="row make-shu" style=" background: #b9d96a; width: 360px ; margin: 0px auto; border-radius: 10px">
+            <p style=" color :#ffffff;padding-top: 25px ; padding-left: 20px ; letter-spacing: 2px; font-size: 26px">
+                Đặt lịch hẹn</p>
+            <div class="row"
+                 style="font-size: 16px;padding-left: 25px;padding-right: 25px ; letter-spacing: 1px;">
+                <p style="color: #ffffff">
+                    Hân hạnh phục vụ quý khách
+                </p>
+                <input type="text" class="form-control" id="fullname" placeholder="Full Name">
+                <input type="text" class="form-control" id="age" placeholder="Age">
+                <input type="number" class="form-control" id="phone" placeholder="Phone Number">
+                <input type="text" class="form-control" id="date" placeholder="Date">
+                <textarea class="form-control" style="height: 140px" id="description"
+                          placeholder="Description"></textarea>
+
+                <div class="row text-center ">
+                    <button class="btn text-center schedule-btn" id="btn-make-schedule">
+                        <p class="text-center">SCHEDULE</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 <!-- header end -->
 <?php echo $sf_content ?>
 <!-- footer start -->
@@ -268,7 +297,7 @@
                 fullname: fullname,
                 age: age,
                 phone: phone,
-                address, address,
+                address: address,
                 date: date,
                 description: description
             };

@@ -31,36 +31,36 @@
                         Rất hân hạnh quý khách đã tới với Hoàng Long Hospital.
                     </p>
 
-                    <div class="row" style="line-height: 18px">
-                        <div class="col-md-4 no-padding" style="display: inline">
-                            <div class="col-xs-2 no-padding"><img src="images/location.png"
-                                                                  style="width: 19px; height: 30px; margin-top: 2px">
-                            </div>
-                            <div class="col-xs-10 no-padding" style="color: #b9d96a">
-                                <p>10th floor, VCCI building <br> 9 Dao Duy Anh Str. Ha Noi</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 no-padding" style="display: inline">
-                            <div class="col-xs-2 no-padding"><img src="images/clock.png"
-                                                                  style="width: 26px; height: 26px; margin-top: 4px">
-                            </div>
-                            <div class="col-xs-10 no-padding-right" style="color: #b9d96a">
-                                <p>MON - SAT <br> 08:00 - 21:00
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-5" style="display: inline">
-                            <div class="col-xs-2 no-padding"><img src="images/call.png"
-                                                                  style="width: 26px; height: 26px; margin-top: 4px">
-                            </div>
-                            <div class="col-xs-10 no-padding" style="color: #b9d96a">
-                                <p>
-                                    04 628 11 331 - 04 628 11 337 <br>
-                                    Hotline: 04 626 00 581
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="row" style="line-height: 18px">-->
+<!--                        <div class="col-md-4 no-padding" style="display: inline">-->
+<!--                            <div class="col-xs-2 no-padding"><img src="images/location.png"-->
+<!--                                                                  style="width: 19px; height: 30px; margin-top: 2px">-->
+<!--                            </div>-->
+<!--                            <div class="col-xs-10 no-padding" style="color: #b9d96a">-->
+<!--                                <p>10th floor, VCCI building <br> 9 Dao Duy Anh Str. Ha Noi</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-3 no-padding" style="display: inline">-->
+<!--                            <div class="col-xs-2 no-padding"><img src="images/clock.png"-->
+<!--                                                                  style="width: 26px; height: 26px; margin-top: 4px">-->
+<!--                            </div>-->
+<!--                            <div class="col-xs-10 no-padding-right" style="color: #b9d96a">-->
+<!--                                <p>MON - SAT <br> 08:00 - 21:00-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-5" style="display: inline">-->
+<!--                            <div class="col-xs-2 no-padding"><img src="images/call.png"-->
+<!--                                                                  style="width: 26px; height: 26px; margin-top: 4px">-->
+<!--                            </div>-->
+<!--                            <div class="col-xs-10 no-padding" style="color: #b9d96a">-->
+<!--                                <p>-->
+<!--                                    04 628 11 331 - 04 628 11 337 <br>-->
+<!--                                    Hotline: 04 626 00 581-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="row text-center" style="margin-top: 45px ; margin-bottom: 35px">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d931.1480100823641!2d105.8374182518667!3d21.00898425004902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26aeae6aa87f7cf6!2zVMOyYSBOaMOgIFZjY2k!5e0!3m2!1svi!2s!4v1495991084193"

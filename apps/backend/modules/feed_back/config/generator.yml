@@ -1,0 +1,36 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           FeedBack
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          feed_back
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name_customer: {label: Tên khách hàng}
+        avatar:  {label: Ảnh hiển thị}
+        address: {label: Địa chỉ}
+        content:  {label: Phản hồi}
+      list:
+        title: Danh sách feed back
+        batch_actions:  {}
+        actions:  ~
+        sort: [updated_at, desc]
+        max_per_page: 10
+        object_actions:
+          _edit:  {label: Detail}
+          _delete:  {label: Del}
+        display: [name_customer, avatar, address, content]
+      filter:
+        class: false
+      form:
+        display: [name_customer, avatar, address, content]
+      edit:    ~
+      new:     ~

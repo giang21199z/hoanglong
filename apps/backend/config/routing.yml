@@ -1,3 +1,9 @@
+logout:
+  url:   /dang-xuat-quan-tri
+  param: { module: login, action: logout }
+login:
+  url:   /dang-nhap-quan-tri
+  param: { module: login, action: index }
 category_about_us:
   class: sfDoctrineRouteCollection
   options:
@@ -124,7 +130,7 @@ news:
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: home, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules

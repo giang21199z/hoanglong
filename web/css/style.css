@@ -122,7 +122,7 @@ blockquote {
 }
 .logo-header{
 	height: 120px;
-	background: rgba(252, 248, 227, 0.84);
+	background: #ffffff;
 }
 .menu-header{
 	height: 45px;
@@ -143,15 +143,7 @@ blockquote {
 	min-height: 100%;
 	width: 100%;
 }
-.banner:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.55);
-	content: "";
-}
+
 .banner-caption {
 	position: absolute;
 	top: 50%;
@@ -450,7 +442,7 @@ blockquote {
 }
 .main-navigation .navbar-default .navbar-nav > li > a:hover,
 .main-navigation .navbar-default .navbar-nav > li.active > a:hover {
-	/*color: #ffffff;*/
+	color: #ffffff;
 }
 @media (min-width:768px) {
 	.main-navigation .navbar-default .navbar-nav > li > a {
@@ -484,7 +476,7 @@ blockquote {
 	background-color: rgba(0, 0, 0, 0.95);
 }
 .fixed-header-on .header img{
-margin-top: 5px;
+	margin-top: 5px;
 }
 .fixed-header-on .site-name {
 	font-size: 24px;
@@ -497,8 +489,8 @@ margin-top: 5px;
 }
 @media (min-width:768px) {
 	.fixed-header-on .navbar-default .navbar-nav > li > a {
-		padding-top: 20px;
-		padding-bottom: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 @media (max-width:991px) {
@@ -641,7 +633,7 @@ margin-top: 5px;
 	left: 50%;
 	top: 50%;
 	font-size: 18px;
-	line-height: 1x;
+	line-height: 1px;
 	color: #ffffff;
 	margin-top: -8px;
 	margin-left: -8px;
@@ -653,3 +645,9 @@ margin-top: 5px;
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
+
+nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	background-color: #86a92b !important;
+	border-color: #428bca;
+}
+

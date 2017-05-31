@@ -11,8 +11,11 @@ class newsActions extends sfActions
 
     public function executeIndex(sfWebRequest $request)
     {
-        $this->news = NewsTable::getAllNews();
+        $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
+        $category = $request->getParameter('category');
+        $this->news = NewsTable::getAllNews(5, $offset, $category);
         $this->category_news = CategoryNewsTable::getAllCategory();
+        $this->total = NewsTable::getTotalPages();
     }
 
     public function executeDetail(sfWebRequest $request)

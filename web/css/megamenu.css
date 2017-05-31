@@ -2,7 +2,6 @@
     position: static !important;
 }
 .mega-dropdown-menu {
-    padding: 20px 0px;
     width: 100%;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -47,8 +46,21 @@
     line-height: 30px;
     text-shadow: none;
     color: #333;
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
 }
 .mega-dropdown:hover{
     background: #86a92b;
+}
+.mega-dropdown a{
+    height: 45px;
+}
+.mega-dropdown ul .col-xs-3{
+    float: left;
+}
+.dropdown-menu .col-xs-3 p{
+    margin-top:10px !important;
+}
+.dropdown-menu li:hover{
+    background: #86a92b;
+    color: #ffffff;
 }

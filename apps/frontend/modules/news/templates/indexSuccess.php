@@ -25,7 +25,7 @@
                     </div>
                     <p style="font-size: 18px ; color: #85a92a ;">Home > Hoang Long News</p>
                 </div>
-                <?php foreach ($news as $value): ?>
+                <?php foreach ($news as $value):?>
                     <div class="row items-new">
                         <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'])) ?>">
                             <div class="img-items">
@@ -48,31 +48,13 @@
                     </div>
                 <?php endforeach ?>
                 <div class="row text-center">
-                    <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #ffffff ; font-size: 12px;">
-                            1
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a ;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            2
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            3
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            4
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            5
-                        </p>
-                    </button>
+                    <?php for($i = 1; $i<= $total/5 + 1; $i++):?>
+                        <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">
+                            <p class="no-margin" style="color: #ffffff ; font-size: 12px;">
+                                <?php echo $i;?>
+                            </p>
+                        </button>
+                    <?php endfor;?>
                 </div>
             </div>
             <div class="right-menu">

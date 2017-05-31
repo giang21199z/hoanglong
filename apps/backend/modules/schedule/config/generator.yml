@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Schedule
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          schedule
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        fullname: {label: Thông tin khách hàng}
+        phone:  {label: Số điện thoại}
+        status: {label: Trạng thái}
+        age:  {label: Tuổi}
+        date:  {label: Ngày hẹn khám}
+        description: {label: Tin nhắn}
+      list:
+        title: Danh sách đặt lịch
+        batch_actions:  {}
+        actions:  {}
+        sort: [updated_at, desc]
+        max_per_page: 10
+        object_actions:
+          _delete:  {label: Del}
+        display: [fullname, status, date, description]
+      filter:
+        display:  [date, status]
+      form:
+        class: false
+      edit:    ~
+      new:     ~

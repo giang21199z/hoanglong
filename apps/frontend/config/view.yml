@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [main.css, /bootstrap/css/bootstrap.css, animations.css, style.css, custom.css, gallery.css, megamenu.css, sweetalert.css]
 
-  javascripts:    [/plugins/jquery.min.js, sweetalert.min.js]
+  javascripts:    [/plugins/jquery.min.js, sweetalert.min.js, jquery.waterwheelCarousel.js]
 
   has_layout:     true
   layout:         layout

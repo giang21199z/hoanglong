@@ -5,21 +5,21 @@
     <div id="wowslider-container1">
         <div class="ws_images">
             <ul>
-                <li><img src="data1/images/1911920.jpg" alt="191-1920" title="191-1920" id="wows1_0"/></li>
+                <li><img src="data1/images/1911920.jpg" alt="191-1920" title="" id="wows1_0"/></li>
                 <li><a href="http://wowslider.com/vi"><img src="data1/images/sinhvienit.netanhthiennhienfullhd1.jpg"
                                                            alt="bootstrap carousel"
-                                                           title="SinhVienIT.Net---anh-thien-nhien-full-hd-1"
+                                                           title=""
                                                            id="wows1_1"/></a></li>
-                <li><img src="data1/images/ti_xung.jpg" alt="tải xuống" title="tải xuống" id="wows1_2"/></li>
+                <li><img src="data1/images/ti_xung.jpg" alt="tải xuống" title="" id="wows1_2"/></li>
             </ul>
         </div>
         <div class="ws_bullets">
             <div>
-                <a href="#" title="191-1920"><span><img src="data1/tooltips/1911920.jpg" alt="191-1920"/>1</span></a>
-                <a href="#" title="SinhVienIT.Net---anh-thien-nhien-full-hd-1"><span><img
+                <a href="#" title=""><span><img src="data1/tooltips/1911920.jpg" alt="191-1920"/>1</span></a>
+                <a href="#" title=""><span><img
                             src="data1/tooltips/sinhvienit.netanhthiennhienfullhd1.jpg"
                             alt="SinhVienIT.Net---anh-thien-nhien-full-hd-1"/>2</span></a>
-                <a href="#" title="tải xuống"><span><img src="data1/tooltips/ti_xung.jpg" alt="tải xuống"/>3</span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/ti_xung.jpg" alt=""/>3</span></a>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
 
 <!-- section start -->
 <!-- ================ -->
-<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+<div class="section   "  >
     <div class="container">
         <div class="row" style="margin-bottom: 50px">
             <div class="col-md-6">
@@ -55,7 +55,7 @@
 </div>
 
 
-<div class="section clearfix object-non-visible" data-animation-effect="fadeIn" style="background: #f5f5f5">
+<div class="section   "   style="background: #f5f5f5">
     <div class="container" style="margin-bottom: 50px">
         <div class="row">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b">
@@ -95,7 +95,7 @@
 </div>
 
 
-<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+<div class="section   "  >
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
@@ -168,11 +168,11 @@
     </div>
 </div>
 
-<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+<div class="section   "  >
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                What Customers Say
+                Gallery
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
@@ -181,71 +181,100 @@
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
         <div class="row">
-            <div id="jssor_1"
-                 style="position:relative;margin:0 auto;top:0px;left:0px;width:1170px;height:250px;overflow:hidden;visibility:hidden;">
-                <!-- Loading Screen -->
-                <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
-                    <div
-                        style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                    <div
-                        style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-                </div>
-                <div data-u="slides"
-                     style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;">
-                    <div>
-                        <img data-u="image" src="img/005.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/006.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/011.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/013.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/014.jpg"/>
-                    </div>
 
-                    <div>
-                        <img data-u="image" src="img/039.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/043.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/044.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/047.jpg"/>
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/050.jpg"/>
-                    </div>
-                </div>
-                <!-- Bullet Navigator -->
-                <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
-                    <!-- bullet navigator item prototype -->
-                    <div data-u="prototype" style="width:21px;height:21px;">
-                        <div data-u="numbertemplate"></div>
-                    </div>
-                </div>
-                <!-- Arrow Navigator -->
-                <span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;"
-                      data-autocenter="2"></span>
-                <span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;"
-                      data-autocenter="2"></span>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var carousel = $("#carousel").waterwheelCarousel({
+                        flankingItems: 3,
+                        movingToCenter: function ($item) {
+                            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+                        },
+                        movedToCenter: function ($item) {
+                            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+                        },
+                        movingFromCenter: function ($item) {
+                            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+                        },
+                        movedFromCenter: function ($item) {
+                            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+                        },
+                        clickedCenter: function ($item) {
+                            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+                        }
+                    });
+
+                    $('#prev').bind('click', function () {
+                        carousel.prev();
+                        return false
+                    });
+
+                    $('#next').bind('click', function () {
+                        carousel.next();
+                        return false;
+                    });
+
+                    $('#reload').bind('click', function () {
+                        newOptions = eval("(" + $('#newoptions').val() + ")");
+                        carousel.reload(newOptions);
+                        return false;
+                    });
+
+                });
+            </script>
+            <style type="text/css">
+
+                #carousel {
+                    width:1140px;
+                    height:300px;
+                    position:relative;
+                }
+                #carousel img {
+                    visibility:hidden; /* hide images until carousel can handle them */
+                    cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+                }
+
+                .split-left {
+                    width:50px;
+                    float:left;
+                }
+                .split-right {
+                    width:50px;
+                    float:left;
+                    margin-left:10px;
+                }
+                #callback-output {
+                    height:250px;
+                    overflow:scroll;
+                }
+                textarea#newoptions {
+                    width:430px;
+                }
+            </style>
+            <div id="carousel">
+                <a href="#"><img src="/images/slide.jpg" id="item-1" /></a>
+                <a href="#"><img src="/images/slide.jpg" id="item-2" /></a>
+                <a href="#"><img src="/images/slide.jpg" id="item-3" /></a>
+                <a href="#"><img src="/images/slide.jpg" id="item-4" /></a>
+                <a href="#"><img src="/images/slide.jpg" id="item-5" /></a>
+
             </div>
-            <script type="text/javascript">jssor_1_slider_init();</script>
         </div>
     </div>
 </div>
 
 
-<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+<div class="section   "  >
     <div class="container">
+        <div class="row" style="margin-top: 40px">
+            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
+                What Customers Say
+            </h2>
 
+            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
+                FEED OF CUSTOMER
+            </p>
+            <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
+        </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <?php foreach ($feed_backs as $value): ?>
@@ -282,7 +311,7 @@
 
     </div>
 </div>
-<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+<div class="section   "  >
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">

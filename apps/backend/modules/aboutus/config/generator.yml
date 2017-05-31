@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AboutUs
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          about_us
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        title: {label: Tiêu đề}
+        images: {label: Ảnh minh họa}
+        summary:  {label: Hiển thị}
+        content:  {label: Nội dung}
+        category_about_us_idcategory_about_us: {label: Category}
+      list:
+        title: Danh sách bài viết
+        batch_actions:  {}
+        actions:  ~
+        sort: [updated_at, desc]
+        max_per_page: 10
+        object_actions:
+          _edit:  {label: Detail}
+          _delete:  {label: Del}
+        display: [title, images, summary, content]
+      filter:
+        display:  [title]
+      form:
+        display: [title, images, summary, content, category_about_us_idcategory_about_us]
+      edit:    ~
+      new:     ~
