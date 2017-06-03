@@ -22,7 +22,9 @@ detail_news:
 homepage:
   url:   /
   param: { module: homepage, action: index }
-
+homepage_ip:
+  url:   /ipad
+  param: { module: homeipad, action: index }
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

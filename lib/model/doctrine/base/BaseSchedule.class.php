@@ -63,7 +63,7 @@ abstract class BaseSchedule extends sfDoctrineRecord
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
-             'autoincrement' => false,
+             'autoincrement' => true,
              'length' => 45,
              ));
         $this->hasColumn('age', 'integer', 4, array(

@@ -303,22 +303,28 @@ margin-top: 25px;
     display: table-cell;
     padding-left: 33px
 }
-#footer .map{
+#footer .social-network{
     width: 410px;
+    float: left;
 }
-#footer .map img{
+#footer .social-network .description{
     width: 410px;
-    height: 250px;
     display: block;
     float: left;
 }
+#footer .social-network .description>div{
+    margin-top: 20px;
+}
+#footer .social-network .description>div i{
+    font-size: 36px;
+}
 #footer .about-hoanglong{
  display: inline;
-    float: left;
-    width: 510px;
-    padding-right: 90px;
-    padding-left: 70px;
-    letter-spacing: 0.5px;
+ float: left;
+ width: 510px;
+ padding-right: 90px;
+ padding-left: 70px;
+ letter-spacing: 0.5px;
 }
 #footer hr{
     width: 115px;
@@ -353,4 +359,10 @@ margin-top: 25px;
 }
 #footer .contact-us .text{
     font-size: 12px;
+}
+#footer .copy-right{
+    background: #343434;
+}
+#footer .copy-right h6{
+    color: white;
 }

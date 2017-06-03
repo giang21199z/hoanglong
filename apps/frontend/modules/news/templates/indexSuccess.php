@@ -25,36 +25,34 @@
                     </div>
                     <p style="font-size: 18px ; color: #85a92a ;">Home > Hoang Long News</p>
                 </div>
-                <?php foreach ($news as $value):?>
+                <?php foreach ($news as $value): ?>
                     <div class="row items-new">
-                        <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'])) ?>">
-                            <div class="img-items">
-                                <img src="/uploads/news/<?php echo $value['images'] ?>"
-                                     style="width: 220px; height: 220px"/>
-                            </div>
-                            <div class="content-items" style="position: relative;">
-                                <p style="font-size: 20px ; color: #85a92a ; letter-spacing: 4px;">
-                                    <?php echo $value['title'] ?>
-                                </p>
+                        <div class="img-items">
+                            <img src="/uploads/news/<?php echo $value['images'] ?>"
+                                 style="width: 220px; height: 220px"/>
+                        </div>
+                        <div class="content-items" style="position: relative;">
+                            <p style="font-size: 20px ; color: #85a92a ;">
+                                <?php echo $value['title'] ?>
+                            </p>
 
-                                <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
-                                    <?php echo VtHelper::truncate($value['summary'], 200) ?>
-                                </p>
-                                <i style=" position: absolute;bottom: 0;left: 0; font-size: 16px; font-weight: bold">
-                                    <?php echo $value['updated_at'] ?>
-                                </i>
-                            </div>
-                        </a>
+                            <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
+                                <?php echo VtHelper::truncate($value['summary'], 200) ?>
+                            </p>
+                            <i style=" position: absolute;bottom: 0;left: 0; font-size: 16px; font-weight: bold">
+                                <?php echo $value['updated_at'] ?>
+                            </i>
+                        </div>
                     </div>
                 <?php endforeach ?>
                 <div class="row text-center">
-                    <?php for($i = 1; $i<= $total/5 + 1; $i++):?>
+                    <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
                         <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">
                             <p class="no-margin" style="color: #ffffff ; font-size: 12px;">
-                                <?php echo $i;?>
+                                <?php echo $i; ?>
                             </p>
                         </button>
-                    <?php endfor;?>
+                    <?php endfor; ?>
                 </div>
             </div>
             <div class="right-menu">

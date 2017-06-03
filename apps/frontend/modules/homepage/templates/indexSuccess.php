@@ -6,23 +6,13 @@
         <div class="ws_images">
             <ul>
                 <li><img src="data1/images/1911920.jpg" alt="191-1920" title="" id="wows1_0"/></li>
-                <li><a href="http://wowslider.com/vi"><img src="data1/images/sinhvienit.netanhthiennhienfullhd1.jpg"
-                                                           alt="bootstrap carousel"
+                <li><a href="#"><img src="data1/images/sinhvienit.netanhthiennhienfullhd1.jpg"
+                                                           alt="hoanglonghospital.vn"
                                                            title=""
                                                            id="wows1_1"/></a></li>
-                <li><img src="data1/images/ti_xung.jpg" alt="tải xuống" title="" id="wows1_2"/></li>
+                <li><img src="data1/images/ti_xung.jpg" alt="hoanglonghospital.vn" title="" id="wows1_2"/></li>
             </ul>
         </div>
-        <div class="ws_bullets">
-            <div>
-                <a href="#" title=""><span><img src="data1/tooltips/1911920.jpg" alt="191-1920"/>1</span></a>
-                <a href="#" title=""><span><img
-                            src="data1/tooltips/sinhvienit.netanhthiennhienfullhd1.jpg"
-                            alt="SinhVienIT.Net---anh-thien-nhien-full-hd-1"/>2</span></a>
-                <a href="#" title=""><span><img src="data1/tooltips/ti_xung.jpg" alt=""/>3</span></a>
-            </div>
-        </div>
-
     </div>
     <script type="text/javascript" src="engine1/wowslider.js"></script>
     <script type="text/javascript" src="engine1/script.js"></script>
@@ -251,11 +241,11 @@
                 }
             </style>
             <div id="carousel">
-                <a href="#"><img src="/images/slide.jpg" id="item-1" /></a>
-                <a href="#"><img src="/images/slide.jpg" id="item-2" /></a>
-                <a href="#"><img src="/images/slide.jpg" id="item-3" /></a>
-                <a href="#"><img src="/images/slide.jpg" id="item-4" /></a>
-                <a href="#"><img src="/images/slide.jpg" id="item-5" /></a>
+                <a href="#"><img src="/images/gallery.jpg" id="item-1" /></a>
+                <a href="#"><img src="/images/gallery2.jpg" id="item-2" /></a>
+                <a href="#"><img src="/images/gallery3.jpg" id="item-3" /></a>
+                <a href="#"><img src="/images/gallery4.jpg" id="item-4" /></a>
+                <a href="#"><img src="/images/gallery5.jpg" id="item-5" /></a>
 
             </div>
         </div>

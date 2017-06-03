@@ -712,3 +712,43 @@ Specialist:
       local: idspecialist
       foreign: specialist_idspecialist
       type: many
+Slide:
+  connection: doctrine
+  tableName: slide
+  columns:
+    idslide:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: hoàng long
+      notnull: true
+      autoincrement: false
+    images:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: slide.jpg
+      notnull: true
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false

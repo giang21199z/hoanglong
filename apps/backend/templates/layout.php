@@ -67,7 +67,7 @@
                     <!-- Main Menu -->
                     <div class="side-menu-container">
                         <ul class="nav navbar-nav">
-                            <li id="slide"><a href="<?php echo url_for('menu') ?>"><span
+                            <li id="slide"><a href="<?php echo url_for('homepage') ?>"><span
                                         class="glyphicon glyphicon-menu-hamburger"></span> Dashboard</a>
                             </li>
                             <li id="slide"><a href="<?php echo url_for('schedule') ?>"><span
@@ -159,6 +159,9 @@
                             </li>
                             <li id="slide"><a href="<?php echo url_for('feed_back') ?>"><span
                                         class="glyphicon glyphicon-heart"></span> Quản lý nhận xét khách hàng</a>
+                            </li>
+                            <li id="slide"><a href="<?php echo url_for('slide') ?>"><span
+                                        class="glyphicon glyphicon-heart"></span> Quản lý Slide</a>
                             </li>
                         </ul>
                     </div>

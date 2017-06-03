@@ -2,6 +2,12 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+    <script>
+        var is_iPad = navigator.userAgent.match(/iPad/i) != null;
+        if(is_iPad){
+            window.location.replace("<?php echo url_for('homepage_ip')?>");
+        }
+    </script>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
@@ -9,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
+    <script>
+        console.log("ra day");
+    </script>
 </head>
 <body class="no-trans">
 <!-- scrollToTop -->
@@ -92,20 +101,22 @@
                             <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-left menu no-padding">
                                     <li class="dropdown mega-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu <span
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
                                                 class="caret"></span></a>
-                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
-                                            <li class="col-xs-3 no-padding"><p>Giới thiệu chung</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Cơ sở hạ tầng</p></li>
-                                            <li class="col-xs-3 no-padding"><a href="<?php echo url_for('doctor') ?>"><p>Đội ngũ bác
-                                                        sĩ</p></a></li>
-                                            <li class="col-xs-3 no-padding">Báo chí</li>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding"
+                                            style="border: 0px ; border-radius: 0px;">
+                                            <li class="col-xs-3 no-padding"><p>GIỚI THIỆU CHUNG</p></li>
+                                            <li class="col-xs-3 no-padding"><p>CƠ SỞ HẠ TẦNG</p></li>
+                                            <li class="col-xs-3 no-padding"><a href="<?php echo url_for('doctor') ?>">
+                                                    <p>ĐỘI NGŨ BÁC SĨ</p></a></li>
+                                            <li class="col-xs-3 no-padding">BÁO CHÍ</li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dịch vụ<span
                                                 class="caret"></span></a>
-                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding"
+                                            style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-3 no-padding"><p>Nội soi chẩn đoán bệnh</p></li>
                                             <li class="col-xs-3 no-padding"><p>Nội soi can thiệp</p></li>
                                             <li class="col-xs-3 no-padding"><p>Chuẩn đoán hình ảnh</p></li>
@@ -116,8 +127,9 @@
                                     </li>
                                     <li class="dropdown mega-dropdown dropdown-toggle">
                                         <a href="<?php echo url_for('list_news') ?>"><p>Tin tức <span
-                                                        class="caret" data-toggle="dropdown"></span></p> </a>
-                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                                    class="caret" data-toggle="dropdown"></span></p></a>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding"
+                                            style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-3 no-padding"><p>Tin tức chuyên môn</p></li>
                                             <li class="col-xs-3 no-padding"><p>Tin tức y khoa</p></li>
                                             <li class="col-xs-3 no-padding"><p>Hội thảo chuyên ngành</p></li>
@@ -126,7 +138,8 @@
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thư viện <span
                                                 class="caret"></span></a>
-                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding" style="border: 0px ; border-radius: 0px;">
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding"
+                                            style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-3 no-padding"><p>Phòng khám</p></li>
                                             <li class="col-xs-3 no-padding"><p>Sự kiện</p></li>
                                         </ul>
@@ -137,7 +150,9 @@
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li style="background-color: #86a92b; "><a type="button"  data-toggle="modal" data-target="#myModal"><span> SCHEDULE</span></a></li>
+                                    <li style="background-color: #86a92b; "><a type="button" data-toggle="modal"
+                                                                               data-target="#myModal"><span> SCHEDULE</span></a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -154,20 +169,21 @@
         <div class="row make-shu" style=" background: #b9d96a; width: 360px ; margin: 0px auto; border-radius: 10px">
             <p style=" color :#ffffff;padding-top: 25px ; padding-left: 20px ; letter-spacing: 2px; font-size: 26px">
                 Đặt lịch hẹn</p>
+
             <div class="row"
                  style="font-size: 16px;padding-left: 25px;padding-right: 25px ; letter-spacing: 1px;">
                 <p style="color: #ffffff">
                     Hân hạnh phục vụ quý khách
                 </p>
-                <input type="text" class="form-control" id="fullname" placeholder="Full Name">
-                <input type="text" class="form-control" id="age" placeholder="Age">
-                <input type="number" class="form-control" id="phone" placeholder="Phone Number">
-                <input type="text" class="form-control" id="date" placeholder="Date">
-                <textarea class="form-control" style="height: 140px" id="description"
+                <input type="text" class="form-control" id="fullname_" placeholder="Full Name">
+                <input type="text" class="form-control" id="age_" placeholder="Age">
+                <input type="number" class="form-control" id="phone_" placeholder="Phone Number">
+                <input type="text" class="form-control" id="date_" placeholder="Date">
+                <textarea class="form-control" style="height: 140px" id="description_"
                           placeholder="Description"></textarea>
 
                 <div class="row text-center ">
-                    <button class="btn text-center schedule-btn" id="btn-make-schedule">
+                    <button class="btn text-center schedule-btn" id="btn-make-schedule_">
                         <p class="text-center">SCHEDULE</p>
                     </button>
                 </div>
@@ -185,8 +201,35 @@
     <!-- ================ -->
     <div class="subfooter" style="background: #343434">
         <div class="row content" style="margin-top: 75px; color: #ffffff">
-            <div class="map">
-                <img src="/images/map.jpg">
+            <div class="social-network">
+                <div class="row">
+                    <p style="font-size: 18px">
+                        SOCIAL NETWORK
+                    </p>
+                    <hr>
+                    <div class="description">
+                        <div class="row">
+                            <img src="/images/full-logo.png" alt="hoanglonghospital.vn" style="width: 100px; margin: 0px auto;"
+                                 class="img img-responsive">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-xs-offset-2">
+                                <i class="fa fa-facebook-official"></i>
+                            </div>
+                            <div class="col-xs-4 col-xs-offset-2">
+                                <i class="fa fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-xs-offset-2">
+                                <i class="fa fa-google-plus-square"></i>
+                            </div>
+                            <div class="col-xs-4 col-xs-offset-2">
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="about-hoanglong">
                 <div class="row">
@@ -201,20 +244,6 @@
                         như trên thế giới.
                         Phòng khám là nơi quy tụ nhiều chuyên gia, bác sĩ giỏi về lĩnh vực y tế chuyên môn đầu ngành.
                     </p>
-                </div>
-                <div class="row icon-contact text-center" style="font-size: 20px">
-                    <div class="fb" style="width: 30px;float: left;"><p
-                            style="width: 30px; height: 30px ; vertical-align: middle; "><i class="fa fa-facebook"></i>
-                        </p></div>
-                    <div class="tw" style="width: 30px;float: left;"><p
-                            style="width: 30px; height: 30px ; vertical-align: middle; "><i class="fa fa-twitter"></i>
-                        </p></div>
-                    <div class="yt" style="width: 30px;float: left;"><p
-                            style="width: 30px; height: 30px ; vertical-align: middle; "><i
-                                class="fa fa-youtube-play"></i></p></div>
-                    <div class="g" style="width: 30px;float: left;"><p
-                            style="width: 30px; height: 30px ; vertical-align: middle; "><i
-                                class="fa fa-google-plus-square"></i></p></div>
                 </div>
             </div>
             <div class="contact-us">
@@ -258,6 +287,9 @@
             </div>
         </div>
     </div>
+    <div class="row copy-right text-center">
+        <h6>© 2017 Hoang Long Hospital. All rights reserved.</h6>
+    </div>
     <!-- .subfooter end -->
 
 </footer>
@@ -287,29 +319,81 @@
 <script>
     $(document).ready(function () {
         $('#btn-make-schedule').click(function () {
-            var fullname = $("#fullname").val();
-            var age = $("#age").val();
-            var phone = $("#phone").val();
-            var address= $("#address").val();
-            var date = $("#date").val();
-            var description = $("#description").val();
-            var data = {
-                fullname: fullname,
-                age: age,
-                phone: phone,
-                address: address,
-                date: date,
-                description: description
-            };
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo url_for("make_schedue")?>',
-                data: data
-            }).done(function ($msg) {
-                swal(JSON.parse($msg).message, "", "success");
+            swal({
+                title: "Đặt lịch hẹn",
+                text: "Bạn có chắc chắn muốn đặt lịch hẹn không?",
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                showLoaderOnConfirm: true
+            }, function () {
+                var fullname = $("#fullname").val();
+                var age = $("#age").val();
+                var phone = $("#phone").val();
+                var address = $("#address").val();
+                var date = $("#date").val();
+                var description = $("#description").val();
+                var data = {
+                    fullname: fullname,
+                    age: age,
+                    phone: phone,
+                    address: address,
+                    date: date,
+                    description: description
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo url_for("make_schedue")?>',
+                    data: data
+                }).done(function ($msg) {
+                    swal(JSON.parse($msg).message, "", "success");
+                });
+            });
+        });
+        $('#btn-make-schedule_').click(function () {
+            swal({
+                title: "Đặt lịch hẹn",
+                text: "Bạn có chắc chắn muốn đặt lịch hẹn không?",
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                showLoaderOnConfirm: true
+            }, function () {
+                var fullname = $("#fullname_").val();
+                var age = $("#age_").val();
+                var phone = $("#phone_").val();
+                var address = $("#address_").val();
+                var date = $("#date_").val();
+                var description = $("#description_").val();
+                var data = {
+                    fullname: fullname,
+                    age: age,
+                    phone: phone,
+                    address: address,
+                    date: date,
+                    description: description
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo url_for("make_schedue")?>',
+                    data: data
+                }).done(function ($msg) {
+                    swal(JSON.parse($msg).message, "", "success");
+                    $('#myModal').modal('hide');
+                    $("#fullname_").val("");
+                    $("#age_").val("");
+                    $("#phone_").val("");
+                    $("#address_").val("");
+                    $("#description_").val("");
+                });
             });
         });
         var now = moment();
+        $('#date_').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            minDate: now
+        });
         $('#date').daterangepicker({
             singleDatePicker: true,
             showDropdowns: true,
