@@ -1,0 +1,587 @@
+
+.navigation .logo {
+    margin-left: 25px;
+    width: 60px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+
+.navigation .text-logo {
+    width: 75px;
+    height: 26px;
+    margin-left: 15px;
+}
+
+.navbar-collapse {
+    padding: 0px 25px 0px 25px !important;
+}
+
+.title-h2 {
+    font-size: 42px;
+    color: #4b4b4b;
+    letter-spacing: 2px;
+}
+
+.title-p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #85a92a;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+.hr {
+    width: 342px;
+    margin-left: 0px;
+    border-bottom-color: #d2d2d2;
+    margin-top: 0px;
+}
+
+.about-clinic {
+    margin-bottom: 30px;
+}
+
+.about-clinic p {
+    line-height: 30px;
+    margin-top: 40px
+}
+
+.about-clinic img {
+    width: 365px;
+    height: 235px;
+}
+
+.about-clinic a {
+    color: #85a92a;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.why-choise-us {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.why-choise-us .list-item {
+    margin-top: 30px;
+}
+
+.why-choise-us .list-item .img {
+    height: 290px;
+}
+
+.why-choise-us .list-item .title {
+    font-size: 18px;
+    margin-top: 30px;
+    color: #85a92a
+}
+
+.btn-readmore {
+    margin-top: 5px;
+    background: #ffffff;
+    border: 1px solid #85a92a;
+}
+
+.btn-readmore p {
+    color: #85a92a;
+    font-size: 10px;
+}
+
+.container {
+    width: 768px;
+    margin: 0px auto;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.our-doctor {
+    margin-top: 10px;
+}
+
+.our-doctor img {
+    width: 190px;
+    height: 190px;
+    margin: 0px auto;
+}
+
+.our-doctor .name-doctor {
+    color: #85a92a;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.our-doctor .description {
+    font-size: 14px;
+}
+
+.paginations button {
+    border: 1px solid #85a92a;
+    margin: 3px;
+    background: #ffffff;
+}
+
+.paginations .pa-active {
+    background: #85a92a;
+}
+
+.paginations .pa-active p {
+    color: #FFFFFF;
+}
+
+.paginations button p {
+    font-size: 12px;
+    color: #85a92a;
+}
+
+.cus-say {
+    margin-top: 40px;
+}
+
+.cus-say img {
+    width: 70px;
+    height: 70px;
+    margin: 0px auto;
+}
+
+.cus-say .say-detail {
+    margin-left: 50px;
+    margin-right: 50px
+}
+
+.cus-say .say-detail img {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.new {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.new .list-new img {
+    height: 245px;
+}
+
+.new .list-new .description .title {
+    font-size: 16px;
+    color: #85a92a;
+    margin-top: 15px;
+}
+
+.new .list-new .description .detail, .time {
+    font-size: 14px;
+}
+
+#footer .content {
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-top: 75px;
+    color: #ffffff;
+    margin-bottom: 45px;
+    padding-bottom: 60px;
+}
+
+#footer .content .title {
+    font-size: 18px;
+}
+
+#footer .content .icon-contact {
+    font-size: 20px;
+}
+
+#footer .content .description {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+#footer .icon-contact {
+    margin-top: 20px;
+}
+
+#footer .icon-contact .fb, .tw, .yt, .g {
+    width: 30px;
+    float: left;
+}
+
+#footer .icon-contact p {
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#footer .end-footer {
+    background: #f5f5f5;
+    line-height: 65px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+#footer hr {
+    width: 117px;
+    margin-left: 0px;
+    border-bottom-color: #d2d2d2;
+    margin-top: 0px;
+}
+
+.list-contact {
+    font-size: 12px;
+}
+
+.list-contact img {
+    margin-top: 6px;
+}
+
+.list-contact .row {
+    margin-bottom: 5px;
+}
+
+.new-content {
+    background: #FFFFFF;
+    width: 768px;
+    margin-top: -80px;
+}
+
+#banner {
+    height: 375px !important;
+    width: 100%;
+}
+
+.menu {
+    left: 0px;
+}
+
+.menu ul li ul {
+    list-style: none;
+}
+
+.menu ul li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+.menu ul li ul li {
+    width: 292px;
+    color: #85a92a;
+    font-size: 17px;
+}
+
+.menu li ul {
+    position: absolute;
+    display: none;
+    width: 1170px;
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.sub-menu {
+    background: #ff0000;
+    margin-top: 5px;
+}
+
+.sub-menu li {
+    width: 292px;
+}
+
+.sub-menu li {
+    text-align: center;
+}
+
+.sub-menu li a {
+    color: #85a92a;
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+}
+
+.sub-menu li:hover {
+    background-color: #633535 !important;
+}
+
+.menu li a {
+    padding: 0px;
+}
+
+.banner {
+    height: 375px !important;
+}
+
+.ip-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -80px;
+    margin-bottom: 60px;
+    background: #FFFFFF;
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 8px 6px -6px black;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.about-us .title-header {
+    margin-bottom: 20px;
+}
+
+.title-header {
+    font-size: 39px;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.list-icon {
+    padding-top: 35px;
+}
+
+.list-icon i {
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #6f6f6f
+}
+
+.about-us {
+
+}
+
+.about-us .detail .description-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.about-us .detail img {
+    width: 100%;
+    height: 400px;
+}
+
+.des-img {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.sub-title {
+    font-size: 18px;
+    color: #85a92a;
+}
+
+.doctor-detail .img-doc {
+    width: 270px;
+    height: 270px;
+}
+
+.history-doctor .name-doc {
+    font-size: 23px;
+    margin-bottom: 0px;
+    color: #85a92a;
+}
+
+.history-doctor .birth-day {
+    font-size: 14px;
+}
+
+.history-doctor .description {
+    margin-top: 20px;
+    padding-left: 20px;
+    letter-spacing: 0.5px;
+}
+
+.detail-history {
+    margin-top: 60px;
+}
+
+.detail-history img {
+    width: 640px;
+    height: 380px;
+}
+
+.detail-new .title {
+    margin-top: 0px;
+}
+
+.detail-new .title {
+    font-size: 30px;
+    color: #000000;
+}
+
+.detail-new .description {
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #4b4b4b;
+    margin-top: 30px;
+}
+
+.pre-next {
+    color: #85a92a;
+}
+
+.pre-next .arr-left span {
+    float: left;
+}
+
+.pre-next .arr-left img {
+    float: left;
+}
+
+.pre-next .arr-left span {
+    margin-left: 10px;
+}
+
+.pre-next .arr-left img {
+    margin-top: 5px;
+}
+
+.pre-next .arr-right img {
+    float: right;
+}
+
+.pre-next .arr-right span {
+    float: right;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+.contact-us {
+    margin-top: 40px;
+}
+
+.des-contact img, span {
+    float: left;
+}
+
+.des-contact .location, .call {
+    margin-top: 10px;
+}
+
+.des-contact span {
+    font-size: 14px;
+    margin-left: 20px;
+    color: #85a92a;
+}
+
+.des-contact .clock img {
+    width: 25px;
+    height: 25px;
+    margin-top: 7px;
+}
+
+.des-contact .location img {
+    width: 16px;
+    height: 25px;
+    margin-top: 7px;
+}
+
+.des-contact .call img {
+    width: 25px;
+    height: 25px;
+    margin-top: 7px;
+}
+
+.map {
+    margin-top: 30px;
+}
+
+.map img {
+    margin: 0px auto;
+    width: 100%;
+    height: 500px;
+}
+
+.detail-services {
+    margin-top: 40px;
+}
+
+.detail-services .service {
+    margin-bottom: 45px;
+}
+
+.detail-services .service .title {
+    font-size: 18px;
+    color: #85a92a;
+}
+
+.detail-services .service .description {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.detail-services .service img {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.list-part .part {
+    margin-top: 65px;
+}
+
+.list-part .part img {
+    height: 190px;
+    width: 190px;
+    margin: 0px auto;
+}
+
+.list-part .part .name {
+    font-size: 18px;
+    color: #85a92a;
+    margin-top: 25px;
+}
+
+.list-part .part .work {
+    font-size: 14px;
+}
+
+.list-part .part .description {
+    font-size: 14px;
+    font-family: "Rage Italic";
+}
+
+.list-news{
+    margin-top: 15px;
+    font-family: 'regular';
+
+}
+
+.list-news .items{
+    margin-top: 15px;
+}
+.list-news .image {
+    height: 180px;
+    width: 180px;
+}
+@media screen and (min-width: 1024px) {
+    .list-news .image {
+        height: 275px;
+        width: 275px;
+    }
+}
+.list-news  .title-new{
+    float: left;
+    font-size: 18px;
+    color: #85a92a;
+}
+
+.list-news .content-items .title{
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #85a92a;
+}
+.list-news .content-items .description{
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.list-news .content-items .date{
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}

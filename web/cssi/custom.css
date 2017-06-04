@@ -1,0 +1,94 @@
+body{
+    font-style: normal;
+}
+.no-padding{
+    padding: 0px;
+}
+.no-padding-top{
+    padding-top: 0px;
+}
+.no-padding-bottom{
+    padding-bottom: 0px;
+}
+.no-padding-right{
+    padding-right: 0px;
+}
+.no-padding-left{
+    padding-left: 0px;
+}
+.no-padding-height{
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.no-padding-width{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.no-margin{
+      margin: 0px;
+}
+.no-margin-top{
+    margin-top: 0px;
+}
+.no-margin-bottom{
+    margin-bottom: 0px;
+}
+.no-margin-left{
+    margin-left: 0px;
+}
+.no-margin-right{
+    margin-right: 0px;
+}
+.no-margin-height{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.no-margin-width{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.infomation{
+    margin-top: 32px;
+}
+.infomation b {
+    color: #7c7c7c;
+    font-size: 12px;
+}
+.infomation p{
+    color: #85a92a;
+    font-size: 12px;
+}
+.infomation img{
+    width: 25px;
+    margin-top: 18px !important;
+}
+.infomation .icon-location{
+    width: 18px;
+}
+.menu-header{
+    background: #a8cf45;
+}
+.menu-header ul li:hover{
+    background: #85a92a;
+}
+.navbar{
+    height: 45px !important;
+}
+.title-banner h2{
+    font-size: 50px;
+}
+.menu-header ul li{
+    height: 45px;
+}
+.icon-contact .fb:hover{
+     background: #b25555;
+ }
+.icon-contact .yt:hover{
+    background: #b25555;
+}
+.icon-contact .tw:hover{
+    background: #0a0a0a;
+}
+.icon-contact .g:hover{
+    background: #0a0a0a;
+}
