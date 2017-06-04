@@ -1,7 +1,7 @@
 ﻿<!-- banner start -->
 <!-- ================ -->
 <div class="row" style="height: 510px">
-    <img src="images/slide-danh-sach-bac-si.jpg" style="height: 510px; width: 100%">
+    <img src="/images/slide-danh-sach-bac-si.jpg" style="height: 510px; width: 100%">
 </div>
 <!-- banner end -->
 

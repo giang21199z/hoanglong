@@ -2,4 +2,8 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
-#all:
+all:
+  why_choose_us: Tại sao lại chọn chúng tôi?
+  our_doctors: Đội ngũ bác sĩ
+  read_more: Xem thêm
+  contact:  Contact

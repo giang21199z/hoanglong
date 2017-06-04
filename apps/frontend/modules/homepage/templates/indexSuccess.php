@@ -49,7 +49,7 @@
     <div class="container" style="margin-bottom: 50px">
         <div class="row">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b">
-                Why Chose Us ?
+                <?php echo sfConfig::get('app_why_choose_us')?>
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
@@ -89,7 +89,7 @@
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                Our Doctor
+                <?php echo sfConfig::get('app_our_doctors')?>
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
@@ -316,7 +316,7 @@
         <div class="row">
             <?php foreach($news as $value):?>
             <div class="col-xs-3 no-padding-right">
-                <img src="uploads/news/<?php echo $value['images']?>" class=" img-responsive" style="height: 245px; width: 285px">
+                <img src="/uploads/news/<?php echo $value['images']?>" class=" img-responsive" style="height: 245px; width: 285px">
 
                 <div class="row" style="margin-left: 5px">
                     <p class="no-margin" style="font-size: 16px ; color: #85a92a ; margin-top: 15px ;">

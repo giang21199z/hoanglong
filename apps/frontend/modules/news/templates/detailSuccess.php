@@ -23,7 +23,7 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Hoang Long News > Lorem Ipsum is ...</p>
+                    <p style="font-size: 18px ; color: #85a92a ;">Home > Hoang Long News > <?php echo $news->getTitle() ?></p>
                 </div>
                 <div class="row">
                     <p class="tille">

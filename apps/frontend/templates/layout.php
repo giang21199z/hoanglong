@@ -4,7 +4,7 @@
 <head>
     <script>
         var is_iPad = navigator.userAgent.match(/iPad/i) != null;
-        if(is_iPad){
+        if (is_iPad) {
             window.location.replace("<?php echo url_for('homepage_ip')?>");
         }
     </script>
@@ -15,9 +15,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
-    <script>
-        console.log("ra day");
-    </script>
 </head>
 <body class="no-trans">
 <!-- scrollToTop -->
@@ -109,7 +106,7 @@
                                             <li class="col-xs-3 no-padding"><p>CƠ SỞ HẠ TẦNG</p></li>
                                             <li class="col-xs-3 no-padding"><a href="<?php echo url_for('doctor') ?>">
                                                     <p>ĐỘI NGŨ BÁC SĨ</p></a></li>
-                                            <li class="col-xs-3 no-padding">BÁO CHÍ</li>
+                                            <li class="col-xs-3 no-padding"><p>BÁO CHÍ</p></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
@@ -209,24 +206,24 @@
                     <hr>
                     <div class="description">
                         <div class="row">
-                            <img src="/images/full-logo.png" alt="hoanglonghospital.vn" style="width: 100px; margin: 0px auto;"
-                                 class="img img-responsive">
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-4 col-xs-offset-2">
+                            <div class="col-xs-4">
+                                <img src="/images/full-logo.png" alt="hoanglonghospital.vn"
+                                     style="width: 100px; margin: 0px auto;"
+                                     class="img img-responsive">
+                            </div>
+                            <div class="col-xs-2">
                                 <i class="fa fa-facebook-official"></i>
                             </div>
-                            <div class="col-xs-4 col-xs-offset-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-youtube"></i>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-4 col-xs-offset-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-google-plus-square"></i>
                             </div>
-                            <div class="col-xs-4 col-xs-offset-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-instagram"></i>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -238,11 +235,7 @@
                     </p>
                     <hr>
                     <p class="description">
-                        Hoang Long Clinic là phòng khám chuyên điều trị các liên quan tới đường tiêu hóa, …
-                        Là một trong những phòng khám có uy tín và danh tiếng hiện nay tại TP Hà Nội.
-                        Phòng khám luôn áp dụng những thành quả của khoa học kỹ thuật y khoa tiên tiến ở trong nước cũng
-                        như trên thế giới.
-                        Phòng khám là nơi quy tụ nhiều chuyên gia, bác sĩ giỏi về lĩnh vực y tế chuyên môn đầu ngành.
+                        Phòng khám Hoàng Long là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật. Phòng khám được sáng lập bởi giáo sư Đào Văn Long - chuyên gia hàng đầu trong lĩnh vực tiêu hóa. Đây là phòng khám sở hữu dàn máy nội soi và siêu âm nội soi hiện đại và tiên tiến bậc nhất hiện nay tại Việt Nam.
                     </p>
                 </div>
             </div>
@@ -297,22 +290,22 @@
 
 <!-- JavaScript files placed at the end of the document so the pages load faster
 ================================================== -->
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Modernizr javascript -->
-<script type="text/javascript" src="plugins/modernizr.js"></script>
+<script type="text/javascript" src="/plugins/modernizr.js"></script>
 
 <!-- Backstretch javascript -->
-<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="/plugins/jquery.backstretch.min.js"></script>
 
 <!-- Initialization of Plugins -->
-<script type="text/javascript" src="js/template.js"></script>
-<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+<script type="text/javascript" src="/js/template.js"></script>
+<script type="text/javascript" src="/plugins/jquery.appear.js"></script>
 
 <!-- Custom Scripts -->
 
 <!--Menu Scripts-->
-<script type="text/javascript" src="js/megamenu.js"></script>
+<script type="text/javascript" src="/js/megamenu.js"></script>
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>

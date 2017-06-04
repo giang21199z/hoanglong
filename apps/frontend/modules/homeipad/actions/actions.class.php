@@ -12,9 +12,9 @@ class homeipadActions extends sfActions
     public function executeIndex(sfWebRequest $request)
     {
         $this->about_us = AboutUsTable::getAboutUsHomepage();
-        $this->doctor = DoctorTable::getDoctorHomepage();
+        $this->doctor = DoctorTable::getDoctorHomepage(3);
         $this->feed_backs = FeedBackTable::getFeedbackHomepage();
-        $this->news = NewsTable::getNewsHomepage();
+        $this->news = NewsTable::getNewsHomepage(3);
         $this->why_choose_us = NewsTable::getNewsWhyChooseUs();
     }
 }

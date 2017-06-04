@@ -14,7 +14,7 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px"> CONTACT </h1>
+                            <h1 class="no-padding" style="margin-top: 22px; text-transform: uppercase;"> <?php echo sfConfig::get("app_contact")?> </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>
@@ -26,45 +26,45 @@
                     <p style="font-size: 18px ; color: #85a92a ;">Home > Contact </p>
                 </div>
                 <div class="row">
-                    <p style="font-size: 14px">
-                        Để nhận được sự trợ giúp tốt nhất của chúng tôi. Quý khách vui lòng liên hệ với chúng tôi qua các kênh liên lạc dưới đây.
-                        Rất hân hạnh quý khách đã tới với Hoàng Long Hospital.
-                    </p>
-
-<!--                    <div class="row" style="line-height: 18px">-->
-<!--                        <div class="col-md-4 no-padding" style="display: inline">-->
-<!--                            <div class="col-xs-2 no-padding"><img src="images/location.png"-->
-<!--                                                                  style="width: 19px; height: 30px; margin-top: 2px">-->
-<!--                            </div>-->
-<!--                            <div class="col-xs-10 no-padding" style="color: #b9d96a">-->
-<!--                                <p>10th floor, VCCI building <br> 9 Dao Duy Anh Str. Ha Noi</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-3 no-padding" style="display: inline">-->
-<!--                            <div class="col-xs-2 no-padding"><img src="images/clock.png"-->
-<!--                                                                  style="width: 26px; height: 26px; margin-top: 4px">-->
-<!--                            </div>-->
-<!--                            <div class="col-xs-10 no-padding-right" style="color: #b9d96a">-->
-<!--                                <p>MON - SAT <br> 08:00 - 21:00-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-5" style="display: inline">-->
-<!--                            <div class="col-xs-2 no-padding"><img src="images/call.png"-->
-<!--                                                                  style="width: 26px; height: 26px; margin-top: 4px">-->
-<!--                            </div>-->
-<!--                            <div class="col-xs-10 no-padding" style="color: #b9d96a">-->
-<!--                                <p>-->
-<!--                                    04 628 11 331 - 04 628 11 337 <br>-->
-<!--                                    Hotline: 04 626 00 581-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                    <div class="row text-center" style="margin-top: 45px ; margin-bottom: 35px">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d931.1480100823641!2d105.8374182518667!3d21.00898425004902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26aeae6aa87f7cf6!2zVMOyYSBOaMOgIFZjY2k!5e0!3m2!1svi!2s!4v1495991084193"
-                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div class="col-sm-7">
+                        <h2>Bản đồ</h2>
+                        <hr>
+                        <img src="/images/map.jpg" alt="Chỉ đường phòng khám hoàng long" class="img img-responsive">
+                    </div>
+                    <div class="col-sm-5">
+                        <h2>Liên lạc</h2>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <i>Email</i><br>
+                                Hỗ trợ thông tin<br><span style="color: #d66941">info@hoanglonghospital.vn</span><br><br>
+                                Cơ hội việc làm<br><span style="color: #d66941">info@hoanglonghospital.vn</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <span class="glyphicon glyphicon-phone-alt"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <i>Điện thoại</i><br>
+                                04 628 11 331 - 04 628 11 337
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <span class="glyphicon glyphicon-phone-alt"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <i>Trụ sở</i><br>
+                                Tầng 10, tòa nhà VCCI số 9 Đào Duy Anh, Hà Nội
+                            </div>
+                        </div>
+                        <br><br>
                     </div>
                 </div>
             </div>

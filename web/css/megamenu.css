@@ -1,7 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+    font-family: 'Open Sans', 'sans-serif';
+}
 .mega-dropdown {
     position: static !important;
 }
 .mega-dropdown-menu {
+    padding:0px;
     width: 100%;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -46,21 +51,38 @@
     line-height: 30px;
     text-shadow: none;
     color: #333;
-    border: 0px solid #ddd;
-}
-.mega-dropdown:hover{
-    background: #86a92b;
+    border: 1px solid #ddd;
 }
 .mega-dropdown a{
-    height: 45px;
+    color: #FFFFFF;
 }
-.mega-dropdown ul .col-xs-3{
-    float: left;
+.mega-dropdown .col-xs-3 a{
+    color: #85a92a;
+    text-decoration: none;
 }
-.dropdown-menu .col-xs-3 p{
-    margin-top:10px !important;
+.mega-dropdown .col-xs-3 :hover{
+    color: #0098D9;
+    font-size: 16px;
 }
-.dropdown-menu li:hover{
-    background: #86a92b;
-    color: #ffffff;
+.dropdown-menu p{
+    padding-top: 13px;
+    margin-bottom: 0px;
+}
+.mega-dropdown .col-xs-3{
+    float: left !important;
+    height: 50px !important;
+}
+.navbar-right a{
+    color: #FFFFFF !important;
+}
+.navbar-right li{
+    background: #85a92a !important;
+}
+
+
+.navbar-right li:hover{
+    background: #85a92a !important;
+}
+.dropdown{
+    margin-right: 15px;
 }

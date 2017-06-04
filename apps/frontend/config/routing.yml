@@ -3,6 +3,9 @@
 contact:
   url:   /lien-he-voi-chung-toi
   param: { module: site, action: contact }
+contact_ipad:
+  url:   /ipad/lien-he-voi-chung-toi
+  param: { module: siteipad, action: contact }
 make_schedue:
   url:   /make-schedule
   param: { module: ajax, action: createSchedule }
@@ -12,12 +15,24 @@ doctor:
 detail_doctor:
   url:   /bac-si/:iddoctor
   param: { module: doctors, action: detail, iddoctor: '' }
+doctor_ipad:
+  url:   /ipad/bac-si
+  param: { module: doctorsipad, action: index}
+detail_doctor_ipad:
+  url:   /ipad/bac-si/:iddoctor
+  param: { module: doctorsipad, action: detail, iddoctor: '' }
 list_news:
   url:   /danh-sach-tin-tuc
   param: { module: news, action: index }
 detail_news:
   url:   /tin-tuc-hoang-long/:idnews
   param: { module: news, action: detail, idnews: '' }
+list_news_ipad:
+  url:   /ipad/danh-sach-tin-tuc
+  param: { module: newsipad, action: index }
+detail_news_ipad:
+  url:   /ipad/tin-tuc-hoang-long/:idnews
+  param: { module: newsipad, action: detail, idnews: '' }
 # default rules
 homepage:
   url:   /
