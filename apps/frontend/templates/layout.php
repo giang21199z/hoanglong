@@ -98,51 +98,61 @@
                             <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-left menu no-padding">
                                     <li class="dropdown mega-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
-                                                class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU </a>
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
-                                            <li class="col-xs-3 no-padding"><p>GIỚI THIỆU CHUNG</p></li>
-                                            <li class="col-xs-3 no-padding"><p>CƠ SỞ HẠ TẦNG</p></li>
+                                            <?php
+                                            $about_us = AboutUsTable::getAboutUsMenu();
+                                            foreach ($about_us as $value): ?>
+                                                <li class="col-xs-3 no-padding"><a href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"]))?>"><p class="text-uppercase"><?php echo $value['title']?></p></a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                            <?php
+                                            $about_us = CategoryAboutUsTable::getAllCategoryExceptRoot();
+                                            foreach($about_us as $value):?>
+                                                <li class="col-xs-3 no-padding"><a href="<?php echo url_for('list_about_us', array('idcategory'=>$value['idcategory_about_us']))?>"><p class="text-uppercase"><?php echo $value['name']?></p></a></li>
+                                            <?php endforeach;?>
                                             <li class="col-xs-3 no-padding"><a href="<?php echo url_for('doctor') ?>">
                                                     <p>ĐỘI NGŨ BÁC SĨ</p></a></li>
-                                            <li class="col-xs-3 no-padding"><p>BÁO CHÍ</p></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dịch vụ<span
-                                                class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DỊCH VỤ</a>
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
-                                            <li class="col-xs-3 no-padding"><p>Nội soi chẩn đoán bệnh</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Nội soi can thiệp</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Chuẩn đoán hình ảnh</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Thăm dò chức năng</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Xét nghiệm</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Liên kết bảo hiểm</p></li>
+                                            <?php
+                                            $services = ServiceTable::getAllService();
+                                            foreach ($services as $value):?>
+                                                <li class="col-xs-3 no-padding"><a href="<?php echo url_for('detail_service', array('idservice' => $value['idnews']))?>"><p
+                                                            class="text-uppercase"><?php echo $value['title']?></p></a>
+                                                </li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown dropdown-toggle">
-                                        <a href="<?php echo url_for('list_news') ?>"><p>Tin tức <span
-                                                    class="caret" data-toggle="dropdown"></span></p></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p>TIN TỨC</p></a>
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
-                                            <li class="col-xs-3 no-padding"><p>Tin tức chuyên môn</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Tin tức y khoa</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Hội thảo chuyên ngành</p></li>
+                                            <?php
+                                            $category_news = CategoryNewsTable::getAllCategory();
+                                            foreach ($category_news as $value):?>
+                                                <li class="col-xs-3 no-padding">
+                                                    <a href="<?php echo url_for('list_news',array('idcategory' => $value['idcategory_news']))?>"><p
+                                                            class="text-uppercase"><?php echo $value['name']?></p></a>
+                                                </li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thư viện <span
-                                                class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">THƯ VIỆN</a>
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
-                                            <li class="col-xs-3 no-padding"><p>Phòng khám</p></li>
-                                            <li class="col-xs-3 no-padding"><p>Sự kiện</p></li>
+                                            <li class="col-xs-6 no-padding"><p>PHÒNG KHÁM</p></li>
+                                            <li class="col-xs-6 no-padding"><p>SỰ KIỆN</p></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="<?php echo url_for('contact') ?>">Liên hệ </a>
+                                        <a href="<?php echo url_for('contact') ?>">LIÊN HỆ </a>
                                     </li>
                                 </ul>
 
@@ -235,7 +245,10 @@
                     </p>
                     <hr>
                     <p class="description">
-                        Phòng khám Hoàng Long là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật. Phòng khám được sáng lập bởi giáo sư Đào Văn Long - chuyên gia hàng đầu trong lĩnh vực tiêu hóa. Đây là phòng khám sở hữu dàn máy nội soi và siêu âm nội soi hiện đại và tiên tiến bậc nhất hiện nay tại Việt Nam.
+                        Phòng khám Hoàng Long là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật. Phòng khám
+                        được sáng lập bởi giáo sư Đào Văn Long - chuyên gia hàng đầu trong lĩnh vực tiêu hóa. Đây là
+                        phòng khám sở hữu dàn máy nội soi và siêu âm nội soi hiện đại và tiên tiến bậc nhất hiện nay tại
+                        Việt Nam.
                     </p>
                 </div>
             </div>

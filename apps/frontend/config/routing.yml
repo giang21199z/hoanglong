@@ -1,5 +1,14 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+detail_service:
+  url:   /dich-vu/:idservice
+  param: { module: news, action: service, idservice: '' }
+detail_about_us:
+  url:   /gioi-thieu-ve-hoang-long/:idaboutus
+  param: { module: aboutus, action: detail, idaboutus: '' }
+list_about_us:
+  url:   /cac-bai-viet-theo-chu-de/:idcategory
+  param: { module: aboutus, action: index, idcategory: '' }
 contact:
   url:   /lien-he-voi-chung-toi
   param: { module: site, action: contact }
@@ -22,8 +31,8 @@ detail_doctor_ipad:
   url:   /ipad/bac-si/:iddoctor
   param: { module: doctorsipad, action: detail, iddoctor: '' }
 list_news:
-  url:   /danh-sach-tin-tuc
-  param: { module: news, action: index }
+  url:   /danh-sach-tin-tuc/:idcategory
+  param: { module: news, action: index, idcategory: '' }
 detail_news:
   url:   /tin-tuc-hoang-long/:idnews
   param: { module: news, action: detail, idnews: '' }

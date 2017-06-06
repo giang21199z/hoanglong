@@ -19,7 +19,11 @@
                                         echo VtHelper::truncate($child['name'], 100);
                                         echo '<ul>';
                                         foreach ($child['child'] as $child2):
-                                            echo '<li>' . VtHelper::truncate($child2['title'], 100) . '</li>';
+                                            if(isset($child2['title'])){
+                                                echo '<li>' .VtHelper::truncate($child2['title'], 100) . '</li>';
+                                            }else{
+                                                echo '<li>' .VtHelper::truncate($child2['name'], 100) . '</li>';
+                                            }
                                         endforeach;
                                         echo '</ul>';
                                     } else {

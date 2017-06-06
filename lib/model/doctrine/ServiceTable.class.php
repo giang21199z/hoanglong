@@ -27,4 +27,33 @@ class ServiceTable extends Doctrine_Table
         return $query;
     }
 
+    public static function getAllService(){
+        $query = ServiceTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->fetchArray();
+        return $query;
+    }
+
+    public static function getServiceById($id)
+    {
+        $query = ServiceTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idnews = ?', $id)
+            ->fetchOne();
+        return $query;
+    }
+
+    public static function getServiceRelatedWith($id, $limit = 4)
+    {
+        $query = ServiceTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idnews != ?', $id)
+            ->limit($limit)
+            ->orderBy('RAND()')
+            ->fetchArray();
+        return $query;
+    }
 }

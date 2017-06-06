@@ -47,11 +47,19 @@ class CategoryAboutUsTable extends Doctrine_Table
 
         return $result;
     }
-    public static function getAllCategory()
+    public static function getAllCategory(){
+        $query = CategoryAboutUsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->fetchArray();
+        return $query;
+    }
+    public static function getAllCategoryExceptRoot()
     {
         $query = CategoryAboutUsTable::getInstance()
             ->createQuery('c')
             ->select('c.*')
+            ->where('c.idcategory_about_us != ?',0)
             ->fetchArray();
         return $query;
     }

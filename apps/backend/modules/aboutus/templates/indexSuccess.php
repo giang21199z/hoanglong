@@ -16,7 +16,13 @@
                                     if (isset($child['name'])): echo VtHelper::truncate($child['name'], 100);?>
                                         <ul>
                                         <?php foreach ($child['child'] as $child2):?>
-                                            <li><?php echo VtHelper::truncate($child2['title'], 100)?></li>
+                                            <li><?php
+                                                if(isset($child2['title'])){
+                                                    echo VtHelper::truncate($child2['title'], 100);
+                                                }else{
+                                                    echo VtHelper::truncate($child2['name'], 100);
+                                                }
+                                                ?></li>
                                         <?php endforeach?>
                                         </ul>
                                     <?php else:

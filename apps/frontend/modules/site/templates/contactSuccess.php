@@ -67,6 +67,9 @@
                         <br><br>
                     </div>
                 </div>
+                <div class="row text-center">
+                    <span>Châm ngôn của chúng tôi là <h3><i><b>"SỨC KHỎE LÀ KHỞI NGUỒN CỦA HẠNH PHÚC!"</b></i></h3></span>
+                </div>
             </div>
             <div class="right-menu">
                 <div class="row make-shu" style=" background: #b9d96a">
