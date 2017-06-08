@@ -442,7 +442,7 @@ blockquote {
 }
 .main-navigation .navbar-default .navbar-nav > li > a:hover,
 .main-navigation .navbar-default .navbar-nav > li.active > a:hover {
-	color: #ffffff;
+	/*color: #ffffff;*/
 }
 @media (min-width:768px) {
 	.main-navigation .navbar-default .navbar-nav > li > a {
@@ -647,7 +647,12 @@ blockquote {
 }
 
 nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-	background-color: #86a92b !important;
+	/*background-color: #86a92b !important;*/
 	border-color: #428bca;
+    height: 45px;
 }
 
+.menu-active{
+    background: #85A92A;
+    border-radius: 0 10px 0 10px;
+}

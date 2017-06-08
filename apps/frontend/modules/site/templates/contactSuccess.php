@@ -102,3 +102,8 @@
 </div>
 
 <!-- section end -->
+<script>
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(6)").addClass('menu-active');
+    $(".mega-dropdown:nth-child(6)").click();
+</script>

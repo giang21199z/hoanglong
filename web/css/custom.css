@@ -235,6 +235,7 @@ margin-top: 25px;
      margin-top: 4px;
  }
 .new-detail2 .arr-left span{
+    margin-top: 10px;
     display: block;
     float: left;
     margin-left:15px;
@@ -362,4 +363,7 @@ margin-top: 25px;
 }
 #footer .copy-right h6{
     color: white;
+}
+.customer-avatar:hover{
+    transform: scale(1.2, 1.2);
 }

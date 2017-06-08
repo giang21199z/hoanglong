@@ -39,14 +39,13 @@
                     <div class="col-md-5 col-md-offset-1 arr-left">
                         <img class="arrow-img" src="/images/left.png">
                         <span>
-                            <?php echo substr($news_related[0]['title'], 0, 25) ?>
-                            <br><?php echo substr($news_related[0]['title'], 25, 30) ?>...
+                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_about_us', array('idaboutus' => $news_related[0]['idnews'], 'title'=> $news_related[0]['title']))?>"><?php echo VtHelper::truncate($news_related[0]['title'],25) ?></a>
                         </span>
                     </div>
                     <div class="col-md-5 arr-right">
                         <img class="arrow-img" src="/images/right.png">
                         <span>
-                            <?php echo VtHelper::truncate($news_related[1]['title']) ?>
+                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_about_us', array('idaboutus' => $news_related[1]['idnews'], 'title'=> $news_related[1]['title']))?>"><?php echo VtHelper::truncate($news_related[1]['title'],25) ?></a>
                         </span>
                     </div>
                 </div>
@@ -58,22 +57,26 @@
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
                         RELATED NEWS </p>
                     <?php foreach ($news_related as $value): ?>
-                        <div class="right-menu right-item">
-                            <div class="row item">
-                                <div class="col-md-4 no-padding">
-                                    <img src="/uploads/news/<?php echo $value['images'] ?>" class="img-new">
-                                </div>
-                                <div class="col-md-8 no-padding-left">
+                        <a style="text-decoration: none; color: black"
+                           href="<?php echo url_for('detail_about_us', array('idaboutus' => $value['idnews'], 'title' => $value['title'])) ?>">
+                            <div class="right-menu right-item">
+                                <div class="row item">
+                                    <div class="col-md-4 no-padding">
+                                        <img src="/uploads/aboutus/<?php echo $value['images'] ?>" class="img-new">
+                                    </div>
+                                    <div class="col-md-8 no-padding-left">
                             <span>
-                             <?php echo $value['title'] ?>
-                              </span>
+                                <?php echo $value['title'] ?>
+                            </span>
+                                        <br><br>
 
-                                    <p class="date">
-                                        <?php echo $value['updated_at'] ?>
-                                    </p>
+                                        <p class="date">
+                                            <?php echo $value['updated_at'] ?>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach ?>
                 </div>
                 <div class="row make-shu" style=" background: #b9d96a">
@@ -105,3 +108,7 @@
 </div>
 
 <!-- section end -->
+<script>
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(2)").addClass('menu-active');
+</script>

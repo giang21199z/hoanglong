@@ -106,3 +106,7 @@
         </div>
     </div>
 </div>
+<script>
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(2)").addClass('menu-active');
+</script>

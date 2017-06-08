@@ -26,24 +26,27 @@
                     <p style="font-size: 18px ; color: #85a92a ;">Home > AboutUs</p>
                 </div>
                 <?php foreach ($news as $value): ?>
-                    <div class="row items-new">
-                        <div class="img-items">
-                            <img src="/uploads/aboutus/<?php echo $value['images'] ?>"
-                                 style="width: 220px; height: 220px"/>
-                        </div>
-                        <div class="content-items" style="position: relative;">
-                            <p style="font-size: 20px ; color: #85a92a ;">
-                                <?php echo $value['title'] ?>
-                            </p>
+                    <a style="text-decoration: none; color: black"
+                       href="<?php echo url_for('detail_about_us', array('idaboutus' => $value['idnews'], 'title' => $value['title'])) ?>">
+                        <div class="row items-new">
+                            <div class="img-items">
+                                <img src="/uploads/aboutus/<?php echo $value['images'] ?>"
+                                     style="width: 220px; height: 220px"/>
+                            </div>
+                            <div class="content-items" style="position: relative;">
+                                <p style="font-size: 20px ; color: #85a92a ;">
+                                    <?php echo $value['title'] ?>
+                                </p>
 
-                            <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
-                                <?php echo VtHelper::truncate($value['summary'], 200) ?>
-                            </p>
-                            <i style=" position: absolute;bottom: 0;left: 0; font-size: 16px; font-weight: bold">
-                                <?php echo $value['updated_at'] ?>
-                            </i>
+                                <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
+                                    <?php echo VtHelper::truncate($value['summary'], 200) ?>
+                                </p>
+                                <i style=" position: absolute;bottom: 0;left: 0; font-size: 16px; font-weight: bold">
+                                    <?php echo $value['updated_at'] ?>
+                                </i>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 <?php endforeach ?>
                 <div class="row text-center">
                     <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
@@ -62,10 +65,13 @@
                         INTRODUCTION </p>
                     <?php foreach ($news_related as $value): ?>
                         <div class="right-menu right-item">
-                            <p class=" "
-                               style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                                <?php echo VtHelper::truncate($value['title']) ?>
-                            </p>
+                            <a style="text-decoration: none"
+                               href="<?php echo url_for('detail_about_us', array('idaboutus' => $value['idnews'], 'title' => $value['title'])) ?>">
+                                <p
+                                    style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
+                                    <?php echo VtHelper::truncate($value['title']) ?>
+                                </p>
+                            </a>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -98,3 +104,7 @@
 </div>
 
 <!-- section end -->
+<script>
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(2)").addClass('menu-active');
+</script>

@@ -25,10 +25,9 @@
                 <h2 class="no-margin-bottom title-h2">
                     About Clinic
                 </h2>
-
-                <p class="title-p">
-                    <?php echo $about_us->getTitle() ?>
-                </p>
+                    <p class="title-p">
+                        <?php echo $about_us->getTitle() ?>
+                    </p>
                 <hr class="hr">
             </div>
             <div class="row">
@@ -108,7 +107,8 @@
                         <div class="col-xs-4 no-padding">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <img src="/uploads/doctors/<?php echo $value['avatar'] ?>" class="img-circle img-responsive">
+                                    <img src="/uploads/doctors/<?php echo $value['avatar'] ?>"
+                                         class="img-circle img-responsive">
                                 </div>
                             </div>
                             <div class="row text-center">
@@ -262,10 +262,11 @@
             <div class="row">
                 <div class="col-xs-6 col-xs-offset-3 ">
                     <?php foreach ($feed_backs as $value): ?>
-                    <div class="col-xs-4 no-padding">
-                        <img src="/uploads/feedback/<?php echo $value['avatar']?>" class="img-circle img-responsive">
-                    </div>
-                    <?php endforeach;?>
+                        <div class="col-xs-4 no-padding">
+                            <img src="/uploads/feedback/<?php echo $value['avatar'] ?>"
+                                 class="img-circle img-responsive">
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <br><br>
@@ -276,15 +277,15 @@
                 </div>
                 <div class="col-xs-10 no-padding text-center" style="width: 86%">
                     <p style="font-size: 13px ;line-height: 27px">
-                        <?php echo $feed_backs[0]['content']?>
+                        <?php echo $feed_backs[0]['content'] ?>
                     </p>
 
                     <p class="no-margin" style="font-size: 16px ; color: #85a92a ;">
-                        <?php echo $feed_backs[0]['name_customer']?>
+                        <?php echo $feed_backs[0]['name_customer'] ?>
                     </p>
 
                     <p style="font-size: 13px">
-                        <?php echo $feed_backs[0]['address']?>
+                        <?php echo $feed_backs[0]['address'] ?>
                     </p>
                 </div>
                 <div class="col-xs-1 no-padding" style="width: 7%">
@@ -309,30 +310,30 @@
                 <hr class="hr">
             </div>
             <div class="row list-new">
-                <?php foreach($news as $value):?>
-                <div class="col-xs-4 no-padding-left">
-                    <img src="uploads/news/<?php echo $value['images']?>" class=" img-responsive">
+                <?php foreach ($news as $value): ?>
+                    <div class="col-xs-4 no-padding-left">
+                        <img src="uploads/news/<?php echo $value['images'] ?>" class=" img-responsive">
 
-                    <div class="row description">
-                        <p class="no-margin title">
-                            <?php echo VtHelper::truncate($value['title'],50)?>
-                        </p>
-
-                        <p class="time">
-                            <?php echo $value['updated_at']?>
-                        </p>
-
-                        <p class="detail" style="font-size: 14px">
-                            <?php echo VtHelper::truncate($value['summary'],100)?>
-                        </p>
-                        <button style="background: #ffffff; border:  1px solid #85a92a">
-                            <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
-                                READ MORE
+                        <div class="row description">
+                            <p class="no-margin title">
+                                <?php echo VtHelper::truncate($value['title'], 50) ?>
                             </p>
-                        </button>
+
+                            <p class="time">
+                                <?php echo $value['updated_at'] ?>
+                            </p>
+
+                            <p class="detail" style="font-size: 14px">
+                                <?php echo VtHelper::truncate($value['summary'], 100) ?>
+                            </p>
+                            <button style="background: #ffffff; border:  1px solid #85a92a">
+                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
+                                    READ MORE
+                                </p>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <?php endforeach?>
+                <?php endforeach ?>
             </div>
             <br>
 

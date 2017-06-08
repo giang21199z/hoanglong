@@ -23,7 +23,7 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Hoang Long News</p>
+                    <p style="font-size: 18px ; color: #85a92a ;">Home > <?php echo $category?></p>
                 </div>
                 <?php foreach ($news as $value): ?>
                     <div class="row items-new">
@@ -32,9 +32,12 @@
                                  style="width: 220px; height: 220px"/>
                         </div>
                         <div class="content-items" style="position: relative;">
-                            <p style="font-size: 20px ; color: #85a92a ;">
-                                <?php echo $value['title'] ?>
-                            </p>
+                            <a style="text-decoration: none; color: black"
+                               href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                                <p style="font-size: 20px ; color: #85a92a ;">
+                                    <?php echo $value['title'] ?>
+                                </p>
+                            </a>
 
                             <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
                                 <?php echo VtHelper::truncate($value['summary'], 200) ?>
@@ -59,12 +62,13 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        INTRODUCTION </p>
+                        Tin tức </p>
                     <?php foreach ($category_news as $value): ?>
                         <div class="right-menu right-item">
                             <p class=" "
                                style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                                <?php echo $value['name'] ?>
+                                <a href="<?php echo url_for('list_news', array('idcategory' => $value['idcategory_news'], 'name' => $value['name'])) ?>"
+                                   style="text-decoration: none; color: #000000"><?php echo $value['name'] ?></a>
                             </p>
                         </div>
                     <?php endforeach; ?>
@@ -98,3 +102,8 @@
 </div>
 
 <!-- section end -->
+<script>
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(4)").addClass('menu-active');
+    $(".mega-dropdown:nth-child(4)").click();
+</script>

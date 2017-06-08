@@ -98,20 +98,28 @@
                             <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-left menu no-padding">
                                     <li class="dropdown mega-dropdown">
+                                        <a href="<?php echo url_for('homepage') ?>">TRANG CHỦ </a>
+                                    </li>
+                                    <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU </a>
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
                                             <?php
                                             $about_us = AboutUsTable::getAboutUsMenu();
                                             foreach ($about_us as $value): ?>
-                                                <li class="col-xs-3 no-padding"><a href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"]))?>"><p class="text-uppercase"><?php echo $value['title']?></p></a>
+                                                <li class="col-xs-3 no-padding"><a
+                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"])) ?>">
+                                                        <p class="text-uppercase"><?php echo $value['title'] ?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
                                             <?php
                                             $about_us = CategoryAboutUsTable::getAllCategoryExceptRoot();
-                                            foreach($about_us as $value):?>
-                                                <li class="col-xs-3 no-padding"><a href="<?php echo url_for('list_about_us', array('idcategory'=>$value['idcategory_about_us']))?>"><p class="text-uppercase"><?php echo $value['name']?></p></a></li>
-                                            <?php endforeach;?>
+                                            foreach ($about_us as $value):?>
+                                                <li class="col-xs-3 no-padding"><a
+                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us']))?>">
+                                                        <p class="text-uppercase"><?php echo $value['name']?></p></a>
+                                                </li>
+                                            <?php endforeach; ?>
                                             <li class="col-xs-3 no-padding"><a href="<?php echo url_for('doctor') ?>">
                                                     <p>ĐỘI NGŨ BÁC SĨ</p></a></li>
                                         </ul>
@@ -123,7 +131,9 @@
                                             <?php
                                             $services = ServiceTable::getAllService();
                                             foreach ($services as $value):?>
-                                                <li class="col-xs-3 no-padding"><a href="<?php echo url_for('detail_service', array('idservice' => $value['idnews']))?>"><p
+                                                <li class="col-xs-3 no-padding"><a
+                                                        href="<?php echo url_for('detail_service', array('idservice' => $value['idnews'], 'title' => $value['title']))?>">
+                                                        <p
                                                             class="text-uppercase"><?php echo $value['title']?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -137,7 +147,8 @@
                                             $category_news = CategoryNewsTable::getAllCategory();
                                             foreach ($category_news as $value):?>
                                                 <li class="col-xs-3 no-padding">
-                                                    <a href="<?php echo url_for('list_news',array('idcategory' => $value['idcategory_news']))?>"><p
+                                                    <a href="<?php echo url_for('list_news', array('idcategory' => $value['idcategory_news'], 'name' => $value['name']))?>">
+                                                        <p
                                                             class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -145,11 +156,6 @@
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">THƯ VIỆN</a>
-                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding"
-                                            style="border: 0px ; border-radius: 0px;">
-                                            <li class="col-xs-6 no-padding"><p>PHÒNG KHÁM</p></li>
-                                            <li class="col-xs-6 no-padding"><p>SỰ KIỆN</p></li>
-                                        </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="<?php echo url_for('contact') ?>">LIÊN HỆ </a>
@@ -157,8 +163,9 @@
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li style="background-color: #86a92b; "><a type="button" data-toggle="modal"
-                                                                               data-target="#myModal"><span> SCHEDULE</span></a>
+                                    <li style="background-color: #86a92b; height: 50px; border-radius: 0px 0px 10px 10px">
+                                        <a type="button" data-toggle="modal"
+                                           data-target="#myModal"><span> SCHEDULE</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -182,12 +189,12 @@
                 <p style="color: #ffffff">
                     Hân hạnh phục vụ quý khách
                 </p>
-                <input type="text" class="form-control" id="fullname_" placeholder="Full Name">
-                <input type="text" class="form-control" id="age_" placeholder="Age">
-                <input type="number" class="form-control" id="phone_" placeholder="Phone Number">
-                <input type="text" class="form-control" id="date_" placeholder="Date">
+                <input type="text" class="form-control" id="fullname_" placeholder="Họ tên">
+                <input type="number" class="form-control" id="age_" placeholder="Tuổi">
+                <input type="text" class="form-control" id="phone_" placeholder="Số điện thoại">
+                <input type="text" class="form-control" id="date_" placeholder="Ngày bạn có thể tới khám">
                 <textarea class="form-control" style="height: 140px" id="description_"
-                          placeholder="Description"></textarea>
+                          placeholder="Miêu tả triệu chứng"></textarea>
 
                 <div class="row text-center ">
                     <button class="btn text-center schedule-btn" id="btn-make-schedule_">
@@ -216,11 +223,6 @@
                     <hr>
                     <div class="description">
                         <div class="row">
-                            <div class="col-xs-4">
-                                <img src="/images/full-logo.png" alt="hoanglonghospital.vn"
-                                     style="width: 100px; margin: 0px auto;"
-                                     class="img img-responsive">
-                            </div>
                             <div class="col-xs-2">
                                 <i class="fa fa-facebook-official"></i>
                             </div>
@@ -233,7 +235,15 @@
                             <div class="col-xs-2">
                                 <i class="fa fa-instagram"></i>
                             </div>
+                        </div>
+                        <br><br>
 
+                        <div class="row">
+                            <div class="col-xs-8 text-center">
+                                <img src="/images/full-logo.png" alt="hoanglonghospital.vn"
+                                     style="width: 100px; margin: 0px auto;"
+                                     class="img img-responsive">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -325,6 +335,31 @@
 <script>
     $(document).ready(function () {
         $('#btn-make-schedule').click(function () {
+            var fullname = $("#fullname").val();
+            var age = $("#age").val();
+            var phone = $("#phone").val();
+            var address = $("#address").val();
+            var date = $("#date").val();
+            var description = $("#description").val();
+            var is_validate = true;
+            if (fullname.length == 0) {
+                $("#fullname").val('');
+                $("#fullname").prop({'placeholder': 'Vui lòng nhập đúng tên'});
+                is_validate = false;
+            }
+            if (age < 0 || age > 150) {
+                $("#age").val('');
+                $("#age").prop({'placeholder': 'Vui lòng nhập đúng tuổi'});
+                is_validate = false;
+            }
+            if (phone.length < 10 || !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone)) {
+                $("#phone").val('');
+                $("#phone").prop({'placeholder': 'Vui lòng nhập đúng số điện thoại'});
+                is_validate = false;
+            }
+            if (!is_validate) {
+                return;
+            }
             swal({
                 title: "Đặt lịch hẹn",
                 text: "Bạn có chắc chắn muốn đặt lịch hẹn không?",
@@ -333,12 +368,6 @@
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true
             }, function () {
-                var fullname = $("#fullname").val();
-                var age = $("#age").val();
-                var phone = $("#phone").val();
-                var address = $("#address").val();
-                var date = $("#date").val();
-                var description = $("#description").val();
                 var data = {
                     fullname: fullname,
                     age: age,
@@ -357,6 +386,31 @@
             });
         });
         $('#btn-make-schedule_').click(function () {
+            var fullname = $("#fullname_").val();
+            var age = $("#age_").val();
+            var phone = $("#phone_").val();
+            var address = $("#address_").val();
+            var date = $("#date_").val();
+            var description = $("#description_").val();
+            var is_validate = true;
+            if (fullname.length == 0) {
+                $("#fullname_").val('');
+                $("#fullname_").prop({'placeholder': 'Vui lòng nhập đúng tên'});
+                is_validate = false;
+            }
+            if (age < 0 || age > 150) {
+                $("#age_").val('');
+                $("#age_").prop({'placeholder': 'Vui lòng nhập đúng tuổi'});
+                is_validate = false;
+            }
+            if (phone.length < 10 || !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone)) {
+                $("#phone_").val('');
+                $("#phone_").prop({'placeholder': 'Vui lòng nhập đúng số điện thoại'});
+                is_validate = false;
+            }
+            if (!is_validate) {
+                return;
+            }
             swal({
                 title: "Đặt lịch hẹn",
                 text: "Bạn có chắc chắn muốn đặt lịch hẹn không?",
@@ -365,12 +419,6 @@
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true
             }, function () {
-                var fullname = $("#fullname_").val();
-                var age = $("#age_").val();
-                var phone = $("#phone_").val();
-                var address = $("#address_").val();
-                var date = $("#date_").val();
-                var description = $("#description_").val();
                 var data = {
                     fullname: fullname,
                     age: age,
@@ -406,6 +454,25 @@
             minDate: now
         });
     });
+    (function ($) {
+
+        var nav = $("#navbar-collapse-1");
+
+        nav.find("li").each(function () {
+            if ($(this).find("ul").length > 0) {
+
+                //show subnav on hover
+                $(this).mouseover(function () {
+                    $(this).find("ul").slideDown(300);
+                });
+                //hide submenus on exit
+                $(this).mouseleave(function () {
+                    $(this).find("ul").stop(true).slideUp(300);
+                });
+            }
+        });
+
+    })(jQuery);
 </script>
 </body>
 </html>

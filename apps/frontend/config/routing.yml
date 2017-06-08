@@ -1,11 +1,11 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 detail_service:
-  url:   /dich-vu/:idservice
-  param: { module: news, action: service, idservice: '' }
+  url:   /dich-vu/:idservice/:title
+  param: { module: news, action: service, idservice: '', title: '' }
 detail_about_us:
-  url:   /gioi-thieu-ve-hoang-long/:idaboutus
-  param: { module: aboutus, action: detail, idaboutus: '' }
+  url:   /gioi-thieu-ve-hoang-long/:idaboutus/:title
+  param: { module: aboutus, action: detail, idaboutus: '', title: '' }
 list_about_us:
   url:   /cac-bai-viet-theo-chu-de/:idcategory
   param: { module: aboutus, action: index, idcategory: '' }
@@ -22,8 +22,8 @@ doctor:
   url:   /bac-si
   param: { module: doctors, action: index}
 detail_doctor:
-  url:   /bac-si/:iddoctor
-  param: { module: doctors, action: detail, iddoctor: '' }
+  url:   /bac-si/:iddoctor/:name
+  param: { module: doctors, action: detail, iddoctor: '', name: '' }
 doctor_ipad:
   url:   /ipad/bac-si
   param: { module: doctorsipad, action: index}
@@ -31,11 +31,11 @@ detail_doctor_ipad:
   url:   /ipad/bac-si/:iddoctor
   param: { module: doctorsipad, action: detail, iddoctor: '' }
 list_news:
-  url:   /danh-sach-tin-tuc/:idcategory
-  param: { module: news, action: index, idcategory: '' }
+  url:   /danh-sach-tin-tuc/:idcategory/:name
+  param: { module: news, action: index, idcategory: '', name: '' }
 detail_news:
-  url:   /tin-tuc-hoang-long/:idnews
-  param: { module: news, action: detail, idnews: '' }
+  url:   /tin-tuc-hoang-long/:idnews/:title
+  param: { module: news, action: detail, idnews: '', title: '' }
 list_news_ipad:
   url:   /ipad/danh-sach-tin-tuc
   param: { module: newsipad, action: index }

@@ -13,6 +13,7 @@ class homepageActions extends sfActions
     {
         $this->about_us = AboutUsTable::getAboutUsHomepage();
         $this->doctor = DoctorTable::getDoctorHomepage();
+        $this->doctor_pages = count(DoctorTable::getAllDoctor());
         $this->feed_backs = FeedBackTable::getFeedbackHomepage();
         $this->news = NewsTable::getNewsHomepage();
         $this->why_choose_us = NewsTable::getNewsWhyChooseUs();

@@ -13,6 +13,7 @@ class newsActions extends sfActions
     {
         $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
         $category = $request->getParameter('idcategory');
+        $this->category = $request->getParameter('name');
         $this->news = NewsTable::getAllNews(5, $offset, $category);
         $this->category_news = CategoryNewsTable::getAllCategory();
         $this->total = NewsTable::getTotalPages();

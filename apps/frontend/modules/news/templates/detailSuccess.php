@@ -23,7 +23,7 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Hoang Long News > <?php echo $news->getTitle() ?></p>
+                    <p style="font-size: 18px ; color: #85a92a ;">Home > Tin tức > <?php echo VtHelper::truncate($news->getTitle())  ?></p>
                 </div>
                 <div class="row">
                     <p class="tille">
@@ -33,20 +33,19 @@
                     <p class="date">
                         <?php echo $news->getUpdatedAt() ?>
                     </p>
-                    <?php echo VtHelper::htmlToView($news->getContent()) ?>
+                    <?php echo html_entity_decode($news->getContent()) ?>
                 </div>
                 <div class="row pre">
                     <div class="col-md-5 col-md-offset-1 arr-left">
                         <img class="arrow-img" src="/images/left.png">
                         <span>
-                            <?php echo substr($news_related[0]['title'], 0, 25) ?>
-                            <br><?php echo substr($news_related[0]['title'], 25, 30) ?>...
+                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_news', array('idnews' => $news_related[0]['idnews'], 'title'=> $news_related[0]['title']))?>"><?php echo VtHelper::truncate($news_related[0]['title'],25) ?></a>
                         </span>
                     </div>
                     <div class="col-md-5 arr-right">
                         <img class="arrow-img" src="/images/right.png">
                         <span>
-                            <?php echo VtHelper::truncate($news_related[1]['title']) ?>
+                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_news', array('idnews' => $news_related[0]['idnews'], 'title'=> $news_related[1]['title']))?>"><?php echo VtHelper::truncate($news_related[1]['title'],25) ?></a>
                         </span>
                     </div>
                 </div>
@@ -56,24 +55,27 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        RELATED NEWS </p>
+                        TIN TỨC KHÁC </p>
                     <?php foreach ($news_related as $value): ?>
-                        <div class="right-menu right-item">
-                            <div class="row item">
-                                <div class="col-md-4 no-padding">
-                                    <img src="/uploads/news/<?php echo $value['images'] ?>" class="img-new">
-                                </div>
-                                <div class="col-md-8 no-padding-left">
+                        <a style="text-decoration: none; color: black"
+                           href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                            <div class="right-menu right-item">
+                                <div class="row item">
+                                    <div class="col-md-4 no-padding">
+                                        <img src="/uploads/news/<?php echo $value['images'] ?>" class="img-new">
+                                    </div>
+                                    <div class="col-md-8 no-padding-left">
                             <span>
-                             <?php echo $value['title'] ?>
+                             <?php echo VtHelper::truncate($value['title'])  ?>
                               </span>
 
-                                    <p class="date">
-                                        <?php echo $value['updated_at'] ?>
-                                    </p>
+                                        <p class="date">
+                                            <?php echo $value['updated_at'] ?>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach ?>
                 </div>
                 <div class="row make-shu" style=" background: #b9d96a">
@@ -105,3 +107,8 @@
 </div>
 
 <!-- section end -->
+<script>
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(4)").addClass('menu-active');
+    $(".mega-dropdown:nth-child(4)").click();
+</script>
