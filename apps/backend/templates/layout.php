@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php
-        if (!($sf_user->getAttribute('USER_BE'))) {
-            header('Location: ' . url_for('login'));
-            exit;
-        } ?>
+    if (!($sf_user->getAttribute('USER_BE'))) {
+        header('Location: ' . url_for('login'));
+        exit;
+    } ?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <?php sfContext::getInstance()->getResponse()->removeStylesheet('/sfDoctrinePlugin/css/global.css'); ?>
     <?php sfContext::getInstance()->getResponse()->removeStylesheet('/sfDoctrinePlugin/css/default.css'); ?>
@@ -47,7 +47,7 @@
                         <li class="divider"></li>
                         <li class="" id="change-pass"><a href="#">Change password</a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo url_for('logout')?>">Logout</a></li>
+                        <li><a href="<?php echo url_for('logout') ?>">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -157,8 +157,14 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="dropdown ">
+                                <a href="<?php echo url_for('video') ?>">
+                                    <span
+                                        class="glyphicon glyphicon-film"></span>Quản lý video
+                                </a>
+                            </li>
                             <li id="slide"><a href="<?php echo url_for('feed_back') ?>"><span
-                                        class="glyphicon glyphicon-heart"></span> Quản lý nhận xét khách hàng</a>
+                                        class="glyphicon glyphicon-comment"></span> Quản lý nhận xét khách hàng</a>
                             </li>
                             <li id="slide"><a href="<?php echo url_for('slide') ?>"><span
                                         class="glyphicon glyphicon-heart"></span> Quản lý Slide</a>

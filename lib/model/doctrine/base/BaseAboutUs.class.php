@@ -138,5 +138,8 @@ abstract class BaseAboutUs extends sfDoctrineRecord
         $this->hasOne('CategoryAboutUs', array(
              'local' => 'category_about_us_idcategory_about_us',
              'foreign' => 'idcategory_about_us'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

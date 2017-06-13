@@ -17,6 +17,7 @@ abstract class BaseCategoryGalleryForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'idcategory_gallery' => new sfWidgetFormInputHidden(),
       'name'               => new sfWidgetFormInputText(),
+      'description'        => new sfWidgetFormTextarea(),
       'created_at'         => new sfWidgetFormDateTime(),
       'updated_at'         => new sfWidgetFormDateTime(),
     ));
@@ -24,8 +25,9 @@ abstract class BaseCategoryGalleryForm extends BaseFormDoctrine
     $this->setValidators(array(
       'idcategory_gallery' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idcategory_gallery')), 'empty_value' => $this->getObject()->get('idcategory_gallery'), 'required' => false)),
       'name'               => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'created_at'         => new sfValidatorDateTime(array('required' => false)),
-      'updated_at'         => new sfValidatorDateTime(array('required' => false)),
+      'description'        => new sfValidatorString(array('required' => false)),
+      'created_at'         => new sfValidatorDateTime(),
+      'updated_at'         => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('category_gallery[%s]');

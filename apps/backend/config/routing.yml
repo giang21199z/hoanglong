@@ -1,3 +1,21 @@
+video:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Video
+    module:               video
+    prefix_path:          /video
+    column:               idvideo
+    with_wildcard_routes: true
+
+category_video:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoryVideo
+    module:               categoryVideo
+    prefix_path:          /categoryVideo
+    column:               idcategory_video
+    with_wildcard_routes: true
+
 slide:
   class: sfDoctrineRouteCollection
   options:

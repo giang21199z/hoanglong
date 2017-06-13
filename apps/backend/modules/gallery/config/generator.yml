@@ -29,6 +29,6 @@ generator:
       filter:
         class: false
       form:
-        display: [name, url]
+        display: [name, url, category_gallery_idcategory_about_us]
       edit:    ~
       new:     ~

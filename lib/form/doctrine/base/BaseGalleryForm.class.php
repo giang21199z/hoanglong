@@ -28,8 +28,8 @@ abstract class BaseGalleryForm extends BaseFormDoctrine
       'idgallery'                            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idgallery')), 'empty_value' => $this->getObject()->get('idgallery'), 'required' => false)),
       'name'                                 => new sfValidatorString(array('required' => false)),
       'url'                                  => new sfValidatorString(array('max_length' => 120, 'required' => false)),
-      'created_at'                           => new sfValidatorDateTime(array('required' => false)),
-      'updated_at'                           => new sfValidatorDateTime(array('required' => false)),
+      'created_at'                           => new sfValidatorDateTime(),
+      'updated_at'                           => new sfValidatorDateTime(),
       'category_gallery_idcategory_about_us' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('category_gallery_idcategory_about_us')), 'empty_value' => $this->getObject()->get('category_gallery_idcategory_about_us'), 'required' => false)),
       'priority'                             => new sfValidatorInteger(array('required' => false)),
     ));

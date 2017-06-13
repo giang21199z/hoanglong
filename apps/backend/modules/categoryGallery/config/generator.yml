@@ -16,8 +16,9 @@ generator:
       fields:
         name: {label: Tên danh mục}
         updated_at: {label: Ngày sửa đổi}
+        description: {label: Mô tả}
       list:
-        title: List Category
+        title: Danh sách thư mục ảnh
         batch_actions:  {}
         actions:  ~
         sort: [updated_at, desc]
@@ -25,10 +26,10 @@ generator:
         object_actions:
           _edit:  {label: Detail}
           _delete:  {label: Del}
-        display: [name, updated_at,]
+        display: [name, description, updated_at]
       filter:
         class: false
       form:
-        display: [name]
+        display: [name, description]
       edit:    ~
       new:     ~

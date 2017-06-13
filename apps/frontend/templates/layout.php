@@ -156,6 +156,19 @@
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">THƯ VIỆN</a>
+                                        <ul class="  dropdown-menu mega-dropdown-menu no-padding"
+                                            style="border: 0px ; border-radius: 0px;">
+                                            <li class="col-xs-3 no-padding">
+                                                <a href="<?php echo url_for('list_gallery') ?>">
+                                                    <p
+                                                        class="text-uppercase">Thư viện ảnh</p></a>
+                                            </li>
+                                            <li class="col-xs-3 no-padding">
+                                                <a href="<?php echo url_for('list_video') ?>">
+                                                    <p
+                                                        class="text-uppercase">Thư viện video</p></a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="<?php echo url_for('contact') ?>">LIÊN HỆ </a>
@@ -224,7 +237,7 @@
                     <div class="description">
                         <div class="row">
                             <div class="col-xs-2">
-                                <i class="fa fa-facebook-official"></i>
+                                <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: white"><i class="fa fa-facebook-official"></i></a>
                             </div>
                             <div class="col-xs-2">
                                 <i class="fa fa-youtube"></i>

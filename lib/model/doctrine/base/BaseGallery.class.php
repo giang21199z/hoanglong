@@ -114,5 +114,8 @@ abstract class BaseGallery extends sfDoctrineRecord
         $this->hasOne('CategoryGallery', array(
              'local' => 'category_gallery_idcategory_about_us',
              'foreign' => 'idcategory_gallery'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

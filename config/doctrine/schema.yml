@@ -1,4 +1,5 @@
 AboutUs:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: about_us
   columns:
@@ -71,6 +72,7 @@ AboutUs:
       foreign: idcategory_about_us
       type: one
 Admin:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: admin
   columns:
@@ -117,6 +119,7 @@ Admin:
       notnull: false
       autoincrement: false
 CategoryAboutUs:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: category_about_us
   columns:
@@ -153,6 +156,7 @@ CategoryAboutUs:
       foreign: category_about_us_idcategory_about_us
       type: many
 CategoryGallery:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: category_gallery
   columns:
@@ -164,6 +168,13 @@ CategoryGallery:
       autoincrement: true
     name:
       type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    description:
+      type: string()
       fixed: false
       unsigned: false
       primary: false
@@ -189,6 +200,7 @@ CategoryGallery:
       foreign: category_gallery_idcategory_about_us
       type: many
 CategoryNews:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: category_news
   columns:
@@ -225,6 +237,7 @@ CategoryNews:
       foreign: category_news_idcategory
       type: many
 CategoryService:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: category_service
   columns:
@@ -261,6 +274,7 @@ CategoryService:
       foreign: category_service_idcategory_service
       type: many
 Doctor:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: doctor
   columns:
@@ -340,6 +354,7 @@ Doctor:
       foreign: idspecialist
       type: one
 FeedBack:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: feed_back
   columns:
@@ -401,6 +416,7 @@ FeedBack:
       notnull: false
       autoincrement: false
 Gallery:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: gallery
   columns:
@@ -459,6 +475,7 @@ Gallery:
       foreign: idcategory_gallery
       type: one
 News:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: news
   columns:
@@ -531,6 +548,7 @@ News:
       foreign: idcategory_news
       type: one
 Schedule:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: schedule
   columns:
@@ -605,6 +623,7 @@ Schedule:
       notnull: true
       autoincrement: false
 Service:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: service
   columns:
@@ -677,6 +696,7 @@ Service:
       foreign: idcategory_service
       type: one
 Specialist:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: specialist
   columns:
@@ -713,6 +733,7 @@ Specialist:
       foreign: specialist_idspecialist
       type: many
 Slide:
+  actAs: { Timestampable: ~ }
   connection: doctrine
   tableName: slide
   columns:
@@ -752,3 +773,105 @@ Slide:
       primary: false
       notnull: false
       autoincrement: false
+CategoryVideo:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: category_video
+  columns:
+    idcategory_video:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Video:
+      local: idcategory_video
+      foreign: idcategory_video_idcategory_video
+      type: many
+Video:
+  actAs: { Timestampable: ~ }
+  connection: doctrine
+  tableName: video
+  columns:
+    idvideo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    url:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: gallery.jpg
+      notnull: false
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    category_video_idcategory_video:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    CategoryVideo:
+      local: category_video_idcategory_video
+      foreign: idcategory_video
+      type: one

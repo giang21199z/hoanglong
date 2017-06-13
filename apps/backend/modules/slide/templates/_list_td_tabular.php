@@ -1,5 +1,5 @@
 <td class="sf_admin_text sf_admin_list_td_link">
-    <img src="/data1/<?php echo $slide->getImages() ?>" class="img-responsive" alt="Cinque Terre"
+    <img src="/data1/images/<?php echo $slide->getImages() ?>" class="img-responsive" alt="Cinque Terre"
          style="width: 70%"><br>
 </td>
 <td class="sf_admin_text sf_admin_list_td_price">

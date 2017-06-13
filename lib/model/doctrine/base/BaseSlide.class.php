@@ -85,6 +85,7 @@ abstract class BaseSlide extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

@@ -1,7 +1,7 @@
 <?php use_helper('I18N', 'Date') ?>
 <link rel="stylesheet" href="/css/eTree.css">
 <?php include_partial('categoryGallery/assets') ?>
-<h1><?php echo __('List Category', array(), 'messages') ?></h1>
+<h1><?php echo __('Danh sách thư mục ảnh', array(), 'messages') ?></h1>
 <div id="sf_admin_container" style="width: 30%; float: left">
     <div id="root" class="easy-tree">
 
@@ -17,7 +17,7 @@
                                         echo VtHelper::truncate($child['name'], 100);
                                         echo '<ul>';
                                         foreach ($child['child'] as $child2):
-                                            echo '<li>' . VtHelper::truncate($child2['title'], 100) . '</li>';
+                                            echo '<li>' . VtHelper::truncate($child2['name'], 100) . '</li>';
                                         endforeach;
                                         echo '</ul>';
                                     } else {

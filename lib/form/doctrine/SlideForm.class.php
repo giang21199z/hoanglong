@@ -14,8 +14,8 @@ class SlideForm extends BaseSlideForm
   {
       $this->setWidgets(array(
           'idslide' => new sfWidgetFormInputHidden(),
-          'name' => new sfWidgetFormInputFile(),
-          'images' => new sfWidgetFormInputText(),
+          'images' => new sfWidgetFormInputFile(),
+          'name' => new sfWidgetFormInputText(),
       ));
 
       $this->setValidators(array(

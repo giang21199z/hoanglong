@@ -16,4 +16,13 @@ class SlideTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Slide');
     }
+    public static function getAllSlide($limit = 3)
+    {
+        $query = SlideTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->limit($limit)
+            ->fetchArray();
+        return $query;
+    }
 }

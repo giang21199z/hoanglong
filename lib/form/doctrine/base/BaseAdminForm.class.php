@@ -28,8 +28,8 @@ abstract class BaseAdminForm extends BaseFormDoctrine
       'username'   => new sfValidatorString(array('max_length' => 45)),
       'password'   => new sfValidatorString(array('max_length' => 45)),
       'fullname'   => new sfValidatorString(array('max_length' => 120, 'required' => false)),
-      'created_at' => new sfValidatorDateTime(array('required' => false)),
-      'updated_at' => new sfValidatorDateTime(array('required' => false)),
+      'created_at' => new sfValidatorDateTime(),
+      'updated_at' => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('admin[%s]');

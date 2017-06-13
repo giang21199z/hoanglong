@@ -39,4 +39,28 @@ class CategoryGalleryTable extends Doctrine_Table
         }
         return $result;
     }
+    public static function getAllCategory(){
+        $query = CategoryGalleryTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idcategory_gallery != ?',0)
+            ->fetchArray();
+        $count = 0;
+        foreach($query as $value){
+            $id = $value['idcategory_gallery'];
+            $gallery_first = GalleryTable::getImagesByCategory($id,1000);
+            $query[$count]['images'] = $gallery_first;
+            $query[$count++]['number'] = count($gallery_first);
+        }
+        return $query;
+    }
+
+    public static function getCategoryById($id){
+        $query = CategoryGalleryTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idcategory_gallery = ?',$id)
+            ->fetchOne();
+        return $query;
+    }
 }

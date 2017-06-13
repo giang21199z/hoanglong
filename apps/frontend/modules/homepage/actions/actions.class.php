@@ -17,5 +17,6 @@ class homepageActions extends sfActions
         $this->feed_backs = FeedBackTable::getFeedbackHomepage();
         $this->news = NewsTable::getNewsHomepage();
         $this->why_choose_us = NewsTable::getNewsWhyChooseUs();
+        $this->slides = SlideTable::getAllSlide();
     }
 }

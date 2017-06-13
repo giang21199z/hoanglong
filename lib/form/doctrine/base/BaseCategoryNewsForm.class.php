@@ -25,7 +25,7 @@ abstract class BaseCategoryNewsForm extends BaseFormDoctrine
       'idcategory_news' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idcategory_news')), 'empty_value' => $this->getObject()->get('idcategory_news'), 'required' => false)),
       'name'            => new sfValidatorString(),
       'created_at'      => new sfValidatorDateTime(),
-      'updated_at'      => new sfValidatorDateTime(array('required' => false)),
+      'updated_at'      => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('category_news[%s]');

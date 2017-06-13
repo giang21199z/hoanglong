@@ -9,17 +9,20 @@ Doctrine_Manager::getInstance()->bindComponent('CategoryGallery', 'doctrine');
  * 
  * @property integer $idcategory_gallery
  * @property string $name
+ * @property string $description
  * @property timestamp $created_at
  * @property timestamp $updated_at
  * @property Doctrine_Collection $Gallery
  * 
  * @method integer             getIdcategoryGallery()  Returns the current record's "idcategory_gallery" value
  * @method string              getName()               Returns the current record's "name" value
+ * @method string              getDescription()        Returns the current record's "description" value
  * @method timestamp           getCreatedAt()          Returns the current record's "created_at" value
  * @method timestamp           getUpdatedAt()          Returns the current record's "updated_at" value
  * @method Doctrine_Collection getGallery()            Returns the current record's "Gallery" collection
  * @method CategoryGallery     setIdcategoryGallery()  Sets the current record's "idcategory_gallery" value
  * @method CategoryGallery     setName()               Sets the current record's "name" value
+ * @method CategoryGallery     setDescription()        Sets the current record's "description" value
  * @method CategoryGallery     setCreatedAt()          Sets the current record's "created_at" value
  * @method CategoryGallery     setUpdatedAt()          Sets the current record's "updated_at" value
  * @method CategoryGallery     setGallery()            Sets the current record's "Gallery" collection
@@ -51,6 +54,15 @@ abstract class BaseCategoryGallery extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 45,
              ));
+        $this->hasColumn('description', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => '',
+             ));
         $this->hasColumn('created_at', 'timestamp', 25, array(
              'type' => 'timestamp',
              'fixed' => 0,
@@ -77,5 +89,8 @@ abstract class BaseCategoryGallery extends sfDoctrineRecord
         $this->hasMany('Gallery', array(
              'local' => 'idcategory_gallery',
              'foreign' => 'category_gallery_idcategory_about_us'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

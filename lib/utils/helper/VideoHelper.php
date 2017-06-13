@@ -10,6 +10,6 @@ class VideoHelper
 {
     public static function getIdVideoYoube($link)
     {
-        return substr($link,strpos($link,"be/")+3);
+        return explode("v=",$link)[1];
     }
 }

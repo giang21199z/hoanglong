@@ -5,12 +5,12 @@
     <div id="wowslider-container1">
         <div class="ws_images">
             <ul>
-                <li><img src="data1/images/1911920.jpg" alt="191-1920" title="" id="wows1_0"/></li>
-                <li><a href="#"><img src="data1/images/sinhvienit.netanhthiennhienfullhd1.jpg"
-                                     alt="hoanglonghospital.vn"
-                                     title=""
-                                     id="wows1_1"/></a></li>
-                <li><img src="data1/images/ti_xung.jpg" alt="hoanglonghospital.vn" title="" id="wows1_2"/></li>
+                <li><img src="data1/images/<?php echo $slides[0]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_0"/></li>
+                <li><img src="data1/images/<?php echo $slides[1]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_1"/></li>
+                <li><img src="data1/images/<?php echo $slides[2]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_2"/></li>
             </ul>
         </div>
     </div>
@@ -26,9 +26,10 @@
         <div class="row" style="margin-bottom: 50px">
             <div class="col-md-6">
                 <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;letter-spacing: 2px">
-                    About Clinic
+                    HOÀNG LONG CLINIC
                 </h2>
-                <a style="text-decoration: none" href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
+                <a style="text-decoration: none"
+                   href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
                     <p style=" margin-top: 10px; font-size: 16px ; color: #85a92a ;padding-bottom: 20px;">
                         <?php echo $about_us->getTitle() ?>
                     </p>
@@ -54,7 +55,7 @@
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                OUR STRENGTHS
+                ĐIỂM MẠNH CỦA CHÚNG TÔI
             </p>
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
 
@@ -75,7 +76,7 @@
                             <?php echo VtHelper::truncate($value['summary'], 100) ?>
                         </p>
                         <button style="background: #ffffff; border:  1px solid #85a92a">
-                            <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title']))?>">
+                            <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
                                     READ MORE
                                 </p>
@@ -97,7 +98,7 @@
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                DOCTOR IS GENTLE MOTHER
+                BÁC SĨ NHƯ MẸ HIỀN
             </p>
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
@@ -133,15 +134,15 @@
                 </div>
             <?php endforeach; ?>
         </div>
-<!--        <div class="row text-center" style="margin-top: 25px; margin-top: 25px">-->
-<!--            --><?php //for ($i = 1; $i < $doctor_pages / 4 + 1; $i++): ?>
-<!--                <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">-->
-<!--                    <p class="no-margin" style="color: #ffffff ; font-size: 12px;">-->
-<!--                        --><?php //echo $i ?>
-<!--                    </p>-->
-<!--                </button>-->
-<!--            --><?php //endfor ?>
-<!--        </div>-->
+        <!--        <div class="row text-center" style="margin-top: 25px; margin-top: 25px">-->
+        <!--            --><?php //for ($i = 1; $i < $doctor_pages / 4 + 1; $i++): ?>
+        <!--                <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">-->
+        <!--                    <p class="no-margin" style="color: #ffffff ; font-size: 12px;">-->
+        <!--                        --><?php //echo $i ?>
+        <!--                    </p>-->
+        <!--                </button>-->
+        <!--            --><?php //endfor ?>
+        <!--        </div>-->
 
     </div>
 </div>
@@ -150,11 +151,11 @@
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                Gallery
+                Thư viện
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                THE MOMENTS OF THE CLINIC
+                ẢNH NỔI BẬT
             </p>
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
@@ -249,7 +250,7 @@
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                What Customers Say
+                Khách hàng của chúng tôi nói gì?
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
@@ -261,7 +262,9 @@
             <div class="col-md-4 col-md-offset-4">
                 <?php foreach ($feed_backs as $value): ?>
                     <div class="col-xs-4 no-padding-right">
-                        <img src="/uploads/feedback/<?php echo $value['avatar'] ?>" class="img-circle img-responsive customer-avatar" id="customer-avatar-id-<?php echo $value['idfeed_back']?>"
+                        <img src="/uploads/feedback/<?php echo $value['avatar'] ?>"
+                             class="img-circle img-responsive customer-avatar"
+                             id="customer-avatar-id-<?php echo $value['idfeed_back'] ?>"
                              style="height: 95px; width: 95px">
                     </div>
                 <?php endforeach ?>
@@ -274,18 +277,19 @@
                 <img src="images/keo_mo.png" style="margin-top: 5px">
             </div>
             <?php foreach ($feed_backs as $value): ?>
-                <div class="col-xs-10 no-padding text-center idfeed_back" id="idfeed_back-<?php echo $value['idfeed_back']?>">
-                <p style="font-size: 13px ;line-height: 27px">
-                    <?php echo $value['content'] ?>
-                </p>
+                <div class="col-xs-10 no-padding text-center idfeed_back"
+                     id="idfeed_back-<?php echo $value['idfeed_back'] ?>">
+                    <p style="font-size: 13px ;line-height: 27px">
+                        <?php echo $value['content'] ?>
+                    </p>
 
-                <p class="no-margin" style="font-size: 16px ; color: #85a92a ; text-transform: uppercase">
-                    <b><?php echo $value['name_customer'] ?></b>
-                </p>
+                    <p class="no-margin" style="font-size: 16px ; color: #85a92a ; text-transform: uppercase">
+                        <b><?php echo $value['name_customer'] ?></b>
+                    </p>
 
-                <p style="font-size: 13px">
-                    <?php echo $value['address'] ?>
-                </p>
+                    <p style="font-size: 13px">
+                        <?php echo $value['address'] ?>
+                    </p>
                 </div>
             <?php endforeach ?>
             <div class="col-xs-1 no-padding" style="width: 5%">
@@ -299,11 +303,11 @@
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                Latest News
+                Tin tức mới nhất
             </h2>
 
             <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                NEWS OF HOANG LONG CLINIC, MEDICAL ...
+                TIN TỨC SỰ KIỆN, Y KHOA, HỘI THẢO, CHUYÊN MÔN
             </p>
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
@@ -326,9 +330,11 @@
                             <?php echo VtHelper::truncate($value['summary'], 100) ?>
                         </p>
                         <button style="background: #ffffff; border:  1px solid #85a92a">
-                            <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
-                                READ MORE
-                            </p>
+                            <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
+                                    READ MORE
+                                </p>
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -336,47 +342,47 @@
         </div>
         <br>
 
-<!--        <div class="row text-center">-->
-<!--            <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">-->
-<!--                <p class="no-margin" style="color: #ffffff ; font-size: 12px;">-->
-<!--                    1-->
-<!--                </p>-->
-<!--            </button>-->
-<!--            <button style="background: #ffffff; border:  1px solid #85a92a ;margin: 3px">-->
-<!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
-<!--                    2-->
-<!--                </p>-->
-<!--            </button>-->
-<!--            <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">-->
-<!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
-<!--                    3-->
-<!--                </p>-->
-<!--            </button>-->
-<!--            <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">-->
-<!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
-<!--                    4-->
-<!--                </p>-->
-<!--            </button>-->
-<!--            <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">-->
-<!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
-<!--                    5-->
-<!--                </p>-->
-<!--            </button>-->
-<!--        </div>-->
+        <!--        <div class="row text-center">-->
+        <!--            <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">-->
+        <!--                <p class="no-margin" style="color: #ffffff ; font-size: 12px;">-->
+        <!--                    1-->
+        <!--                </p>-->
+        <!--            </button>-->
+        <!--            <button style="background: #ffffff; border:  1px solid #85a92a ;margin: 3px">-->
+        <!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
+        <!--                    2-->
+        <!--                </p>-->
+        <!--            </button>-->
+        <!--            <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">-->
+        <!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
+        <!--                    3-->
+        <!--                </p>-->
+        <!--            </button>-->
+        <!--            <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">-->
+        <!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
+        <!--                    4-->
+        <!--                </p>-->
+        <!--            </button>-->
+        <!--            <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">-->
+        <!--                <p class="no-margin" style="color: #85a92a ; font-size: 12px;">-->
+        <!--                    5-->
+        <!--                </p>-->
+        <!--            </button>-->
+        <!--        </div>-->
     </div>
 </div>
 
 <!-- section end -->
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(".mega-dropdown").removeClass('menu-active');
         $(".mega-dropdown:nth-child(1)").addClass('menu-active');
         $(".idfeed_back:nth-child(2)").hide();
         $(".idfeed_back:nth-child(3)").hide();
-        $(".customer-avatar").click(function(){
-            var id =$(this).attr('id').split("-")[3];
+        $(".customer-avatar").click(function () {
+            var id = $(this).attr('id').split("-")[3];
             $('.idfeed_back').hide();
-            $("#idfeed_back-"+id).show();
+            $("#idfeed_back-" + id).show();
         });
     });
 </script>

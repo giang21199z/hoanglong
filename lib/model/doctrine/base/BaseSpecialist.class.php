@@ -77,5 +77,8 @@ abstract class BaseSpecialist extends sfDoctrineRecord
         $this->hasMany('Doctor', array(
              'local' => 'idspecialist',
              'foreign' => 'specialist_idspecialist'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

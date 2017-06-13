@@ -77,5 +77,8 @@ abstract class BaseCategoryNews extends sfDoctrineRecord
         $this->hasMany('News', array(
              'local' => 'idcategory_news',
              'foreign' => 'category_news_idcategory'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

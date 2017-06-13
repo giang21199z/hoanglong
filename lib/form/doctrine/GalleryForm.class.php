@@ -12,10 +12,20 @@ class GalleryForm extends BaseGalleryForm
 {
     public function configure()
     {
+        foreach (CategoryGalleryTable::getAllCategory() as $value) {
+//            var_dump($value);
+            $list_category[$value['idcategory_gallery']] = $value['name'];
+        }
+
         $this->setWidgets(array(
             'idgallery' => new sfWidgetFormInputHidden(),
             'name' => new sfWidgetFormTextarea(),
             'url' => new sfWidgetFormInputFile(),
+            'category_gallery_idcategory_about_us' => new sfWidgetFormChoice(
+                array(
+                    'choices' => $list_category
+                )
+            ),
         ));
 
         $this->setValidators(array(
@@ -31,6 +41,7 @@ class GalleryForm extends BaseGalleryForm
                     'mime_types' => 'Không đúng định dạng',
                 )
             ),
+            'category_gallery_idcategory_about_us' => new sfValidatorInteger(),
         ));
         foreach ($this->getWidgetSchema()->getFields() as $field) {
             $field->setAttribute('class', 'form-control');

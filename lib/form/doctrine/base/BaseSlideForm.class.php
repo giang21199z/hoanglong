@@ -26,8 +26,8 @@ abstract class BaseSlideForm extends BaseFormDoctrine
       'idslide'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idslide')), 'empty_value' => $this->getObject()->get('idslide'), 'required' => false)),
       'name'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'images'     => new sfValidatorString(array('max_length' => 120, 'required' => false)),
-      'created_at' => new sfValidatorDateTime(array('required' => false)),
-      'updated_at' => new sfValidatorDateTime(array('required' => false)),
+      'created_at' => new sfValidatorDateTime(),
+      'updated_at' => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('slide[%s]');

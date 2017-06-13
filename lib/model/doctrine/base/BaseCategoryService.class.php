@@ -77,5 +77,8 @@ abstract class BaseCategoryService extends sfDoctrineRecord
         $this->hasMany('Service', array(
              'local' => 'idcategory_service',
              'foreign' => 'category_service_idcategory_service'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }
