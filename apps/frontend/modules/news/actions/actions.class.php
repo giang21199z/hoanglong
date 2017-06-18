@@ -11,12 +11,16 @@ class newsActions extends sfActions
 
     public function executeIndex(sfWebRequest $request)
     {
-        $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
-        $category = $request->getParameter('idcategory');
+        $offset = $request->getParameter('page') == null? 0 : $request->getParameter('page');
+        $this->id_category = $request->getParameter('idcategory');
         $this->category = $request->getParameter('name');
-        $this->news = NewsTable::getAllNews(5, $offset, $category);
+        $this->page_size = 5;
+        $this->news = NewsTable::getAllNews($this->page_size, $offset*$this->page_size, $this->id_category);
+        $this->active = $offset;
         $this->category_news = CategoryNewsTable::getAllCategory();
-        $this->total = NewsTable::getTotalPages();
+        $this->total = NewsTable::getTotalPages($this->id_category);
+//        var_dump($this->total);
+//        die;
     }
 
     public function executeDetail(sfWebRequest $request)

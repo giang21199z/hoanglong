@@ -88,12 +88,13 @@
                         <p style="color: #ffffff">
                             Hân hạnh phục vụ quý khách
                         </p>
-                        <input type="text" class="form-control" id="fullname" placeholder="Full Name">
-                        <input type="text" class="form-control" id="age" placeholder="Age">
-                        <input type="number" class="form-control" id="phone" placeholder="Phone Number">
-                        <input type="text" class="form-control" id="date" placeholder="Date">
+                        <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
+                        <input type="text" class="form-control" id="age" placeholder="Tuổi">
+                        <input type="number" class="form-control" id="phone" placeholder="Số điện thoại">
+                        <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+                        <input type="text" class="form-control" id="date" placeholder="Ngày đặt hẹn">
                         <textarea class="form-control" style="height: 140px" id="description"
-                                  placeholder="Description"></textarea>
+                                  placeholder="Mô tả triệu chứng"></textarea>
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">

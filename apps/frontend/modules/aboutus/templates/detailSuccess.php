@@ -14,7 +14,7 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px">About Us </h1>
+                            <h1 class="no-padding" style="margin-top: 22px">GIỚI THIỆU </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>
@@ -23,7 +23,7 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > About Us > <?php echo $news->getTitle() ?></p>
+                    <p style="font-size: 18px ; color: #85a92a ;">Home > Giới thiệu > <?php echo $news->getTitle() ?></p>
                 </div>
                 <div class="row">
                     <p class="tille">
@@ -88,12 +88,13 @@
                         <p style="color: #ffffff">
                             Hân hạnh phục vụ quý khách
                         </p>
-                        <input type="text" class="form-control" id="fullname" placeholder="Full Name">
-                        <input type="text" class="form-control" id="age" placeholder="Age">
-                        <input type="number" class="form-control" id="phone" placeholder="Phone Number">
-                        <input type="text" class="form-control" id="date" placeholder="Date">
+                        <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
+                        <input type="text" class="form-control" id="age" placeholder="Tuổi">
+                        <input type="number" class="form-control" id="phone" placeholder="Số điện thoại">
+                        <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+                        <input type="text" class="form-control" id="date" placeholder="Ngày đặt hẹn">
                         <textarea class="form-control" style="height: 140px" id="description"
-                                  placeholder="Description"></textarea>
+                                  placeholder="Mô tả triệu chứng"></textarea>
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">

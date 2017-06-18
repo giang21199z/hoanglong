@@ -84,6 +84,8 @@ class AboutUsTable extends Doctrine_Table
             $query = AboutUsTable::getInstance()
                 ->createQuery('c')
                 ->select('c.*')
+                ->where('c.idnews != 1')
+                ->addWhere('c.idnews != 2')
                 ->limit($limit)
                 ->offset($offset)
                 ->orderBy("c.idnews")
@@ -96,6 +98,8 @@ class AboutUsTable extends Doctrine_Table
                 ->limit($limit)
                 ->offset($offset)
                 ->where('c.category_about_us_idcategory_about_us = ?', $category)
+                ->addWhere('c.idnews != 1')
+                ->addWhere('c.idnews != 2')
                 ->orderBy("c.idnews")
                 ->groupBy('c.idnews')
                 ->fetchArray();
@@ -106,6 +110,8 @@ class AboutUsTable extends Doctrine_Table
         $count = AboutUsTable::getInstance()
             ->createQuery('c')
             ->select('count(c.idnews) as count')
+            ->where('c.idnews != 1')
+            ->addWhere('c.idnews != 2')
             ->fetchArray();
         return $count[0]['count'];
     }

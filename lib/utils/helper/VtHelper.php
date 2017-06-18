@@ -55,12 +55,12 @@ class VtHelper
         $mail->SMTPAuth = true;
         $mail->Username = "revitrip@gmail.com";
         $mail->Password = "tadtravelvn";
-        $mail->setFrom('revitrip@gmail.com', 'Revitrip');
-        $mail->addReplyTo('revitrip@gmail.com', 'Revitrip');
-        $mail->addAddress($to, 'ADMIN');
+        $mail->setFrom('hotrohoanglong@gmail.com', 'Hoàng Long Hospital');
+        $mail->addReplyTo('hotrohoanglong@gmail.com', 'Hoàng Long Hospital');
+        $mail->addAddress($to, 'Bộ phận hỗ trợ');
         $mail->Subject = $title;
         $mail->msgHTML($content);
-        $mail->AltBody = 'Support revitrip';
+        $mail->AltBody = 'Support Hoàng Long Hospital';
         if (!$mail->send()) {
             return false;
         } else {

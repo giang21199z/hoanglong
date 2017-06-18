@@ -39,32 +39,17 @@
                         </div>
                     <?php endforeach ?>
                 </div>
-                <div class="row text-center" style="margin-bottom: 50px ; margin-top: 20px">
-                    <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #ffffff ; font-size: 12px;">
-                            1
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a ;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            2
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            3
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            4
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            5
-                        </p>
-                    </button>
+                <div class="row text-center">
+                    <?php for ($i = 1; $i <= $total / $page_size + 1; $i++): ?>
+                        <a href="<?php echo url_for('detail_list_gallery', array('id' => $value['id'],'page' => $i - 1, 'total' => $total))?>">
+                            <button
+                                <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
+                                <p class="no-margin" style=" font-size: 12px;">
+                                    <?php echo $i; ?>
+                                </p>
+                            </button>
+                        </a>
+                    <?php endfor; ?>
                 </div>
             </div>
             <div class="right-menu">
@@ -96,30 +81,23 @@
                 </div>
                 <div class="row make-shu" style=" background: #b9d96a">
                     <p style=" color :#ffffff;padding-top: 25px ; padding-left: 10px ; letter-spacing: 2px; font-size: 26px">
-                        MAKE SCHEDULE</p>
+                        Đặt lịch hẹn</p>
 
                     <div class="row"
                          style="font-size: 16px;padding-left: 25px;padding-right: 25px ; letter-spacing: 1px;">
                         <p style="color: #ffffff">
-                            Lorem Ipsum is simply dummy text of the printing.
+                            Hân hạnh phục vụ quý khách
                         </p>
-                        <input type="text" class="form-control" placeholder="Full Name">
-                        <input type="text" class="form-control" placeholder="Age">
-                        <input type="number" class="form-control" placeholder="Phone Number">
-
-                        <div class="row">
-                            <div class="col-xs-6 no-padding" style="padding-right: 4px">
-                                <input type="number" class="form-control" placeholder="Date">
-                            </div>
-                            <div class="col-xs-6 no-padding" style="padding-left: 4px">
-                                <input type="number" class="form-control" placeholder="Month">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Title">
-                        <textarea class="form-control" style="height: 140px" placeholder="Description"></textarea>
+                        <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
+                        <input type="text" class="form-control" id="age" placeholder="Tuổi">
+                        <input type="number" class="form-control" id="phone" placeholder="Số điện thoại">
+                        <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+                        <input type="text" class="form-control" id="date" placeholder="Ngày đặt hẹn">
+                        <textarea class="form-control" style="height: 140px" id="description"
+                                  placeholder="Mô tả triệu chứng"></textarea>
 
                         <div class="row text-center ">
-                            <button class="btn text-center schedule-btn">
+                            <button class="btn text-center schedule-btn" id="btn-make-schedule">
                                 <p class="text-center">SCHEDULE</p>
                             </button>
                         </div>

@@ -12,46 +12,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td> Họ tên</td>
-                <td> Điện thoại</td>
-                <td>Địa chỉ</td>
-                <td>Ngày hẹn</td>
-                <td>Tin nhắn</td>
-            </tr>
-            <tr>
-                <td> Họ tên</td>
-                <td> Điện thoại</td>
-                <td>Địa chỉ</td>
-                <td>Ngày hẹn</td>
-                <td>Tin nhắn</td>
-            </tr>
-            <tr>
-                <td> Họ tên</td>
-                <td> Điện thoại</td>
-                <td>Địa chỉ</td>
-                <td>Ngày hẹn</td>
-                <td>Tin nhắn</td>
-            </tr>
-            <tr>
-                <td> Họ tên</td>
-                <td> Điện thoại</td>
-                <td>Địa chỉ</td>
-                <td>Ngày hẹn</td>
-                <td>Tin nhắn</td>
-            </tr>
-            <tr>
-                <td> Họ tên</td>
-                <td> Điện thoại</td>
-                <td>Địa chỉ</td>
-                <td>Ngày hẹn</td>
-                <td>Tin nhắn</td>
-            </tr>
+            <?php foreach ($schedule as $value): ?>
+                <tr>
+                    <td> <?php echo $value['fullname']?></td>
+                    <td> <?php echo $value['phone']?></td>
+                    <td> <?php echo $value['address']?></td>
+                    <td> <?php echo $value['date']?></td>
+                    <td title="<?php echo $value['description']?>"> <?php echo VtHelper::truncate($value['description'])?></td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>
     <div class="col-lg-6">
-        <h3>Lượng khách đặt hẹn tính đến <?php echo date("d/m/Y")  ?></h3>
+        <h3>Lượng khách đặt hẹn tính đến <?php echo date("d/m/Y") ?></h3>
         <canvas id="mybarChart"></canvas>
     </div>
 

@@ -16,7 +16,7 @@ class ajaxActions extends sfActions
             $age = $request->getPostParameter("age");
             $phone = $request->getPostParameter("phone");
             $address = $request->getPostParameter("address");
-            $date = $request->getPostParameter("date");
+            $date = date_format(date_create($request->getPostParameter("date")),"Y-m-d");
             $description = $request->getPostParameter("description");
             $schedule = new Schedule();
             $schedule->setFullname($fullname);
@@ -33,7 +33,7 @@ class ajaxActions extends sfActions
             $content.="<div>Số điện thoại:$phone</div>";
             $content.="<div>Ngày hẹn thăm khám:$date</div>";
             $content.="<div>Miêu tả:$description</div>";
-            VtHelper::sendAEmail("Thông tin đặt hẹn",$content,"giangnd.ptit@gmail.com");
+            VtHelper::sendAEmail("Thông tin đặt hẹn",$content,"hotrohoanglong@gmail.com");
             return $this->renderText(json_encode(array('status' => 1, 'message' => 'Đã gửi lịch hẹn thành công. Chúng tôi sẽ sớm liên lạc với bạn!')));
         }else{
             return $this->renderText(json_encode(array('status' => 1, 'message' => 'Đã gửi lịch hẹn thất bại. Vui lòng liên lạc với chúng tôi qua số 04 628 11 331 - 04 628 11 337')));

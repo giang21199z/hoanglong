@@ -1,8 +1,8 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 detail_list_gallery:
-  url:   /thu-vien-anh-phong-kham/:id
-  param: { module: gallery, action: detail, id: ''}
+  url:   /thu-vien-anh-phong-kham/:id/:total
+  param: { module: gallery, action: detail, id: '', total: ''}
 list_gallery:
   url:   /thu-muc-anh-phong-kham
   param: { module: gallery, action: index}

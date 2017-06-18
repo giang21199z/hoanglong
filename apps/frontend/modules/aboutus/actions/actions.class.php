@@ -19,7 +19,9 @@ class aboutusActions extends sfActions
     {
         $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
         $category = $request->getParameter('idcategory');
-        $this->news = AboutUsTable::getAllNews(5, $offset, $category);
+        $page_size = 5;
+        $this->news = AboutUsTable::getAllNews($page_size, $offset*$page_size, $category);
+        $this->active = $offset;
         $this->total = AboutUsTable::getTotalPages();
         $this->news_related = AboutUsTable::getAboutUsRelated(3);
     }

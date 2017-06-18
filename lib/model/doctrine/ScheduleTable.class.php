@@ -26,4 +26,15 @@ class ScheduleTable extends Doctrine_Table
             ->fetchOne();
         return $query;
     }
+    public static function getAllCategory($limit = 5)
+    {
+        $query = ScheduleTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->limit($limit)
+            ->orderBy('c.updated_at desc')
+            ->fetchArray();
+        return $query;
+    }
+
 }

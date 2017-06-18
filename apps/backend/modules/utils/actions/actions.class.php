@@ -29,7 +29,7 @@ class utilsActions extends sfActions
         $files1 = scandir($dir);
         $list_file = "[";
         foreach ($files1 as $key => $value) {
-            if ($key == 0 || $key == 1 || $key == 2) {
+            if ($key == 0 || $key == 1 || $key == 2 || strpos($value, '.') == false) {
                 continue;
             } else {
                 $file = '{"image": "/uploads/' . $value . '","folder": "uploads"},';

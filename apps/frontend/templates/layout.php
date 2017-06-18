@@ -205,6 +205,7 @@
                 <input type="text" class="form-control" id="fullname_" placeholder="Họ tên">
                 <input type="number" class="form-control" id="age_" placeholder="Tuổi">
                 <input type="text" class="form-control" id="phone_" placeholder="Số điện thoại">
+                <input type="text" class="form-control" id="address_" placeholder="Địa chỉ">
                 <input type="text" class="form-control" id="date_" placeholder="Ngày bạn có thể tới khám">
                 <textarea class="form-control" style="height: 140px" id="description_"
                           placeholder="Miêu tả triệu chứng"></textarea>
@@ -370,6 +371,11 @@
                 $("#phone").prop({'placeholder': 'Vui lòng nhập đúng số điện thoại'});
                 is_validate = false;
             }
+            if (address.length == 0) {
+                $("#address").val('');
+                $("#address").prop({'placeholder': 'Vui lòng nhập đúng địa chỉ'});
+                is_validate = false;
+            }
             if (!is_validate) {
                 return;
             }
@@ -419,6 +425,11 @@
             if (phone.length < 10 || !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone)) {
                 $("#phone_").val('');
                 $("#phone_").prop({'placeholder': 'Vui lòng nhập đúng số điện thoại'});
+                is_validate = false;
+            }
+            if (address.length == 0) {
+                $("#address_").val('');
+                $("#address_").prop({'placeholder': 'Vui lòng nhập đúng địa chỉ'});
                 is_validate = false;
             }
             if (!is_validate) {

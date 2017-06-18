@@ -48,15 +48,20 @@
                         </div>
                     </div>
                 <?php endforeach ?>
+<!--                pagination-->
                 <div class="row text-center">
-                    <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
-                        <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">
-                            <p class="no-margin" style="color: #ffffff ; font-size: 12px;">
-                                <?php echo $i; ?>
-                            </p>
-                        </button>
+                    <?php for ($i = 1; $i <= $total / $page_size + 1; $i++): ?>
+                        <a href="<?php echo url_for('list_news', array('idcategory' => $id_category, 'name' => $category, 'page' => $i - 1))?>">
+                            <button
+                                <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
+                                <p class="no-margin" style=" font-size: 12px;">
+                                    <?php echo $i; ?>
+                                </p>
+                            </button>
+                        </a>
                     <?php endfor; ?>
                 </div>
+<!--                end pagination-->
             </div>
             <div class="right-menu">
                 <div class="row" style="background:#f6f6f6 ">
@@ -82,12 +87,13 @@
                         <p style="color: #ffffff">
                             Hân hạnh phục vụ quý khách
                         </p>
-                        <input type="text" class="form-control" id="fullname" placeholder="Full Name">
-                        <input type="text" class="form-control" id="age" placeholder="Age">
-                        <input type="number" class="form-control" id="phone" placeholder="Phone Number">
-                        <input type="text" class="form-control" id="date" placeholder="Date">
+                        <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
+                        <input type="text" class="form-control" id="age" placeholder="Tuổi">
+                        <input type="number" class="form-control" id="phone" placeholder="Số điện thoại">
+                        <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+                        <input type="text" class="form-control" id="date" placeholder="Ngày đặt hẹn">
                         <textarea class="form-control" style="height: 140px" id="description"
-                                  placeholder="Description"></textarea>
+                                  placeholder="Mô tả triệu chứng"></textarea>
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">

@@ -14,9 +14,12 @@ generator:
     config:
       actions: ~
       fields:
-        category_idcategory: {label: Category}
-        images: {label: Illustrating images}
-        priority: {label: Hiển thị trang chủ}
+        category_idcategory: {label: Chuyên mục}
+        images: {label: Ảnh minh họa}
+        priority: {label: Nơi hiển thị}
+        title: {label: Tiêu đề}
+        summary: {label: Tóm tắt}
+        updated_at: {label: Cập nhật hồi}
       list:
         title: Danh sách tin tức
         batch_actions:  {}

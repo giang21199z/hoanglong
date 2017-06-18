@@ -33,6 +33,7 @@ class NewsTable extends Doctrine_Table
             ->createQuery('c')
             ->select('c.*')
             ->limit($limit)
+            ->where('c.priority = 3')
             ->fetchArray();
         return $query;
     }
@@ -44,6 +45,7 @@ class NewsTable extends Doctrine_Table
             ->select('c.*')
             ->limit($limit)
             ->where('c.priority = 2')
+            ->orderBy('c.updated_at desc')
             ->fetchArray();
         return $query;
     }
@@ -73,11 +75,21 @@ class NewsTable extends Doctrine_Table
         return $query;
     }
 
-    public static function getTotalPages(){
-        $count = NewsTable::getInstance()
-            ->createQuery('c')
-            ->select('count(c.idnews) as count')
-            ->fetchArray();
+    public static function getTotalPages($category)
+    {
+        if ($category == NULL) {
+            $count = NewsTable::getInstance()
+                ->createQuery('c')
+                ->select('count(c.idnews) as count')
+                ->fetchArray();
+        } else {
+            $count = NewsTable::getInstance()
+                ->createQuery('c')
+                ->select('count(c.idnews) as count')
+                ->where('c.category_news_idcategory = ?', $category)
+                ->fetchArray();
+        }
+
         return $count[0]['count'];
     }
 

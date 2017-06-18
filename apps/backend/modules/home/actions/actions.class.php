@@ -24,6 +24,6 @@ class homeActions extends sfActions
 //                $this->errorBE = 'Cập nhật password thất bại.Bạn vui lòng kiểm tra lại thông tin';
 //            }
 //        }
-
+        $this->schedule = ScheduleTable::getAllCategory();
     }
 }

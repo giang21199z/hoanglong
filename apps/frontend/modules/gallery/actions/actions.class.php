@@ -11,13 +11,20 @@ class galleryActions extends sfActions
 
     public function executeIndex(sfWebRequest $request)
     {
-        $this->categories = CategoryGalleryTable::getAllCategory();
-
+        $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
+        $this->page_size = 5;
+        $this->active = $offset;
+        $this->total = GalleryTable::getTotalPages();
+        $this->categories = CategoryGalleryTable::getAllCategory($this->page_size, $this->page_size * $offset);
     }
+
     public function executeDetail(sfWebRequest $request)
     {
-        $id = $request->getParameter('id');
-        $this->galleries = GalleryTable::getAllGalleryByCategory($id);
-        $this->category = CategoryGalleryTable::getCategoryById($id);
+        $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
+        $this->total = $request->getParameter('total');
+        $this->id = $request->getParameter('id');
+        $this->page_size = 5;
+        $this->galleries = GalleryTable::getAllGalleryByCategory($this->id, $this->page_size, $this->page_size * $offset);
+        $this->category = CategoryGalleryTable::getCategoryById($this->id);
     }
 }

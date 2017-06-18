@@ -80,5 +80,7 @@
     $(document).ready(function () {
         $('.list-group-item').addClass('action-item').removeClass('list-group-item');
         $('.list-group').removeClass('list-group');
+        $('a[href$="aboutus/1"]').hide();
+        $('a[href$="aboutus/2"]').hide();
     });
 </script>

@@ -17,11 +17,13 @@ class GalleryTable extends Doctrine_Table
         return Doctrine_Core::getTable('Gallery');
     }
 
-    public static function getAllGalleryByCategory($id)
+    public static function getAllGalleryByCategory($id, $limit, $offset)
     {
         $query = GalleryTable::getInstance()
             ->createQuery('c')
             ->select('c.*')
+            ->limit($limit)
+            ->offset($offset)
             ->where('category_gallery_idcategory_about_us = ?', $id)
             ->fetchArray();
         return $query;
@@ -37,5 +39,15 @@ class GalleryTable extends Doctrine_Table
             ->fetchArray();
         $query = count($query) > 0 ? $query : array(0 => array('url' => "gallery.jpg"));
         return $query;
+    }
+
+    public static function getTotalPages()
+    {
+
+        $count = GalleryTable::getInstance()
+            ->createQuery('c')
+            ->select('count(*) as count')
+            ->fetchArray();
+        return $count[0]['count'];
     }
 }
