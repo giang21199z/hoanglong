@@ -37,4 +37,11 @@ class VideoTable extends Doctrine_Table
             ->fetchArray();
         return $query;
     }
+    public static function getTotalPages(){
+        $count = VideoTable::getInstance()
+            ->createQuery('c')
+            ->select('count(*) as count')
+            ->fetchArray();
+        return $count[0]['count'];
+    }
 }

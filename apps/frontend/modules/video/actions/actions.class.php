@@ -11,10 +11,10 @@ class videoActions extends sfActions
 
     public function executeIndex(sfWebRequest $request)
     {
-        $this->videos = VideoTable::getAllGallery(4,0);
-    }
-    public function executeDetail(sfWebRequest $request)
-    {
-
+        $offset = $request->getParameter('page') == null ? 0 : $request->getParameter('page');
+        $page_size = 4;
+        $this->videos = VideoTable::getAllGallery($page_size, $offset * $page_size);
+        $this->active = $offset;
+        $this->total = VideoTable::getTotalPages();
     }
 }

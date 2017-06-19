@@ -41,7 +41,7 @@
                 </div>
                 <div class="row text-center">
                     <?php for ($i = 1; $i <= $total / $page_size + 1; $i++): ?>
-                        <a href="<?php echo url_for('detail_list_gallery', array('id' => $value['id'],'page' => $i - 1, 'total' => $total))?>">
+                        <a href="<?php echo url_for('detail_list_gallery', array('id' => $value['id'], 'page' => $i - 1, 'total' => $total)) ?>">
                             <button
                                 <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
                                 <p class="no-margin" style=" font-size: 12px;">
@@ -56,27 +56,21 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        INTRODUCTION </p>
+                        Thư viện </p>
 
                     <div class="right-menu right-item">
-                        <p class=" "
-                           style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                            Lorem ipsum </p>
+                        <a href="<?php echo url_for('list_gallery') ?>" style="text-decoration: none">
+                            <p class=" "
+                               style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
+                                Ảnh </p>
+                        </a>
                     </div>
                     <div class="right-menu right-item">
-                        <p class=" "
-                           style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                            Lorem ipsum </p>
-                    </div>
-                    <div class="right-menu right-item">
-                        <p class=" "
-                           style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle; ">
-                            Lorem ipsum </p>
-                    </div>
-                    <div class="right-menu right-item">
-                        <p class=" "
-                           style="letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle; ">
-                            Lorem ipsum </p>
+                        <a href="<?php echo url_for('list_video') ?>" style="text-decoration: none">
+                            <p class=" "
+                               style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
+                                Video </p>
+                        </a>
                     </div>
                 </div>
                 <div class="row make-shu" style=" background: #b9d96a">
@@ -116,6 +110,7 @@
         <!-- Modal content-->
 
         <img src="" id="detail-src">
+
         <h3 id="name-img" class="text-uppercase" style="color: white"></h3>
     </div>
 </div>

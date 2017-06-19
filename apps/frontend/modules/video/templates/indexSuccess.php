@@ -29,48 +29,37 @@
                     <div class="row">
                         <?php foreach ($videos as $value): ?>
                             <div class="col-xs-6 no-padding">
-                                <div class="row" style="border-radius: 4px;border: 1px solid #ddd; margin-bottom: 20px; margin-left: 10px">
+                                <div class="row"
+                                     style="border-radius: 4px;border: 1px solid #ddd; margin-bottom: 20px; margin-left: 10px">
                                     <div class="row"
                                          style="width: 35px; height: 35px; position: absolute; z-index: 9999; right: 5px; top: 5px">
                                         <img src="/images/icon.png">
                                     </div>
                                     <iframe width="363" height="204"
-                                            src="https://www.youtube-nocookie.com/embed/<?php echo VideoHelper::getIdVideoYoube($value['url'])?>" frameborder="0"
+                                            src="https://www.youtube-nocookie.com/embed/<?php echo VideoHelper::getIdVideoYoube($value['url']) ?>"
+                                            frameborder="0"
                                             allowfullscreen></iframe>
                                     <p style="font-size: 18px ; padding-top: 15px ; padding-bottom: 30px ; padding-left: 20px ; color: #a8cf45">
-                                        <?php echo VtHelper::truncate($value['name'])?></p>
+                                        <?php echo VtHelper::truncate($value['name']) ?></p>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="row text-center" style="margin-bottom: 50px ; margin-top: 20px">
-                    <button style="background: #85a92a; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #ffffff ; font-size: 12px;">
-                            1
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a ;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            2
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            3
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            4
-                        </p>
-                    </button>
-                    <button style="background: #ffffff; border:  1px solid #85a92a;margin: 3px">
-                        <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
-                            5
-                        </p>
-                    </button>
+                <!--                pagination-->
+                <div class="row text-center">
+                    <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
+                        <a href="<?php echo url_for('list_video', array('page' => $i - 1)) ?>">
+                            <button
+                                <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
+                                <p class="no-margin" style=" font-size: 12px;">
+                                    <?php echo $i; ?>
+                                </p>
+                            </button>
+                        </a>
+                    <?php endfor; ?>
                 </div>
+                <!--                end pagination-->
             </div>
             <div class="right-menu">
                 <div class="row" style="background:#f6f6f6 ">

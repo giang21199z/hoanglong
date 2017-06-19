@@ -15,6 +15,18 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($('body').scrollTop() < 100) {
+                    $('.logo-header').show();
+
+                } else {
+                    $('.logo-header').hide();
+                }
+            });
+        });
+    </script>
 </head>
 <body class="no-trans">
 <!-- scrollToTop -->
