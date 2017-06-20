@@ -27,7 +27,10 @@
                     <img src="/uploads/news/<?php echo $value['images'] ?>" class="image"/>
                 </div>
                 <div class=" col-xs-8 no-padding content-items">
-                    <p class="title"><?php echo $value['title'] ?></p>
+                    <a style="text-decoration: none; color: black"
+                       href="<?php echo url_for('detail_news_ipad', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                        <p class="title"><?php echo $value['title'] ?></p>
+                    </a>
 
                     <p class="description">
                         <?php echo VtHelper::truncate($value['summary'], 200) ?>
@@ -41,11 +44,11 @@
         <?php endforeach ?>
         <div class="row text-center paginations" style="margin-top: 25px;">
             <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
-            <button class="pa-active">
-                <p class="no-margin">
-                    <?php echo $i; ?>
-                </p>
-            </button>
+                <button class="pa-active">
+                    <p class="no-margin">
+                        <?php echo $i; ?>
+                    </p>
+                </button>
             <?php endfor; ?>
         </div>
     </div>

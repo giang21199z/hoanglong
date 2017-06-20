@@ -28,21 +28,22 @@
             <p class="date">
                 <?php echo $news->getUpdatedAt() ?>
             </p>
-            <?php echo VtHelper::htmlToView($news->getContent()) ?>
+            <?php echo html_entity_decode($news->getContent()) ?>
         </div>
         <div class="row pre-next">
-            <div class="col-xs-6 arr-left">
+            <div class="col-xs-4 col-md-offset-1 arr-left">
                 <img class="arrow-img" src="/images/left.png">
-                <span>
-                    <?php echo substr($news_related[0]['title'], 0, 25) ?>
-                    <br><?php echo substr($news_related[0]['title'], 25, 30) ?>...
-                </span>
+                        <span>
+                            <a style="text-decoration: none; color: #85A92A"
+                               href="<?php echo url_for('detail_news_ipad', array('idnews' => $news_related[0]['idnews'], 'title' => $news_related[0]['title'])) ?>"><?php echo VtHelper::truncate($news_related[0]['title'], 25) ?></a>
+                        </span>
             </div>
-            <div class="col-xs-6 arr-right">
+            <div class="col-xs-4 arr-right">
                 <img class="arrow-img" src="/images/right.png">
-                <span>
-                    <?php echo VtHelper::truncate($news_related[1]['title']) ?>
-                </span>
+                        <span>
+                            <a style="text-decoration: none; color: #85A92A"
+                               href="<?php echo url_for('detail_news_ipad', array('idnews' => $news_related[0]['idnews'], 'title' => $news_related[1]['title'])) ?>"><?php echo VtHelper::truncate($news_related[1]['title'], 25) ?></a>
+                        </span>
             </div>
         </div>
     </div>

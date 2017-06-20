@@ -6,12 +6,21 @@ detail_list_gallery:
 list_gallery:
   url:   /thu-muc-anh-phong-kham
   param: { module: gallery, action: index}
+detail_list_gallery_ipad:
+  url:   /ipad/thu-vien-anh-phong-kham/:id/:total
+  param: { module: galleryipad, action: detail, id: '', total: ''}
+list_gallery_ipad:
+  url:   /ipad/thu-muc-anh-phong-kham
+  param: { module: galleryipad, action: index}
 list_video:
   url:   /thu-muc-video-phong-kham
   param: { module: video, action: index}
 detail_service:
   url:   /dich-vu/:idservice/:title
   param: { module: news, action: service, idservice: '', title: '' }
+detail_service_ipad:
+  url:   /ipad/dich-vu/:idservice/:title
+  param: { module: newsipad, action: service, idservice: '', title: '' }
 detail_about_us:
   url:   /gioi-thieu-ve-hoang-long/:idaboutus/:title
   param: { module: aboutus, action: detail, idaboutus: '', title: '' }

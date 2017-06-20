@@ -114,3 +114,23 @@ body{
     /*display: table-cell;*/
     text-align: center;
 }
+.pagination-active{
+    background: #85a92a;
+    border:  1px solid #85a92a;
+    margin: 3px;
+    color: #ffffff ;
+}
+.pagination-deactive{
+    background: #FFFFFF;
+    border:  1px solid #85a92a;
+    margin: 3px;
+    color: #000000 ;
+}
+.arr-left span{
+    margin-top: 10px;
+    display: block;
+    float: left;
+    margin-left:15px;
+    color: #85a92a;
+    letter-spacing: 0.5px;
+}

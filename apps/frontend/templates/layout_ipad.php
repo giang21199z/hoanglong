@@ -138,7 +138,7 @@
                                             $services = ServiceTable::getAllService();
                                             foreach ($services as $value):?>
                                                 <li class="col-xs-4 no-padding text-center"><a
-                                                        href="<?php echo url_for('detail_service', array('idservice' => $value['idnews'], 'title' => $value['title']))?>">
+                                                        href="<?php echo url_for('detail_service_ipad', array('idservice' => $value['idnews'], 'title' => $value['title']))?>">
                                                         <p
                                                             class="text-uppercase"><?php echo $value['title']?></p></a>
                                                 </li>
@@ -153,7 +153,7 @@
                                             $category_news = CategoryNewsTable::getAllCategory();
                                             foreach ($category_news as $value):?>
                                                 <li class="col-xs-4 no-padding text-center">
-                                                    <a href="<?php echo url_for('list_news', array('idcategory' => $value['idcategory_news'], 'name' => $value['name']))?>">
+                                                    <a href="<?php echo url_for('list_news_ipad', array('idcategory' => $value['idcategory_news'], 'name' => $value['name']))?>">
                                                         <p
                                                             class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
@@ -165,7 +165,7 @@
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-4 no-padding text-center">
-                                                <a href="<?php echo url_for('list_gallery') ?>">
+                                                <a href="<?php echo url_for('list_gallery_ipad') ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện ảnh</p></a>
                                             </li>

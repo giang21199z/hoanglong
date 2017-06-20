@@ -37,6 +37,20 @@
             </div>
         </div>
         <?php endforeach ?>
+        <!--                pagination-->
+        <div class="row text-center">
+            <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
+                <a href="<?php echo url_for('list_about_us_ipad',array('page' => $i-1))?>">
+                    <button
+                        <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
+                        <p class="no-margin" style=" font-size: 12px;">
+                            <?php echo $i; ?>
+                        </p>
+                    </button>
+                </a>
+            <?php endfor; ?>
+        </div>
+        <!--                end pagination-->
     </div>
 </div>
 <!-- section end -->
