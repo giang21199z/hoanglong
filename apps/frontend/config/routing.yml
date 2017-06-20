@@ -15,9 +15,15 @@ detail_service:
 detail_about_us:
   url:   /gioi-thieu-ve-hoang-long/:idaboutus/:title
   param: { module: aboutus, action: detail, idaboutus: '', title: '' }
+detail_about_us_ipad:
+  url:   /ipad/gioi-thieu-ve-hoang-long/:idaboutus/:title
+  param: { module: aboutusipad, action: detail, idaboutus: '', title: '' }
 list_about_us:
   url:   /cac-bai-viet-theo-chu-de/:idcategory
   param: { module: aboutus, action: index, idcategory: '' }
+list_about_us_ipad:
+  url:   /ipad/cac-bai-viet-theo-chu-de/:idcategory
+  param: { module: aboutusipad, action: index, idcategory: '' }
 contact:
   url:   /lien-he-voi-chung-toi
   param: { module: site, action: contact }
@@ -37,8 +43,8 @@ doctor_ipad:
   url:   /ipad/bac-si
   param: { module: doctorsipad, action: index}
 detail_doctor_ipad:
-  url:   /ipad/bac-si/:iddoctor
-  param: { module: doctorsipad, action: detail, iddoctor: '' }
+  url:   /ipad/bac-si/:iddoctor/:name
+  param: { module: doctorsipad, action: detail, iddoctor: '', name: '' }
 list_news:
   url:   /danh-sach-tin-tuc/:idcategory/:name
   param: { module: news, action: index, idcategory: '', name: '' }

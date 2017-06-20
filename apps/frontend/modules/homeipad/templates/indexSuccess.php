@@ -5,10 +5,12 @@
     <div id="wowslider-container1">
         <div class="ws_images">
             <ul>
-                <li><img src="/data1/images/1911920.jpg" alt="191-1920" title="191-1920" id="wows1_0"/></li>
-                <li><img src="/data1/images/sinhvienit.netanhthiennhienfullhd1.jpg" alt="slider"
-                         title="SinhVienIT.Net---anh-thien-nhien-full-hd-1" id="wows1_1"/></a></li>
-                <li><img src="/data1/images/ti_xung.jpg" alt="tải xuống" title="tải xuống" id="wows1_2"/></li>
+                <li><img src="data1/images/<?php echo $slides[0]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_0"/></li>
+                <li><img src="data1/images/<?php echo $slides[1]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_1"/></li>
+                <li><img src="data1/images/<?php echo $slides[2]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_2"/></li>
             </ul>
         </div>
     </div>
@@ -25,15 +27,16 @@
                 <h2 class="no-margin-bottom title-h2">
                     About Clinic
                 </h2>
-                    <p class="title-p">
-                        <?php echo $about_us->getTitle() ?>
-                    </p>
+
+                <p class="title-p">
+                    <?php echo $about_us->getTitle() ?>
+                </p>
                 <hr class="hr">
             </div>
             <div class="row">
                 <div class="col-xs-6">
                     <p class="description-detail">
-                        <?php echo VtHelper::truncate($about_us->getSummary(), 200) ?>
+                        <?php echo VtHelper::truncate($about_us->getSummary(), 150) ?>
                     </p>
                 </div>
                 <div class="col-xs-6">
@@ -66,11 +69,11 @@
                                 </div>
                                 <div class="row ">
                                     <p class="title">
-                                        <?php echo VtHelper::truncate($value['title']) ?>
+                                        <?php echo VtHelper::truncate($value['title'], 20) ?>
                                     </p>
 
                                     <p>
-                                        <?php echo VtHelper::truncate($value['summary'], 100) ?>
+                                        <?php echo VtHelper::truncate($value['summary']) ?>
                                     </p>
                                     <button class="btn-readmore">
                                         <p class="no-margin">
@@ -121,44 +124,18 @@
                                 </p>
 
                                 <p class="description">
-                                    <?php echo VtHelper::truncate($value['summary'], 95) ?>
+                                    <?php echo VtHelper::truncate($value['summary'], 40) ?>
                                 </p>
-                                <button style="background: #ffffff; border:  1px solid #85a92a">
-                                    <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
-                                        READ MORE
-                                    </p>
-                                </button>
+                                <a href="<?php echo url_for('detail_doctor_ipad', array("iddoctor" => $value['iddoctor'], "name" => $value['name'])) ?>">
+                                    <button style="background: #ffffff; border:  1px solid #85a92a">
+                                        <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
+                                            READ MORE
+                                        </p>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
-                <div class="row text-center paginations" style="margin-top: 25px;">
-                    <button class="pa-active">
-                        <p class="no-margin">
-                            1
-                        </p>
-                    </button>
-                    <button>
-                        <p class="no-margin">
-                            2
-                        </p>
-                    </button>
-                    <button>
-                        <p class="no-margin">
-                            3
-                        </p>
-                    </button>
-                    <button>
-                        <p class="no-margin">
-                            4
-                        </p>
-                    </button>
-                    <button>
-                        <p class="no-margin">
-                            5
-                        </p>
-                    </button>
-
                 </div>
             </div>
         </div>
@@ -192,35 +169,35 @@
                 <div data-u="slides"
                      style="cursor:default;position:relative;top:0px;left:0px;width:1170px;height:350px;overflow:hidden;">
                     <div>
-                        <img data-u="image" src="/imgi/005.jpg"/>
+                        <img src="/images/gallery.jpg" id="item-1"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/006.jpg"/>
+                        <img src="/images/gallery2.jpg" id="item-2"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/011.jpg"/>
+                        <img src="/images/gallery3.jpg" id="item-3"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/013.jpg"/>
+                        <img src="/images/gallery4.jpg" id="item-4"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/014.jpg"/>
+                        <img src="/images/gallery5.jpg" id="item-5"/>
                     </div>
 
                     <div>
-                        <img data-u="image" src="/imgi/039.jpg"/>
+                        <img src="/images/gallery.jpg" id="item-1"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/043.jpg"/>
+                        <img src="/images/gallery2.jpg" id="item-2"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/044.jpg"/>
+                        <img src="/images/gallery3.jpg" id="item-3"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/047.jpg"/>
+                        <img src="/images/gallery4.jpg" id="item-4"/>
                     </div>
                     <div>
-                        <img data-u="image" src="/imgi/050.jpg"/>
+                        <img src="/images/gallery5.jpg" id="item-5"/>
                     </div>
                 </div>
                 <style type="text/css   ">
@@ -316,7 +293,7 @@
 
                         <div class="row description">
                             <p class="no-margin title">
-                                <?php echo VtHelper::truncate($value['title'], 50) ?>
+                                <?php echo VtHelper::truncate($value['title'], 20) ?>
                             </p>
 
                             <p class="time">
@@ -337,34 +314,6 @@
             </div>
             <br>
 
-            <div class="row text-center paginations" style="margin-top: 25px; margin-top: 25px">
-                <button class="pa-active">
-                    <p class="no-margin">
-                        1
-                    </p>
-                </button>
-                <button>
-                    <p class="no-margin">
-                        2
-                    </p>
-                </button>
-                <button>
-                    <p class="no-margin">
-                        3
-                    </p>
-                </button>
-                <button>
-                    <p class="no-margin">
-                        4
-                    </p>
-                </button>
-                <button>
-                    <p class="no-margin">
-                        5
-                    </p>
-                </button>
-
-            </div>
         </div>
     </div>
 </div>

@@ -273,7 +273,6 @@
 .menu li ul {
     position: absolute;
     display: none;
-    width: 1170px;
 }
 
 .menu li:hover ul {
@@ -584,4 +583,13 @@
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0px;
+}
+.dropdown {
+    margin-right: 0px !important;
+}
+.dropdown a{
+    padding: 15px !important;
+}
+.mega-dropdown-menu p{
+    padding-top: 0px !important;
 }

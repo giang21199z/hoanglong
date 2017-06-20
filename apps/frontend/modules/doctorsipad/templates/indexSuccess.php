@@ -28,7 +28,8 @@
 
                 <div class="col-xs-4 part">
                     <div class="row text-center">
-                        <img src="/uploads/doctors/<?php echo $doctors[$j]['avatar']?>" class="img-circle img-responsive">
+                        <img src="/uploads/doctors/<?php echo $doctors[$j]['avatar']?>"
+                             class="img-circle img-responsive">
                     </div>
                     <div class="row text-center">
                         <p class=" no-margin name">
@@ -42,43 +43,45 @@
                         <p class="description">
                             <?php echo VtHelper::truncate($doctors[$j]['summary'], 50)?>
                         </p>
-                        <button class="btn-readmore">
-                            <p class="no-margin">
-                                READ MORE
-                            </p>
-                        </button>
+                        <a href="<?php echo url_for('detail_doctor_ipad', array('iddoctor' => $doctors[$j]['iddoctor'], 'name' => $doctors[$i]['name']))?>">
+                            <button class="btn-readmore">
+                                <p class="no-margin">
+                                    READ MORE
+                                </p>
+                            </button>
+                        </a>
                     </div>
                 </div>
             <?php endfor; ?>
         </div>
     <?php endfor; ?>
-    <div class="row text-center paginations" style="margin-top: 25px;">
-        <button class="pa-active">
-            <p class="no-margin">
-                1
-            </p>
-        </button>
-        <button>
-            <p class="no-margin">
-                2
-            </p>
-        </button>
-        <button>
-            <p class="no-margin">
-                3
-            </p>
-        </button>
-        <button>
-            <p class="no-margin">
-                4
-            </p>
-        </button>
-        <button>
-            <p class="no-margin">
-                5
-            </p>
-        </button>
-
-    </div>
+<!--    <div class="row text-center paginations" style="margin-top: 25px;">-->
+<!--        <button class="pa-active">-->
+<!--            <p class="no-margin">-->
+<!--                1-->
+<!--            </p>-->
+<!--        </button>-->
+<!--        <button>-->
+<!--            <p class="no-margin">-->
+<!--                2-->
+<!--            </p>-->
+<!--        </button>-->
+<!--        <button>-->
+<!--            <p class="no-margin">-->
+<!--                3-->
+<!--            </p>-->
+<!--        </button>-->
+<!--        <button>-->
+<!--            <p class="no-margin">-->
+<!--                4-->
+<!--            </p>-->
+<!--        </button>-->
+<!--        <button>-->
+<!--            <p class="no-margin">-->
+<!--                5-->
+<!--            </p>-->
+<!--        </button>-->
+<!---->
+<!--    </div>-->
 </div>
 <!-- section end -->

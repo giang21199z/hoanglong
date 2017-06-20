@@ -92,3 +92,25 @@ body{
 .icon-contact .g:hover{
     background: #0a0a0a;
 }
+.make-shu .form-control{
+    border: 0px;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 10px;
+}
+.schedule-btn{
+    box-shadow: -1px 3px 3px 0px #aaa;
+    width: 150px;
+    border-radius:10px;
+    letter-spacing: 1px;
+    background: #ffffff;
+    color:#b9d96a ; height: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.schedule-btn p{
+    /*display: table-cell;*/
+    text-align: center;
+}
