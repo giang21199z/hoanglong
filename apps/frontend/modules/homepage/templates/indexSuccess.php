@@ -5,17 +5,17 @@
     <div id="wowslider-container1">
         <div class="ws_images">
             <ul>
-                <li><img src="data1/images/<?php echo $slides[0]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                <li><img src="/data1/images/<?php echo $slides[0]['images'] ?>" alt="hoanglonghospital.vn" title=""
                          id="wows1_0"/></li>
-                <li><img src="data1/images/<?php echo $slides[1]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                <li><img src="/data1/images/<?php echo $slides[1]['images'] ?>" alt="hoanglonghospital.vn" title=""
                          id="wows1_1"/></li>
-                <li><img src="data1/images/<?php echo $slides[2]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                <li><img src="/data1/images/<?php echo $slides[2]['images'] ?>" alt="hoanglonghospital.vn" title=""
                          id="wows1_2"/></li>
             </ul>
         </div>
     </div>
-    <script type="text/javascript" src="engine1/wowslider.js"></script>
-    <script type="text/javascript" src="engine1/script.js"></script>
+    <script type="text/javascript" src="/engine1/wowslider.js"></script>
+    <script type="text/javascript" src="/engine1/script.js"></script>
 </div>
 <!-- banner end -->
 
@@ -40,7 +40,7 @@
                 </p>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="images/image_about.PNG">
+                <img class="img-responsive" src="/images/image_about.PNG">
             </div>
         </div>
     </div>
@@ -54,9 +54,9 @@
                 <?php echo sfConfig::get('app_why_choose_us') ?>
             </h2>
 
-            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                ĐIỂM MẠNH CỦA CHÚNG TÔI
-            </p>
+<!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
+<!--                ĐIỂM MẠNH CỦA CHÚNG TÔI-->
+<!--            </p>-->
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
 
         </div>
@@ -274,7 +274,7 @@
 
         <div class="row" style="margin-left: 50px; margin-right: 50px">
             <div class="col-xs-1 no-padding" style="width: 5%">
-                <img src="images/keo_mo.png" style="margin-top: 5px">
+                <img src="/images/keo_mo.png" style="margin-top: 5px">
             </div>
             <?php foreach ($feed_backs as $value): ?>
                 <div class="col-xs-10 no-padding text-center idfeed_back"
@@ -293,10 +293,9 @@
                 </div>
             <?php endforeach ?>
             <div class="col-xs-1 no-padding" style="width: 5%">
-                <img src="images/keo_dong.png" style="margin-top: 5px">
+                <img src="/images/keo_dong.png" style="margin-top: 5px">
             </div>
         </div>
-
     </div>
 </div>
 <div class="section   ">

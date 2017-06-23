@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 20, 2017 lúc 07:50 CH
+-- Thời gian đã tạo: Th6 22, 2017 lúc 05:27 CH
 -- Phiên bản máy phục vụ: 10.1.21-MariaDB
 -- Phiên bản PHP: 5.6.30
 
@@ -32,8 +32,8 @@ CREATE TABLE `about_us` (
   `title` text,
   `summary` text,
   `content` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `category_about_us_idcategory_about_us` int(11) NOT NULL,
   `priority` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -63,8 +63,8 @@ CREATE TABLE `admin` (
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `fullname` varchar(120) DEFAULT 'admin',
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -83,8 +83,8 @@ INSERT INTO `admin` (`idadmin`, `username`, `password`, `fullname`, `created_at`
 CREATE TABLE `category_about_us` (
   `idcategory_about_us` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -105,8 +105,8 @@ CREATE TABLE `category_gallery` (
   `idcategory_gallery` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `description` text NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -127,8 +127,8 @@ INSERT INTO `category_gallery` (`idcategory_gallery`, `name`, `description`, `cr
 CREATE TABLE `category_news` (
   `idcategory_news` int(11) NOT NULL,
   `name` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -150,8 +150,8 @@ INSERT INTO `category_news` (`idcategory_news`, `name`, `created_at`, `updated_a
 CREATE TABLE `category_service` (
   `idcategory_service` int(11) NOT NULL,
   `name` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -171,8 +171,8 @@ CREATE TABLE `category_video` (
   `idcategory_video` int(4) NOT NULL,
   `name` varchar(45) NOT NULL,
   `description` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -198,8 +198,8 @@ CREATE TABLE `doctor` (
   `summary` text,
   `content` text,
   `avatar` varchar(120) DEFAULT 'doctor.jpg',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `specialist_idspecialist` int(11) NOT NULL,
   `priority` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -226,8 +226,8 @@ CREATE TABLE `feed_back` (
   `address` varchar(45) NOT NULL,
   `avatar` varchar(120) DEFAULT 'avatar.jpg',
   `content` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `priority` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -250,8 +250,8 @@ CREATE TABLE `gallery` (
   `idgallery` int(11) NOT NULL,
   `name` text,
   `url` varchar(120) DEFAULT 'gallery.jpg',
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP,
   `category_gallery_idcategory_about_us` int(11) NOT NULL,
   `priority` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -277,8 +277,8 @@ CREATE TABLE `news` (
   `title` text,
   `summary` text,
   `content` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `category_news_idcategory` int(11) NOT NULL,
   `priority` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -312,8 +312,8 @@ CREATE TABLE `schedule` (
   `date` date DEFAULT NULL,
   `description` text,
   `status` int(11) DEFAULT '0',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -352,8 +352,8 @@ CREATE TABLE `service` (
   `title` text,
   `summary` text,
   `content` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `priority` int(11) DEFAULT '1',
   `category_service_idcategory_service` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -380,8 +380,8 @@ CREATE TABLE `slide` (
   `idslide` int(11) NOT NULL,
   `name` varchar(45) NOT NULL DEFAULT 'hoàng long',
   `images` varchar(120) NOT NULL DEFAULT 'slide.jpg',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -402,8 +402,8 @@ INSERT INTO `slide` (`idslide`, `name`, `images`, `created_at`, `updated_at`) VA
 CREATE TABLE `specialist` (
   `idspecialist` int(11) NOT NULL,
   `name` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -424,8 +424,8 @@ CREATE TABLE `video` (
   `name` varchar(120) NOT NULL,
   `url` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `category_video_idcategory_video` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

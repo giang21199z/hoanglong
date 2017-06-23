@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Phòng khám Đa Khoa Hoàng Long: Sức khỏe là khởi nguồn của hạnh phúc
+    description:  Phòng khám Hoàng Long do giáo sư Đào Văn Long sáng lập là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật với thế mạnh là nội soi và siêu âm nội soi.
+    keywords:     nội soi, đường tiêu hóa, gan mật, đào văn long, siêu âm nội soi
+    language:     vi
+    robots:       index, follow
+
+  stylesheets:    []
+
+  javascripts:    []
+
+  has_layout:     true
+  layout:         layout_mobile

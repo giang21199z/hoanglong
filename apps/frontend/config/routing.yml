@@ -12,6 +12,12 @@ detail_list_gallery_ipad:
 list_gallery_ipad:
   url:   /ipad/thu-muc-anh-phong-kham
   param: { module: galleryipad, action: index}
+detail_list_gallery_mobile:
+  url:   /m/thu-vien-anh-phong-kham/:id/:total
+  param: { module: gallerymobile, action: detail, id: '', total: ''}
+list_gallery_mobile:
+  url:   /m/thu-muc-anh-phong-kham
+  param: { module: gallerymobile, action: index}
 list_video:
   url:   /thu-muc-video-phong-kham
   param: { module: video, action: index}
@@ -21,24 +27,36 @@ detail_service:
 detail_service_ipad:
   url:   /ipad/dich-vu/:idservice/:title
   param: { module: newsipad, action: service, idservice: '', title: '' }
+detail_service_mobile:
+  url:   /m/dich-vu/:idservice/:title
+  param: { module: newsmobile, action: service, idservice: '', title: '' }
 detail_about_us:
   url:   /gioi-thieu-ve-hoang-long/:idaboutus/:title
   param: { module: aboutus, action: detail, idaboutus: '', title: '' }
 detail_about_us_ipad:
   url:   /ipad/gioi-thieu-ve-hoang-long/:idaboutus/:title
   param: { module: aboutusipad, action: detail, idaboutus: '', title: '' }
+detail_about_us_mobile:
+  url:   /m/gioi-thieu-ve-hoang-long/:idaboutus/:title
+  param: { module: aboutusm, action: detail, idaboutus: '', title: '' }
 list_about_us:
   url:   /cac-bai-viet-theo-chu-de/:idcategory
   param: { module: aboutus, action: index, idcategory: '' }
 list_about_us_ipad:
   url:   /ipad/cac-bai-viet-theo-chu-de/:idcategory
   param: { module: aboutusipad, action: index, idcategory: '' }
+list_about_us_mobile:
+  url:   /m/cac-bai-viet-theo-chu-de/:idcategory
+  param: { module: aboutusm, action: index, idcategory: '' }
 contact:
-  url:   /lien-he-voi-chung-toi
+  url:   /lien-he-voi-chung-toi-ngay-nhe
   param: { module: site, action: contact }
 contact_ipad:
   url:   /ipad/lien-he-voi-chung-toi
-  param: { module: siteipad, action: contact }
+  param: { module: siteipad, action: contact}
+contact_mobile:
+  url:   /m/lien-he-voi-chung-toi
+  param: { module: sitemobile, action: contact }
 make_schedue:
   url:   /make-schedule
   param: { module: ajax, action: createSchedule }
@@ -54,6 +72,12 @@ doctor_ipad:
 detail_doctor_ipad:
   url:   /ipad/bac-si/:iddoctor/:name
   param: { module: doctorsipad, action: detail, iddoctor: '', name: '' }
+doctor_mobile:
+  url:   /m/bac-si
+  param: { module: doctorsmobile, action: index}
+detail_doctor_mobile:
+  url:   /m/bac-si/:iddoctor/:name
+  param: { module: doctorsmobile, action: detail, iddoctor: '', name: '' }
 list_news:
   url:   /danh-sach-tin-tuc/:idcategory/:name
   param: { module: news, action: index, idcategory: '', name: '' }
@@ -66,6 +90,12 @@ list_news_ipad:
 detail_news_ipad:
   url:   /ipad/tin-tuc-hoang-long/:idnews
   param: { module: newsipad, action: detail, idnews: '' }
+list_news_mobile:
+  url:   /m/danh-sach-tin-tuc
+  param: { module: newsmobile, action: index }
+detail_news_mobile:
+  url:   /m/tin-tuc-hoang-long/:idnews
+  param: { module: newsmobile, action: detail, idnews: '' }
 # default rules
 homepage:
   url:   /
@@ -73,6 +103,9 @@ homepage:
 homepage_ip:
   url:   /ipad
   param: { module: homeipad, action: index }
+homepage_m:
+  url:   /m
+  param: { module: homemobile, action: index }
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

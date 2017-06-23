@@ -24,6 +24,14 @@ class DoctorTable extends Doctrine_Table
             ->fetchArray();
         return $query;
     }
+    public static function getAllDoctorMobile()
+    {
+        $query = DoctorTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->fetchArray();
+        return $query;
+    }
     public static function getDoctorHomepage($limit = 4)
     {
         $query = DoctorTable::getInstance()

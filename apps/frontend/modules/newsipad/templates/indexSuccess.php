@@ -43,7 +43,7 @@
             </div>
         <?php endforeach ?>
         <div class="row text-center paginations" style="margin-top: 25px;">
-            <?php for ($i = 1; $i <= $total / 5 + 1; $i++): ?>
+            <?php for ($i = 1; $i <= $total / $page_size + 1; $i++): ?>
                 <button class="pa-active">
                     <p class="no-margin">
                         <?php echo $i; ?>

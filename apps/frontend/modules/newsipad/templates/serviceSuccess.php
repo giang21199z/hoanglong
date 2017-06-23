@@ -7,7 +7,7 @@
     <div class="row new-title about-us ">
         <div class="row">
             <div class="col-xs-8 no-padding">
-                <h1 class="title-header" >GIỚI THIỆU </h1>
+                <h1 class="title-header" >DỊCH VỤ </h1>
             </div>
             <div class="col-xs-4 no-padding list-icon" style="">
                 <i class="fa fa-google-plus"></i>

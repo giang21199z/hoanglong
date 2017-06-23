@@ -52,9 +52,9 @@
                                 <img class="icon-location" src="/images/location.png">
                             </div>
                             <div class="col-xs-10 no-padding">
-                                <b> OUR LOCATION </b>
+                                <b> ĐỊA CHỈ </b>
 
-                                <p class="no-margin-bottom"> 10th floor, VCCI building <br>9 Dao Duy Anh Str. Ha Noi
+                                <p class="no-margin-bottom"> Tầng 10, tòa nhà VCCI <br>Số 9, Đào Duy Anh, Hà Nội
                                 </p>
                             </div>
                         </div>
@@ -65,9 +65,9 @@
                                 <img src="/images/clock.png">
                             </div>
                             <div class="col-xs-10 no-padding" style="padding-left: 20px">
-                                <b> TIME OPEN </b>
+                                <b> GIỜ MỞ CỬA  </b>
 
-                                <p class="no-margin-bottom"> MON - SAT </p>
+                                <p class="no-margin-bottom"> Thứ 2 - Thứ 7 </p>
 
                                 <p class="no-margin-bottom"> 8:00 - 21:00 </p>
                             </div>
@@ -79,7 +79,7 @@
                                 <img src="/images/call.png">
                             </div>
                             <div class="col-xs-10 no-padding" style="padding-left: 15px">
-                                <b> CALL US NOW </b>
+                                <b> LIÊN HỆ </b>
 
                                 <p class="no-margin-bottom"> 04 628 11 331 - 04 628 11 337 </p>
 
@@ -104,7 +104,8 @@
                             <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-left menu no-padding">
                                     <li class="dropdown mega-dropdown">
-                                        <a href="<?php echo url_for('homepage') ?>">TRANG CHỦ </a>
+                                        <a href="<?php echo url_for('homepage_ip', array('xteam' => 'ipad')) ?>">TRANG
+                                            CHỦ </a>
                                     </li>
                                     <li class="dropdown mega-dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU </a>
@@ -114,7 +115,7 @@
                                             $about_us = AboutUsTable::getAboutUsMenu();
                                             foreach ($about_us as $value): ?>
                                                 <li class="col-xs-4 no-padding text-center"><a
-                                                        href="<?php echo url_for('detail_about_us_ipad', array("idaboutus" => $value["idnews"])) ?>">
+                                                        href="<?php echo url_for('detail_about_us_ipad', array("idaboutus" => $value["idnews"], 'xteam' => 'ipad')) ?>">
                                                         <p class="text-uppercase"><?php echo $value['title'] ?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -122,11 +123,12 @@
                                             $about_us = CategoryAboutUsTable::getAllCategoryExceptRoot();
                                             foreach ($about_us as $value):?>
                                                 <li class="col-xs-4 no-padding text-center"><a
-                                                        href="<?php echo url_for('list_about_us_ipad', array('idcategory' => $value['idcategory_about_us']))?>">
+                                                        href="<?php echo url_for('list_about_us_ipad', array('idcategory' => $value['idcategory_about_us'], 'xteam' => 'ipad'))?>">
                                                         <p class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
-                                            <li class="col-xs-4 no-padding text-center"><a href="<?php echo url_for('doctor_ipad') ?>">
+                                            <li class="col-xs-4 no-padding text-center"><a
+                                                    href="<?php echo url_for('doctor_ipad',array('xteam' => 'ipad')) ?>">
                                                     <p>ĐỘI NGŨ BÁC SĨ</p></a></li>
                                         </ul>
                                     </li>
@@ -165,19 +167,19 @@
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-4 no-padding text-center">
-                                                <a href="<?php echo url_for('list_gallery_ipad') ?>">
+                                                <a href="<?php echo url_for('list_gallery_ipad', array('xteam' => 'ipad')) ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện ảnh</p></a>
                                             </li>
                                             <li class="col-xs-4 no-padding">
-                                                <a href="<?php echo url_for('list_video') ?>">
+                                                <a href="<?php echo url_for('list_video', array('xteam' => 'ipad')) ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện video</p></a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="<?php echo url_for('contact_ipad') ?>">LIÊN HỆ </a>
+                                        <a href="<?php echo url_for('contact_ipad', array('xteam' => 'ipad')) ?>">LIÊN HỆ </a>
                                     </li>
                                 </ul>
 
@@ -209,7 +211,7 @@
             <div class="col-xs-7 no-padding-left ft-left">
                 <div class="row">
                     <p class="title">
-                        HOANG LONG CLINIC
+                        Phòng khám Hoàng Long
                     </p>
                     <hr>
                     <p class="description">
@@ -244,7 +246,7 @@
             </div>
             <div class="col-xs-4 col-md-offset-1 no-padding">
                 <p style="font-size: 18px">
-                    CONTACT US
+                    Liên hệ
                 </p>
                 <hr>
                 <div class="row list-contact">
@@ -253,7 +255,7 @@
                             <img src="/imagesi/location.png" class="img-location">
                         </div>
                         <div class="col-xs-10 no-padding ">
-                            <p class="text">10th floor, VCCI building <br> 9 Dao Duy Anh Str. Ha Noi</p>
+                            <p class="text">Tầng 10, Tòa nhà VCCI <br> Số 9, Đào Duy Anh, Hà Nội</p>
                         </div>
                     </div>
                     <div class="row">
@@ -298,13 +300,14 @@
                 <input type="number" class="form-control" id="age_" placeholder="Tuổi">
                 <input type="text" class="form-control" id="phone_" placeholder="Số điện thoại">
                 <input type="text" class="form-control" id="address_" placeholder="Địa chỉ">
-                <input type="text" class="form-control" id="date_" placeholder="Ngày bạn có thể tới khám.VD: 02/01/2017">
+                <input type="text" class="form-control" id="date_"
+                       placeholder="Ngày bạn có thể tới khám.VD: 02/01/2017">
                 <textarea class="form-control" style="height: 120px" id="description_"
                           placeholder="Miêu tả triệu chứng"></textarea>
 
                 <div class="row text-center ">
                     <button class="btn text-center schedule-btn" id="btn-make-schedule_">
-                        <p class="text-center">SCHEDULE</p>
+                        <p class="text-center">ĐẶT LỊCH KHÁM</p>
                     </button>
                 </div>
             </div>

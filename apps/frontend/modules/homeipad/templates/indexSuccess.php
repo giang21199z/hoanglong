@@ -289,7 +289,7 @@
             <div class="row list-new">
                 <?php foreach ($news as $value): ?>
                     <div class="col-xs-4 no-padding-left">
-                        <img src="uploads/news/<?php echo $value['images'] ?>" class=" img-responsive">
+                        <img src="/uploads/news/<?php echo $value['images'] ?>" class=" img-responsive">
 
                         <div class="row description">
                             <p class="no-margin title">

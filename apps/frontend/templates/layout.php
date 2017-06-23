@@ -5,7 +5,15 @@
     <script>
         var is_iPad = navigator.userAgent.match(/iPad/i) != null;
         if (is_iPad) {
-            window.location.replace("<?php echo url_for('homepage_ip')?>");
+            window.location.replace("<?php echo url_for('homepage_ip', array('xteam' => 'ipad')) ?>");
+        }
+        else if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ){
+            window.location.replace("<?php echo url_for('homepage_m', array('xteam' => 'ipad'))?>");
         }
     </script>
     <?php include_http_metas() ?>
@@ -58,7 +66,7 @@
                                 <img src="/images/call.png">
                             </div>
                             <div class="col-xs-10 no-padding" style="padding-left: 15px">
-                                <b> CALL US NOW </b>
+                                <b> LIÊN HỆ </b>
 
                                 <p class="no-margin-bottom"> 04 628 11 331 - 04 628 11 337 </p>
 
@@ -72,9 +80,9 @@
                                 <img src="/images/clock.png">
                             </div>
                             <div class="col-xs-10 no-padding" style="padding-left: 20px">
-                                <b> TIME OPEN </b>
+                                <b> GIỜ MỞ CỬA </b>
 
-                                <p class="no-margin-bottom"> MON - SAT </p>
+                                <p class="no-margin-bottom"> Thứ 2 - Thứ 7 </p>
 
                                 <p class="no-margin-bottom"> 8:00 - 21:00 </p>
                             </div>
@@ -86,9 +94,9 @@
                                 <img class="icon-location" src="/images/location.png">
                             </div>
                             <div class="col-xs-10 no-padding">
-                                <b> OUR LOCATION </b>
+                                <b> ĐỊA CHỈ </b>
 
-                                <p class="no-margin-bottom"> 10th floor, VCCI building <br>9 Dao Duy Anh Str. Ha Noi
+                                <p class="no-margin-bottom"> Tầng 10, tòa nhà VCCI <br>Số 9, Đào Duy Anh, Hà Nội
                                 </p>
                             </div>
                         </div>
@@ -120,7 +128,7 @@
                                             $about_us = AboutUsTable::getAboutUsMenu();
                                             foreach ($about_us as $value): ?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"])) ?>">
+                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"], "title"=> $value['title'])) ?>">
                                                         <p class="text-uppercase"><?php echo $value['title'] ?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -128,7 +136,7 @@
                                             $about_us = CategoryAboutUsTable::getAllCategoryExceptRoot();
                                             foreach ($about_us as $value):?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us']))?>">
+                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us'], 'xteam'=>'hoanglong'))?>">
                                                         <p class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -171,26 +179,26 @@
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-3 no-padding">
-                                                <a href="<?php echo url_for('list_gallery') ?>">
+                                                <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện ảnh</p></a>
                                             </li>
                                             <li class="col-xs-3 no-padding">
-                                                <a href="<?php echo url_for('list_video') ?>">
+                                                <a href="<?php echo url_for('list_video', array('xteam' => 'hoanglong')) ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện video</p></a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="<?php echo url_for('contact') ?>">LIÊN HỆ </a>
+                                        <a href="<?php echo url_for('contact',array('xteam' => 'hoanglong')) ?>">LIÊN HỆ </a>
                                     </li>
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
                                     <li style="background-color: #86a92b; height: 50px; border-radius: 0px 0px 10px 10px">
                                         <a type="button" data-toggle="modal"
-                                           data-target="#myModal"><span> SCHEDULE</span></a>
+                                           data-target="#myModal"><span> ĐẶT LỊCH KHÁM</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -244,7 +252,7 @@
             <div class="social-network">
                 <div class="row">
                     <p style="font-size: 18px">
-                        SOCIAL NETWORK
+                        KẾT NỘI MẠNG XÃ HỘI
                     </p>
                     <hr>
                     <div class="description">
@@ -277,7 +285,7 @@
             <div class="about-hoanglong">
                 <div class="row">
                     <p style="font-size: 18px">
-                        HOANG LONG CLINIC
+                        PHÒNG KHÁM HOÀNG LONG
                     </p>
                     <hr>
                     <p class="description">
@@ -290,7 +298,7 @@
             </div>
             <div class="contact-us">
                 <p style="font-size: 18px">
-                    CONTACT US
+                    LIÊN HỆ NGAY
                 </p>
                 <hr>
                 <div class="row">
@@ -298,7 +306,7 @@
                         <img src="/images/location.png" class="img-location">
                     </div>
                     <div class="col-xs-10 no-padding ">
-                        <p class="text">10th floor, VCCI building <br> 9 Dao Duy Anh Str. Ha Noi</p>
+                        <p class="text">Tầng 10, Tòa nhà VCCI <br> Số 9, Đào Duy Anh, Hà Nội</p>
                     </div>
                 </div>
                 <br>
@@ -308,7 +316,7 @@
                         <img src="/images/clock.png" class="img-clock">
                     </div>
                     <div class="col-xs-10 no-padding ">
-                        <p class="text">MON - SAT <br> 08:00 - 21:00
+                        <p class="text">Thứ 2 - Thứ 7 <br> 08:00 - 21:00
                         </p>
                     </div>
                 </div>
@@ -409,7 +417,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo url_for("make_schedue")?>',
+                    url: '<?php echo url_for("make_schedue",array("xteam" => "hoanglong"))?>',
                     data: data
                 }).done(function ($msg) {
                     swal(JSON.parse($msg).message, "", "success");
@@ -465,7 +473,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo url_for("make_schedue")?>',
+                    url: '<?php echo url_for("make_schedue",array("xteam" => "hoanglong"))?>',
                     data: data
                 }).done(function ($msg) {
                     swal(JSON.parse($msg).message, "", "success");
