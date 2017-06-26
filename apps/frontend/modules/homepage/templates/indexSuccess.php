@@ -65,23 +65,23 @@
                 <div class="col-md-4 no-padding-left">
                     <div class="row">
                         <img src="/uploads/news/<?php echo $value['images'] ?>" class="img-responsive"
-                             style="height: 375px">
+                             style="height: 250px">
                     </div>
                     <div class="row">
-                        <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a">
-                            <?php echo VtHelper::truncate($value['title']) ?>
+                        <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a; text-align: center">
+                            <?php echo $value['title'] ?>
                         </p>
 
-                        <p>
-                            <?php echo VtHelper::truncate($value['summary'], 100) ?>
-                        </p>
-                        <button style="background: #ffffff; border:  1px solid #85a92a">
-                            <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
-                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
-                                    READ MORE
-                                </p>
-                            </a>
-                        </button>
+<!--                        <p>-->
+<!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
+<!--                        </p>-->
+<!--                        <button style="background: #ffffff; border:  1px solid #85a92a">-->
+<!--                            <a href="--><?php //echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?><!--">-->
+<!--                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">-->
+<!--                                    READ MORE-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                        </button>-->
                     </div>
                 </div>
             <?php endforeach ?>
@@ -120,9 +120,9 @@
                             <?php echo $value['degree'] ?>
                         </p>
 
-                        <p>
-                            <?php echo VtHelper::truncate($value['summary'], 95) ?>
-                        </p>
+<!--                        <p>-->
+<!--                            --><?php //echo VtHelper::truncate($value['summary'], 95) ?>
+<!--                        </p>-->
                         <button style="background: #ffffff; border:  1px solid #85a92a">
                             <a href="<?php echo url_for('detail_doctor', array("iddoctor" => $value['iddoctor'], "name" => $value['name'])) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">

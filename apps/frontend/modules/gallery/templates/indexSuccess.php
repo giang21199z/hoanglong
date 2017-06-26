@@ -23,7 +23,9 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Thư viện > Ảnh </p>
+                    <p style="font-size: 18px ; color: #85a92a ; margin-top: 10px;"><a href="<?php echo url_for('homepage') ?>" style="text-decoration: none; color: #8DAF39">
+                            Trang chủ
+                        </a> > Thư viện ảnh </p>
                 </div>
                 <div class="row ">
                     <div class="row">

@@ -17,7 +17,7 @@ class GalleryTable extends Doctrine_Table
         return Doctrine_Core::getTable('Gallery');
     }
 
-    public static function getAllGalleryByCategory($id, $limit, $offset)
+    public static function getAllGalleryByCategory($id, $limit = 10 , $offset = 0)
     {
         $query = GalleryTable::getInstance()
             ->createQuery('c')

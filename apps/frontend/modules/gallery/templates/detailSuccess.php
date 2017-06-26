@@ -23,10 +23,14 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Thư viện > Ảnh
+                    <p style="font-size: 18px ; color: #85a92a ; margin-top: 10px;"><a href="<?php echo url_for('homepage') ?>" style="text-decoration: none; color: #8DAF39">
+                            Trang chủ
+                        </a> > <a href="<?php echo url_for('list_gallery') ?>" style="text-decoration: none; color: #8DAF39">
+                            Thư viện ảnh
+                        </a>
                         > <?php echo $category->getName() ?> </p>
                 </div>
-                <p style="line-height: 24px;letter-spacing: 2px; font-size: 17px;">
+                <p style="line-height: 24px;letter-spacing: 2px; font-size: 17px; text-align: center">
                     <?php echo $category->getDescription() ?>
                 </p>
 

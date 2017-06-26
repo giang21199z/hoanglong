@@ -16,7 +16,7 @@ class homepageActions extends sfActions
         $this->doctor_pages = count(DoctorTable::getAllDoctor());
         $this->feed_backs = FeedBackTable::getFeedbackHomepage();
         $this->news = NewsTable::getNewsHomepage();
-        $this->why_choose_us = NewsTable::getNewsWhyChooseUs();
+        $this->why_choose_us = NewsTable::getNewsWhyChooseUs(6);
         $this->slides = SlideTable::getAllSlide();
     }
 }

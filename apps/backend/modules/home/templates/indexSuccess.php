@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <h3>Danh sách khách đặt hẹn khám mới nhất</h3>
         <table class="table table-responsive">
             <thead>
@@ -24,10 +24,10 @@
             </tbody>
         </table>
     </div>
-    <div class="col-lg-6">
-        <h3>Lượng khách đặt hẹn tính đến <?php echo date("d/m/Y") ?></h3>
-        <canvas id="mybarChart"></canvas>
-    </div>
+<!--    <div class="col-lg-6">-->
+<!--        <h3>Lượng khách đặt hẹn tính đến --><?php //echo date("d/m/Y") ?><!--</h3>-->
+<!--        <canvas id="mybarChart"></canvas>-->
+<!--    </div>-->
 
 </div>
 <script src="/js/Chart.js/dist/Chart.min.js"></script>

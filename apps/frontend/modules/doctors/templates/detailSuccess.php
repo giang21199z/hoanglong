@@ -14,34 +14,41 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px">OUR TEAM </h1>
+                            <h1 class="no-padding" style="margin-top: 22px">Đỗi ngũ bác sĩ </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>
-                            <i class="fa fa-twitter" style="margin-right: 10px;" ></i>
+                            <i class="fa fa-twitter" style="margin-right: 10px;"></i>
                             <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Our Team > <?php echo $doctor->getName()?></p>
+                    <p style="font-size: 18px ; color: #85a92a ; margin-top: 10px;"><a href="<?php echo url_for('homepage') ?>"
+                                                                     style="text-decoration: none; color: #8DAF39">
+                            Trang chủ
+                        </a> > <a href="<?php echo url_for('doctor') ?>" style="text-decoration: none; color: #8DAF39">Đội
+                            ngũ bác sĩ</a> > <?php echo $doctor->getName() ?></p>
                 </div>
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="/uploads/doctors/<?php echo $doctor->getAvatar()?>" class="img-responsive img-circle img-doc">
+                        <img src="/uploads/doctors/<?php echo $doctor->getAvatar() ?>"
+                             class="img-responsive img-circle img-doc">
                     </div>
                     <div class="col-md-7 text-center">
                         <p class="name-doc">
-                            <?php echo $doctor->getName()?>
+                            <?php echo $doctor->getName() ?>
                         </p>
+
                         <p class="birth-day">
-                            <?php echo $doctor->getSpecialist()->getName();?>
+                            <?php echo $doctor->getSpecialist()->getName(); ?>
                         </p>
+
                         <p class="description">
-                            <?php echo $doctor->getSummary()?>
+                            <?php echo $doctor->getSummary() ?>
                         </p>
                     </div>
                     <div class="row history-doc">
-                        <?php echo VtHelper::htmlToView($doctor->getContent())?>
+                        <?php echo html_entity_decode($doctor->getContent()) ?>
 
                     </div>
 
@@ -52,6 +59,7 @@
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
                         OUR TEAM </p>
+
                     <div class="right-menu right-item">
                         <p class=" "
                            style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
@@ -68,6 +76,7 @@
                 <div class="row make-shu" style=" background: #b9d96a">
                     <p style=" color :#ffffff;padding-top: 25px ; padding-left: 10px ; letter-spacing: 2px; font-size: 26px">
                         Đặt lịch hẹn</p>
+
                     <div class="row"
                          style="font-size: 16px;padding-left: 25px;padding-right: 25px ; letter-spacing: 1px;">
                         <p style="color: #ffffff">

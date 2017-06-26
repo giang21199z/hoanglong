@@ -14,7 +14,7 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px"> OUR TEAM-OUR </h1>
+                            <h1 class="no-padding" style="margin-top: 22px"> Đội ngũ bác sĩ </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>
@@ -23,7 +23,13 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p class="p-title">Home > Our Team > All</p>
+                    <p class="p-title" style="margin-top: 10px;">
+                        <a href="<?php echo url_for('homepage') ?>" style="text-decoration: none; color: #8DAF39">
+                            Trang chủ
+                        </a>
+                        >
+                        <a href="<?php echo url_for('doctor') ?>" style="text-decoration: none; color: #8DAF39">Đội ngũ bác sĩ</a>
+                    </p>
                 </div>
 
                 <?php for ($i = 0; $i < count($doctors);): ?>
@@ -44,9 +50,9 @@
                                         <?php echo $doctors[$j]['degree']?>
                                     </p>
 
-                                    <p class="description">
-                                        <?php echo VtHelper::truncate($doctors[$j]['summary'], 50)?>
-                                    </p>
+<!--                                    <p class="description">-->
+<!--                                        --><?php //echo VtHelper::truncate($doctors[$j]['summary'], 50)?>
+<!--                                    </p>-->
                                     <a href="<?php echo url_for('detail_doctor', array('iddoctor' => $doctors[$j]['iddoctor']))?>">
                                         <button style="background: #ffffff; border:  1px solid #85a92a">
                                             <p class="no-margin" style="color: #85a92a ; font-size: 12px;">

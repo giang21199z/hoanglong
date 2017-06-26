@@ -14,7 +14,8 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px; text-transform: uppercase;"> <?php echo sfConfig::get("app_contact")?> </h1>
+                            <h1 class="no-padding"
+                                style="margin-top: 22px; text-transform: uppercase;"> <?php echo sfConfig::get("app_contact") ?> </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>
@@ -23,7 +24,11 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Contact </p>
+                    <p style="font-size: 18px ; color: #85a92a ; margin-top: 10px;">
+                        <a href="<?php echo url_for('homepage') ?>"
+                           style="text-decoration: none; color: #8DAF39">
+                            Trang chủ
+                        </a> > Liên hệ </p>
                 </div>
                 <div class="row">
                     <div class="col-sm-7">
@@ -40,7 +45,8 @@
                             </div>
                             <div class="col-xs-10">
                                 <i>Email</i><br>
-                                Hỗ trợ thông tin<br><span style="color: #d66941">info@hoanglonghospital.vn</span><br><br>
+                                Hỗ trợ thông tin<br><span
+                                    style="color: #d66941">info@hoanglonghospital.vn</span><br><br>
                                 Cơ hội việc làm<br><span style="color: #d66941">info@hoanglonghospital.vn</span>
                             </div>
                         </div>
@@ -68,7 +74,8 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <span>Châm ngôn của chúng tôi là <h3><i><b>"SỨC KHỎE LÀ KHỞI NGUỒN CỦA HẠNH PHÚC!"</b></i></h3></span>
+                    <span>Châm ngôn của chúng tôi là <h3><i><b>"SỨC KHỎE LÀ KHỞI NGUỒN CỦA HẠNH PHÚC!"</b></i>
+                        </h3></span>
                 </div>
             </div>
             <div class="right-menu">

@@ -41,8 +41,6 @@
   <div id="sf_admin_header">
     <?php include_partial('gallery/list_header', array('pager' => $pager)) ?>
   </div>
-
-
   <div id="sf_admin_content">
     <?php include_partial('gallery/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper)) ?>
     <ul class="sf_admin_actions">
