@@ -14,7 +14,7 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px">HOANG LONG NEWS </h1>
+                            <h1 class="no-padding" style="margin-top: 22px">TIN TỨC </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>

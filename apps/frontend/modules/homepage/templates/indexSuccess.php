@@ -1,4 +1,4 @@
-﻿<!-- banner start -->
+﻿﻿<!-- banner start -->
 <!-- ================ -->
 <div id="banner" class="banner">
     <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
@@ -26,13 +26,13 @@
         <div class="row" style="margin-bottom: 50px">
             <div class="col-md-6">
                 <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;letter-spacing: 2px">
-                    HOÀNG LONG CLINIC
+                    GIỚI THIỆU CHUNG
                 </h2>
                 <a style="text-decoration: none"
                    href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
-                    <p style=" margin-top: 10px; font-size: 16px ; color: #85a92a ;padding-bottom: 20px;">
-                        <?php echo $about_us->getTitle() ?>
-                    </p>
+                    <!--                    <p style=" margin-top: 10px; font-size: 16px ; color: #85a92a ;padding-bottom: 20px;">-->
+                    <!--                        --><?php //echo $about_us->getTitle() ?>
+                    <!--                    </p>-->
                 </a>
                 <hr style="width: 342px;margin-left: 0px; border-bottom-color: #d2d2d2">
                 <p style="line-height: 30px; margin-top: 40px">
@@ -54,34 +54,34 @@
                 <?php echo sfConfig::get('app_why_choose_us') ?>
             </h2>
 
-<!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
-<!--                ĐIỂM MẠNH CỦA CHÚNG TÔI-->
-<!--            </p>-->
+            <!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
+            <!--                ĐIỂM MẠNH CỦA CHÚNG TÔI-->
+            <!--            </p>-->
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
 
         </div>
         <div class="row" style=" margin-top: 30px">
-            <?php foreach ($why_choose_us as $value): ?>
-                <div class="col-md-4 no-padding-left">
+            <?php $count =0; foreach ($why_choose_us as $value): ?>
+                <div class="col-md-4 no-padding-left" <?php if($count++>=3){?> style="margin-top: 40px; height: auto" <?php }else{?> style="height: 220px;" <?php }?>>
                     <div class="row">
-                        <img src="/uploads/news/<?php echo $value['images'] ?>" class="img-responsive"
-                             style="height: 250px">
+                        <img src="/uploads/news/<?php echo $value['images'] ?>" class="img img-responsive "
+                             style="height: 120px; margin: 0px auto; border-radius: 5px">
                     </div>
                     <div class="row">
                         <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a; text-align: center">
                             <?php echo $value['title'] ?>
                         </p>
 
-<!--                        <p>-->
-<!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
-<!--                        </p>-->
-<!--                        <button style="background: #ffffff; border:  1px solid #85a92a">-->
-<!--                            <a href="--><?php //echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?><!--">-->
-<!--                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">-->
-<!--                                    READ MORE-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                        </button>-->
+                        <!--                        <p>-->
+                        <!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
+                        <!--                        </p>-->
+                        <!--                        <button style="background: #ffffff; border:  1px solid #85a92a">-->
+                        <!--                            <a href="--><?php //echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?><!--">-->
+                        <!--                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">-->
+                        <!--                                    READ MORE-->
+                        <!--                                </p>-->
+                        <!--                            </a>-->
+                        <!--                        </button>-->
                     </div>
                 </div>
             <?php endforeach ?>
@@ -92,14 +92,14 @@
 
 <div class="section   ">
     <div class="container">
-        <div class="row" style="margin-top: 40px">
+        <div class="row" style="/*margin-top: 40px*/">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
                 <?php echo sfConfig::get('app_our_doctors') ?>
             </h2>
 
-            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                BÁC SĨ NHƯ MẸ HIỀN
-            </p>
+            <!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
+            <!--                BÁC SĨ NHƯ MẸ HIỀN-->
+            <!--            </p>-->
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
         <div class="row">
@@ -120,9 +120,9 @@
                             <?php echo $value['degree'] ?>
                         </p>
 
-<!--                        <p>-->
-<!--                            --><?php //echo VtHelper::truncate($value['summary'], 95) ?>
-<!--                        </p>-->
+                        <!--                        <p>-->
+                        <!--                            --><?php //echo VtHelper::truncate($value['summary'], 95) ?>
+                        <!--                        </p>-->
                         <button style="background: #ffffff; border:  1px solid #85a92a">
                             <a href="<?php echo url_for('detail_doctor', array("iddoctor" => $value['iddoctor'], "name" => $value['name'])) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
@@ -149,7 +149,7 @@
 
 <div class="section   ">
     <div class="container">
-        <div class="row" style="margin-top: 40px">
+        <div class="row" style="/*margin-top: 40px*/">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
                 Thư viện
             </h2>
@@ -250,12 +250,12 @@
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                Khách hàng của chúng tôi nói gì?
+                Phản hồi từ khách hàng
             </h2>
-
-            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                PHẢN HỒI TỪ KHÁCH HÀNG
-            </p>
+            <!---->
+            <!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
+            <!--                PHẢN HỒI TỪ KHÁCH HÀNG-->
+            <!--            </p>-->
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
         <div class="row">
@@ -300,15 +300,15 @@
 </div>
 <div class="section   ">
     <div class="container">
-        <div class="row" style="margin-top: 40px">
-            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
+        <div class="row" style="/*margin-top: 40px*/">
+            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px; margin-bottom: 30px;">
                 Tin tức mới nhất
             </h2>
-
-            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                TIN TỨC SỰ KIỆN, Y KHOA, HỘI THẢO, CHUYÊN MÔN
-            </p>
-            <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
+            <!---->
+            <!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
+            <!--                TIN TỨC SỰ KIỆN, Y KHOA, HỘI THẢO, CHUYÊN MÔN-->
+            <!--            </p>-->
+            <!--            <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">-->
         </div>
         <div class="row">
             <?php foreach ($news as $value): ?>
@@ -325,9 +325,9 @@
                             <?php echo $value['updated_at'] ?>
                         </p>
 
-                        <p style="font-size: 14px">
-                            <?php echo VtHelper::truncate($value['summary'], 100) ?>
-                        </p>
+                        <!--                        <p style="font-size: 14px">-->
+                        <!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
+                        <!--                        </p>-->
                         <button style="background: #ffffff; border:  1px solid #85a92a">
                             <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">

@@ -55,7 +55,7 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        RELATED NEWS </p>
+                        Tin tức khác </p>
                     <?php foreach ($news_related as $value): ?>
                         <a style="text-decoration: none; color: black"
                            href="<?php echo url_for('detail_about_us', array('idaboutus' => $value['idnews'], 'title' => $value['title'])) ?>">
@@ -98,7 +98,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch hẹn</p>
                             </button>
                         </div>
                     </div>

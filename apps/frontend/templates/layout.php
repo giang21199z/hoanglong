@@ -52,8 +52,7 @@
                     <a href="<?php echo url_for('homepage') ?>">
                         <img src="/images/logo.png"
                              style="margin-left: 15px; width: 60px ; height: 50px;margin-bottom: 10px; margin-top: 8px">
-                        <br>
-                        <img src="/images/text-logo.png" style="width: 75px; height: 26px">
+                        <img src="/images/text-logo.png" style="width: 75px; height: 26px ; margin-left: 20px">
                     </a>
                 </div>
 
@@ -197,8 +196,9 @@
 
                                 <ul class="nav navbar-nav navbar-right">
                                     <li style="background-color: #86a92b; height: 50px; border-radius: 0px 0px 10px 10px">
+
                                         <a type="button" data-toggle="modal"
-                                           data-target="#myModal"><span> ĐẶT LỊCH KHÁM</span></a>
+                                           data-target="#myModal"><span class="glyphicon glyphicon-calendar"></span><span> ĐẶT LỊCH KHÁM</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -251,34 +251,14 @@
         <div class="row content" style="margin-top: 75px; color: #ffffff">
             <div class="social-network">
                 <div class="row">
-                    <p style="font-size: 18px">
-                        KẾT NỘI MẠNG XÃ HỘI
-                    </p>
-                    <hr>
-                    <div class="description">
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: white"><i class="fa fa-facebook-official"></i></a>
-                            </div>
-                            <div class="col-xs-2">
-                                <i class="fa fa-youtube"></i>
-                            </div>
-                            <div class="col-xs-2">
-                                <i class="fa fa-google-plus-square"></i>
-                            </div>
-                            <div class="col-xs-2">
-                                <i class="fa fa-instagram"></i>
-                            </div>
-                        </div>
-                        <br><br>
-
-                        <div class="row">
-                            <div class="col-xs-8 text-center">
-                                <img src="/images/full-logo.png" alt="hoanglonghospital.vn"
-                                     style="width: 100px; margin: 0px auto;"
-                                     class="img img-responsive">
-                            </div>
-                        </div>
+                    <div class="row text-center">
+                        <img src="/images/logo-ft.png" alt=""/>
+                    </div>
+                    <div class="row text-center" style="font-size: 23px; margin-top: 10px ">
+                        <i class="fa fa-facebook" style="margin-right: 10px;"></i>
+                        <i class="fa fa-twitter" style="margin-right: 10px;"></i>
+                        <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
+                        <i class="fa fa-google-plus"></i>
                     </div>
                 </div>
             </div>
@@ -518,5 +498,18 @@
 
     })(jQuery);
 </script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/59580132e9c6d324a473850f/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>

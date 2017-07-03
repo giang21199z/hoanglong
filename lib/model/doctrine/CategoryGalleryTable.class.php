@@ -39,7 +39,7 @@ class CategoryGalleryTable extends Doctrine_Table
         }
         return $result;
     }
-    public static function getAllCategory($limit, $offset){
+    public static function getAllCategory($limit = 4 , $offset = 0){
         $query = CategoryGalleryTable::getInstance()
             ->createQuery('c')
             ->select('c.*')
