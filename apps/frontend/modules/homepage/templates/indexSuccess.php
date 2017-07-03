@@ -65,7 +65,7 @@
                 <div class="col-md-4 no-padding-left" <?php if($count++>=3){?> style="margin-top: 40px; height: auto" <?php }else{?> style="height: 220px;" <?php }?>>
                     <div class="row">
                         <img src="/uploads/news/<?php echo $value['images'] ?>" class="img img-responsive "
-                             style="height: 120px; margin: 0px auto; border-radius: 5px">
+                             style="height: 120px; margin: 0px auto; border-radius: 5px; box-shadow: 7px 7px 14px;">
                     </div>
                     <div class="row">
                         <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a; text-align: center">

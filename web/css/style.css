@@ -61,16 +61,16 @@ h1 span,
 h2 span,
 h3 span,
 h4 span {
-	color: #339BEB;
+	/*color: #339BEB;*/
 }
 .text-colored {
-	color: #55acee;
+	/*color: #55acee;*/
 }
 a {
-	color: #55acee;
+	/*color: #55acee;*/
 }
 a:hover {
-	color: #339BEB;
+	/*color: #339BEB;*/
 }
 a:focus,
 a:active {
@@ -516,6 +516,7 @@ blockquote {
 .logo,
 .site-name-and-slogan {
 	float: left;
+    margin-top: 25px;
 }
 .site-name {
 	font-size: 36px;
