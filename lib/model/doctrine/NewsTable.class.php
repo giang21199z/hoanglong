@@ -34,6 +34,7 @@ class NewsTable extends Doctrine_Table
             ->select('c.*')
             ->limit($limit)
             ->where('c.priority = 3')
+            ->orderBy('c.updated_at desc')
             ->fetchArray();
         return $query;
     }

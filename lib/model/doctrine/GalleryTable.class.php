@@ -44,7 +44,7 @@ class GalleryTable extends Doctrine_Table
     public static function getTotalPages()
     {
 
-        $count = GalleryTable::getInstance()
+        $count = CategoryGalleryTable::getInstance()
             ->createQuery('c')
             ->select('count(*) as count')
             ->fetchArray();

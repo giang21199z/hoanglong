@@ -43,7 +43,7 @@
                                              class="img-responsive" style="height: 240px">
 
                                         <p style="font-size: 18px ; padding-top: 15px ; padding-bottom: 30px ; padding-left: 20px ; color: #a8cf45">
-                                            <?php echo VtHelper::truncate($value['description'], 100) ?></p>
+                                            <?php echo VtHelper::truncate($value['name'], 100) ?></p>
                                     </div>
                                 </a>
                             </div>

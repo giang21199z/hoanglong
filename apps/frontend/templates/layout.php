@@ -232,7 +232,7 @@
 
                 <div class="row text-center ">
                     <button class="btn text-center schedule-btn" id="btn-make-schedule_">
-                        <p class="text-center">SCHEDULE</p>
+                        <p class="text-center">Đặt lịch khám</p>
                     </button>
                 </div>
             </div>
@@ -252,10 +252,10 @@
             <div class="social-network">
                 <div class="row">
                     <div class="row text-center">
-                        <img src="/images/logo-ft.png" alt=""/>
+                        <a href="#"><img src="/images/logo-ft.png" alt=""/></a>
                     </div>
                     <div class="row text-center" style="font-size: 23px; margin-top: 10px ">
-                        <i class="fa fa-facebook" style="margin-right: 10px;"></i>
+                        <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: white"><i class="fa fa-facebook" style="margin-right: 10px;"></i></a>
                         <i class="fa fa-twitter" style="margin-right: 10px;"></i>
                         <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
                         <i class="fa fa-google-plus"></i>

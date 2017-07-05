@@ -23,7 +23,7 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Giới thiệu > <?php echo $news->getTitle() ?></p>
+                    <p style="font-size: 18px ; color: #85a92a ;"> <a href="<?php echo url_for('homepage')?>" style="text-decoration: none; color: #B4CA7B">Trang chủ </a> > <a href="<?php echo url_for('list_about_us')?>" style="text-decoration: none; color: #B4CA7B">Giới thiệu </a> > <?php echo $news->getTitle() ?></p>
                 </div>
                 <div class="row">
                     <p class="tille">

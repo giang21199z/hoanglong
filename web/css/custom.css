@@ -67,6 +67,7 @@ body{
 }
 .infomation .col-xs-4 , .col-xs-3{
     float: right;
+    width: 25%;
 }
 .menu-header{
     background: #b5d56a;

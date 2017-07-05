@@ -12,7 +12,7 @@ class homepageActions extends sfActions
     public function executeIndex(sfWebRequest $request)
     {
         $this->about_us = AboutUsTable::getAboutUsHomepage();
-        $this->doctor = DoctorTable::getDoctorHomepage();
+        $this->doctor = DoctorTable::getDoctorHomepage(5);
         $this->doctor_pages = count(DoctorTable::getAllDoctor());
         $this->feed_backs = FeedBackTable::getFeedbackHomepage();
         $this->news = NewsTable::getNewsHomepage();

@@ -24,21 +24,25 @@
 <div class="section   ">
     <div class="container">
         <div class="row" style="margin-bottom: 50px">
-            <div class="col-md-6">
-                <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;letter-spacing: 2px">
-                    GIỚI THIỆU CHUNG
-                </h2>
-                <a style="text-decoration: none"
-                   href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
-                    <!--                    <p style=" margin-top: 10px; font-size: 16px ; color: #85a92a ;padding-bottom: 20px;">-->
-                    <!--                        --><?php //echo $about_us->getTitle() ?>
-                    <!--                    </p>-->
-                </a>
-                <hr style="width: 342px;margin-left: 0px; border-bottom-color: #d2d2d2">
-                <p style="line-height: 30px; margin-top: 40px">
-                    <?php echo $about_us->getSummary() ?>
-                </p>
-            </div>
+            <a style="text-decoration: none"
+               href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
+                <div class="col-md-6">
+                    <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;letter-spacing: 2px">
+                        GIỚI THIỆU CHUNG
+                    </h2>
+                    <a style="text-decoration: none"
+                       href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
+                        <!--                    <p style=" margin-top: 10px; font-size: 16px ; color: #85a92a ;padding-bottom: 20px;">-->
+                        <!--                        --><?php //echo $about_us->getTitle() ?>
+                        <!--                    </p>-->
+                    </a>
+                    <hr style="width: 342px;margin-left: 0px; border-bottom-color: #d2d2d2">
+                    <p style="line-height: 30px; margin-top: 40px">
+                        <?php echo $about_us->getSummary() ?>
+                    </p>
+                </div>
+            </a>
+
             <div class="col-md-6">
                 <img class="img-responsive" src="/images/image_about.PNG">
             </div>
@@ -50,7 +54,7 @@
 <div class="section   " style="background: #f5f5f5">
     <div class="container" style="margin-bottom: 50px">
         <div class="row">
-            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b">
+            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;">
                 <?php echo sfConfig::get('app_why_choose_us') ?>
             </h2>
 
@@ -61,29 +65,35 @@
 
         </div>
         <div class="row" style=" margin-top: 30px">
-            <?php $count =0; foreach ($why_choose_us as $value): ?>
-                <div class="col-md-4 no-padding-left" <?php if($count++>=3){?> style="margin-top: 40px; height: auto" <?php }else{?> style="height: 220px;" <?php }?>>
-                    <div class="row">
-                        <img src="/uploads/news/<?php echo $value['images'] ?>" class="img img-responsive "
-                             style="height: 120px; margin: 0px auto; border-radius: 5px; box-shadow: 7px 7px 14px;">
-                    </div>
-                    <div class="row">
-                        <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a; text-align: center">
-                            <?php echo $value['title'] ?>
-                        </p>
+            <?php $count = 0;
+            foreach ($why_choose_us as $value): ?>
+                <a href="<?php echo $count == 0 ? url_for('doctor') : url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>"
+                   style="color: #000000">
+                    <div
+                        class="col-md-4 no-padding-left" <?php if ($count++ >= 3) { ?> style="margin-top: 40px; height: auto" <?php } else { ?> style="height: 220px;" <?php } ?>>
+                        <div class="row">
+                            <img src="/uploads/news/<?php echo $value['images'] ?>" class="img img-responsive "
+                                 style="height: 120px; margin: 0px auto; border-radius: 5px; box-shadow: 7px 7px 14px;">
+                        </div>
+                        <div class="row">
+                            <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a; text-align: center">
+                                <?php echo $value['title'] ?>
+                            </p>
 
-                        <!--                        <p>-->
-                        <!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
-                        <!--                        </p>-->
-                        <!--                        <button style="background: #ffffff; border:  1px solid #85a92a">-->
-                        <!--                            <a href="--><?php //echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?><!--">-->
-                        <!--                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">-->
-                        <!--                                    READ MORE-->
-                        <!--                                </p>-->
-                        <!--                            </a>-->
-                        <!--                        </button>-->
+                            <!--                        <p>-->
+                            <!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
+                            <!--                        </p>-->
+                            <!--                        <button style="background: #ffffff; border:  1px solid #85a92a">-->
+                            <!--                            <a href="-->
+                            <?php //echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?><!--">-->
+                            <!--                                <p class="no-margin" style="color: #85a92a ; font-size: 10px;">-->
+                            <!--                                    READ MORE-->
+                            <!--                                </p>-->
+                            <!--                            </a>-->
+                            <!--                        </button>-->
+                        </div>
                     </div>
-                </div>
+                </a>
             <?php endforeach ?>
         </div>
     </div>
@@ -92,9 +102,10 @@
 
 <div class="section   ">
     <div class="container">
-        <div class="row" style="/*margin-top: 40px*/">
+        <div class="row infomation_doctor" style="/*margin-top: 40px*/">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                <?php echo sfConfig::get('app_our_doctors') ?>
+                <a href="<?php echo url_for('doctor') ?>"
+                   style="color: #000000; text-decoration: none"><?php echo sfConfig::get('app_our_doctors') ?></a>
             </h2>
 
             <!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
@@ -104,11 +115,11 @@
         </div>
         <div class="row">
             <?php foreach ($doctor as $value): ?>
-                <div class="col-xs-3">
+                <div class="col-xs-3" style="width: 20%;">
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
                             <img src="/uploads/doctors/<?php echo $value['avatar'] ?>" class="img-circle img-responsive"
-                                 style="height: 190px">
+                                 style="height: auto">
                         </div>
                     </div>
                     <div class="row text-center">
@@ -126,7 +137,7 @@
                         <button style="background: #ffffff; border:  1px solid #85a92a">
                             <a href="<?php echo url_for('detail_doctor', array("iddoctor" => $value['iddoctor'], "name" => $value['name'])) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
-                                    READ MORE
+                                    XEM THÊM
                                 </p>
                             </a>
                         </button>
@@ -149,16 +160,19 @@
 
 <div class="section   ">
     <div class="container">
-        <div class="row" style="/*margin-top: 40px*/">
-            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                Thư viện
-            </h2>
+        <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>" style="color: black; text-decoration: none;">
+            <div class="row" style="/*margin-top: 40px*/">
+                <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
+                    Thư viện
+                </h2>
 
-            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
-                ẢNH NỔI BẬT
-            </p>
-            <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
-        </div>
+                <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">
+                    ẢNH NỔI BẬT
+                </p>
+                <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
+            </div>
+        </a>
+
         <div class="row">
 
             <script type="text/javascript">
@@ -301,7 +315,8 @@
 <div class="section   ">
     <div class="container">
         <div class="row" style="/*margin-top: 40px*/">
-            <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px; margin-bottom: 30px;">
+            <h2 class="no-margin-bottom"
+                style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px; margin-bottom: 30px;">
                 Tin tức mới nhất
             </h2>
             <!---->
@@ -317,8 +332,9 @@
                          style="height: 245px; width: 285px">
 
                     <div class="row" style="margin-left: 5px">
-                        <p class="no-margin" style="font-size: 16px ; color: #85a92a ; margin-top: 15px ;">
-                            <?php echo VtHelper::truncate($value['title'], 50) ?>
+                        <p class="no-margin"
+                           style="font-size: 16px ; color: #85a92a ; margin-top: 15px ; height: 50px;">
+                            <?php echo VtHelper::truncate($value['title'], 100) ?>
                         </p>
 
                         <p style="font-size: 14px">
@@ -331,7 +347,7 @@
                         <button style="background: #ffffff; border:  1px solid #85a92a">
                             <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
-                                    READ MORE
+                                    XEM THÊM
                                 </p>
                             </a>
                         </button>

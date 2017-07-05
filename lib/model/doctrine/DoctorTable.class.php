@@ -38,6 +38,7 @@ class DoctorTable extends Doctrine_Table
             ->createQuery('c')
             ->select('c.*')
             ->limit($limit)
+            ->orderBy('c.updated_at')
             ->fetchArray();
         return $query;
     }
