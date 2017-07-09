@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand">
+        <a href="<?php echo url_for('homepage_m', array('xteam' => 'mobile'))?>" class="navbar-brand">
             <img class="logo" src="/images/logo.png">
             <img class="text-logo" src="/images/text-logo.png">
         </a>
@@ -31,7 +31,6 @@
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Trang chủ</a></li>
-
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Giới thiệu <b class="caret"></b></a>
                 <ul class="dropdown-menu"
@@ -111,29 +110,29 @@
 <footer class="row">
     <div class="footer">
         <div class="row">
-            <div class="col-xs-6 no-padding-left left-ft">
-                <div class="row">
-                    <p class="title">
-                        Phòng khám Hoàng Long
-                    </p>
-                    <hr>
-                </div>
-                <div class="row">
-                    <h5 class="description">
-                        Phòng khám Hoàng Long là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật. Phòng khám
-                        được sáng lập bởi giáo sư Đào Văn Long - chuyên gia hàng đầu trong lĩnh vực tiêu hóa. Đây là
-                        phòng khám sở hữu dàn máy nội soi và siêu âm nội soi hiện đại và tiên tiến bậc nhất hiện nay tại
-                        Việt Nam.
-                    </h5>
-                    <span class="icon-contact" style="float: left">
-              <i class="fa fa-facebook"></i>
-              <i class="fa fa-twitter"></i>
-              <i class="fa fa-youtube-play"></i>
-              <i class="fa fa-google-plus"></i>
-             </span>
-                </div>
-            </div>
-            <div class="col-xs-6 no-padding right-ft">
+<!--            <div class="col-xs-6 no-padding-left left-ft">-->
+<!--                <div class="row">-->
+<!--                    <p class="title">-->
+<!--                        Phòng khám Hoàng Long-->
+<!--                    </p>-->
+<!--                    <hr>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <h5 class="description">-->
+<!--                        Phòng khám Hoàng Long là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật. Phòng khám-->
+<!--                        được sáng lập bởi giáo sư Đào Văn Long - chuyên gia hàng đầu trong lĩnh vực tiêu hóa. Đây là-->
+<!--                        phòng khám sở hữu dàn máy nội soi và siêu âm nội soi hiện đại và tiên tiến bậc nhất hiện nay tại-->
+<!--                        Việt Nam.-->
+<!--                    </h5>-->
+<!--                    <span class="icon-contact" style="float: left">-->
+<!--              <i class="fa fa-facebook"></i>-->
+<!--              <i class="fa fa-twitter"></i>-->
+<!--              <i class="fa fa-youtube-play"></i>-->
+<!--              <i class="fa fa-google-plus"></i>-->
+<!--             </span>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-xs-12 no-padding right-ft">
                 <div class="row">
                     <p class="title">
                         Liên hệ
@@ -154,7 +153,7 @@
                             <img src="/images/clock.png" class="img-clock">
                         </div>
                         <div class="col-xs-10 no-padding ">
-                            <p class="text">Thứ 2 - Thứ 7 <br> 08:00 - 21:00
+                            <p class="text">Thứ 2 - Thứ 7 <br> 07:30 - 17:30
                             </p>
                         </div>
                     </div>
@@ -164,8 +163,8 @@
                         </div>
                         <div class="col-xs-10 no-padding ">
                             <p class="text">
-                                04 628 11 331 - 04 628 11 337 <br>
-                                Hotline: 04 626 00 581
+                                024 628 11 331 - 024 628 11 337 <br>
+                                Hotline: 024 628 11 337
                             </p>
                         </div>
                     </div>

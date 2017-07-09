@@ -7,20 +7,20 @@
         if (is_iPad) {
             window.location.replace("<?php echo url_for('homepage_ip', array('xteam' => 'ipad')) ?>");
         }
-        else if( navigator.userAgent.match(/Android/i)
+        else if (navigator.userAgent.match(/Android/i)
             || navigator.userAgent.match(/webOS/i)
             || navigator.userAgent.match(/iPhone/i)
             || navigator.userAgent.match(/BlackBerry/i)
             || navigator.userAgent.match(/Windows Phone/i)
-        ){
-            window.location.replace("<?php echo url_for('homepage_m', array('xteam' => 'ipad'))?>");
+        ) {
+            window.location.replace("<?php echo url_for('homepage_m', array('xteam' => 'mobile'))?>");
         }
     </script>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/daterangepicker.css"/>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
     <script>
@@ -50,9 +50,10 @@
             <div class="col-md-4">
                 <div class="logo smooth-scroll">
                     <a href="<?php echo url_for('homepage') ?>">
-                        <img src="/images/logo.png"
+                        <img src="/images/logo.png" alt="logo hoàng long hospital"
                              style="margin-left: 15px; width: 60px ; height: 50px;margin-bottom: 10px; margin-top: 8px">
-                        <img src="/images/text-logo.png" style="width: 75px; height: 26px ; margin-left: 20px">
+                        <img src="/images/text-logo.png" style="width: 75px; height: 26px ; margin-left: 20px"
+                             alt="logo hoàng long hospital">
                     </a>
                 </div>
 
@@ -62,40 +63,40 @@
                     <div class="col-xs-4">
                         <div class="row">
                             <div class="col-xs-2 no-padding">
-                                <img src="/images/call.png">
+                                <img src="/images/call.png" alt="call hoàng long">
                             </div>
                             <div class="col-xs-10 no-padding" style="padding-left: 15px">
                                 <b> LIÊN HỆ </b>
 
-                                <p class="no-margin-bottom"> 04 628 11 331 - 04 628 11 337 </p>
+                                <p class="no-margin-bottom"> 024 628 11 331</p>
 
-                                <p class="no-margin-bottom"> Hotline : 04 626 00 581 </p>
+                                <p class="no-margin-bottom"> 024 628 11 337 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-3">
                         <div class="row">
                             <div class="col-xs-2 no-padding">
-                                <img src="/images/clock.png">
+                                <img src="/images/clock.png" alt="thời gian hoàng long">
                             </div>
                             <div class="col-xs-10 no-padding" style="padding-left: 20px">
                                 <b> GIỜ MỞ CỬA </b>
 
                                 <p class="no-margin-bottom"> Thứ 2 - Thứ 7 </p>
 
-                                <p class="no-margin-bottom"> 8:00 - 21:00 </p>
+                                <p class="no-margin-bottom"> 7:30 - 17:30 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="row">
                             <div class="col-xs-2 no-padding">
-                                <img class="icon-location" src="/images/location.png">
+                                <img class="icon-location" src="/images/location.png" alt="địa chỉ hoàng long">
                             </div>
                             <div class="col-xs-10 no-padding">
                                 <b> ĐỊA CHỈ </b>
 
-                                <p class="no-margin-bottom"> Tầng 10, tòa nhà VCCI <br>Số 9, Đào Duy Anh, Hà Nội
+                                <p class="no-margin-bottom"> Tầng 10, tòa nhà VCCI <br>Số 9, Đào Duy Anh, HN
                                 </p>
                             </div>
                         </div>
@@ -127,7 +128,7 @@
                                             $about_us = AboutUsTable::getAboutUsMenu();
                                             foreach ($about_us as $value): ?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"], "title"=> $value['title'])) ?>">
+                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"], "title" => $value['title'])) ?>">
                                                         <p class="text-uppercase"><?php echo $value['title'] ?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -135,7 +136,7 @@
                                             $about_us = CategoryAboutUsTable::getAllCategoryExceptRoot();
                                             foreach ($about_us as $value):?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us'], 'xteam'=>'hoanglong'))?>">
+                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us'], 'xteam' => 'hoanglong'))?>">
                                                         <p class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -190,7 +191,8 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="<?php echo url_for('contact',array('xteam' => 'hoanglong')) ?>">LIÊN HỆ </a>
+                                        <a href="<?php echo url_for('contact', array('xteam' => 'hoanglong')) ?>">LIÊN
+                                            HỆ </a>
                                     </li>
                                 </ul>
 
@@ -198,7 +200,8 @@
                                     <li style="background-color: #86a92b; height: 50px; border-radius: 0px 0px 10px 10px">
 
                                         <a type="button" data-toggle="modal"
-                                           data-target="#myModal"><span class="glyphicon glyphicon-calendar"></span><span> ĐẶT LỊCH KHÁM</span></a>
+                                           data-target="#myModal"><span
+                                                class="glyphicon glyphicon-calendar"></span><span> ĐẶT LỊCH KHÁM</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -252,10 +255,11 @@
             <div class="social-network">
                 <div class="row">
                     <div class="row text-center">
-                        <a href="#"><img src="/images/logo-ft.png" alt=""/></a>
+                        <a href="#"><img src="/images/logo-ft.png" alt="hoàng long hospital"/></a>
                     </div>
                     <div class="row text-center" style="font-size: 23px; margin-top: 10px ">
-                        <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: white"><i class="fa fa-facebook" style="margin-right: 10px;"></i></a>
+                        <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: white"><i
+                                class="fa fa-facebook" style="margin-right: 10px;"></i></a>
                         <i class="fa fa-twitter" style="margin-right: 10px;"></i>
                         <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
                         <i class="fa fa-google-plus"></i>
@@ -264,8 +268,8 @@
             </div>
             <div class="about-hoanglong">
                 <div class="row">
-                    <p style="font-size: 18px">
-                        PHÒNG KHÁM HOÀNG LONG
+                    <p style="font-size: 17px">
+                        PHÒNG KHÁM ĐA KHOA HOÀNG LONG
                     </p>
                     <hr>
                     <p class="description">
@@ -278,12 +282,12 @@
             </div>
             <div class="contact-us">
                 <p style="font-size: 18px">
-                    LIÊN HỆ NGAY
+                    LIÊN HỆ
                 </p>
                 <hr>
                 <div class="row">
                     <div class="col-xs-2 no-padding">
-                        <img src="/images/location.png" class="img-location">
+                        <img src="/images/location.png" class="img-location" alt="location hoàng long">
                     </div>
                     <div class="col-xs-10 no-padding ">
                         <p class="text">Tầng 10, Tòa nhà VCCI <br> Số 9, Đào Duy Anh, Hà Nội</p>
@@ -293,10 +297,10 @@
 
                 <div class="row">
                     <div class="col-xs-2 no-padding">
-                        <img src="/images/clock.png" class="img-clock">
+                        <img src="/images/clock.png" class="img-clock" alt="lịch khám hoàng long">
                     </div>
                     <div class="col-xs-10 no-padding ">
-                        <p class="text">Thứ 2 - Thứ 7 <br> 08:00 - 21:00
+                        <p class="text">Thứ 2 - Thứ 7 <br> 7:30 - 17:30
                         </p>
                     </div>
                 </div>
@@ -305,12 +309,12 @@
 
                 <div class="row">
                     <div class="col-xs-2 no-padding">
-                        <img src="/images/call.png" class="img-call">
+                        <img src="/images/call.png" class="img-call" alt="call hoàng long">
                     </div>
                     <div class="col-xs-10 no-padding ">
                         <p class="text">
-                            04 628 11 331 - 04 628 11 337 <br>
-                            Hotline: 04 626 00 581
+                            024 628 11 331 <br>
+                            Hotline: 024 628 11 337
                         </p>
                     </div>
                 </div>
@@ -344,8 +348,8 @@
 <!--Menu Scripts-->
 <script type="text/javascript" src="/js/megamenu.js"></script>
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<script type="text/javascript" src="/js/moment.min.js"></script>
+<script type="text/javascript" src="/js/daterangepicker.js"></script>
 <script>
     $(document).ready(function () {
         $('#btn-make-schedule').click(function () {
@@ -398,9 +402,18 @@
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo url_for("make_schedue",array("xteam" => "hoanglong"))?>',
-                    data: data
+                    data: data,
+                    success: function ($msg) {
+                        swal(JSON.parse($msg).message, "", "success");
+                        $('#myModal').modal('hide');
+                        $("#fullname_").val("");
+                        $("#age_").val("");
+                        $("#phone_").val("");
+                        $("#address_").val("");
+                        $("#description_").val("");
+                    }
                 }).done(function ($msg) {
-                    swal(JSON.parse($msg).message, "", "success");
+
                 });
             });
         });
@@ -454,15 +467,19 @@
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo url_for("make_schedue",array("xteam" => "hoanglong"))?>',
-                    data: data
+                    data: data,
+                    success: function ($msg) {
+                        console.log("msg",$msg);
+                        swal(JSON.parse($msg).message, "", "success");
+                        $('#myModal').modal('hide');
+                        $("#fullname_").val("");
+                        $("#age_").val("");
+                        $("#phone_").val("");
+                        $("#address_").val("");
+                        $("#description_").val("");
+                    }
                 }).done(function ($msg) {
-                    swal(JSON.parse($msg).message, "", "success");
-                    $('#myModal').modal('hide');
-                    $("#fullname_").val("");
-                    $("#age_").val("");
-                    $("#phone_").val("");
-                    $("#address_").val("");
-                    $("#description_").val("");
+
                 });
             });
         });
@@ -500,14 +517,14 @@
 </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/59580132e9c6d324a473850f/default';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/591fac068028bb7327046d4c/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
     })();
 </script>
 <!--End of Tawk.to Script-->

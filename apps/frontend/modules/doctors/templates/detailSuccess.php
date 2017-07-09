@@ -14,7 +14,7 @@
                 <div class="row new-title">
                     <div class="row">
                         <div class="col-xs-10 no-padding">
-                            <h1 class="no-padding" style="margin-top: 22px">Đỗi ngũ bác sĩ </h1>
+                            <h1 class="no-padding" style="margin-top: 22px">Đội ngũ bác sĩ </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
                             <i class="fa fa-facebook" style="margin-right: 10px;"></i>
@@ -58,13 +58,7 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        OUR TEAM </p>
-
-                    <div class="right-menu right-item">
-                        <p class=" "
-                           style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                            All </p>
-                    </div>
+                        Chuyên khoa </p>
                     <?php foreach ($spacialist as $value): ?>
                         <div class="right-menu right-item">
                             <p class=" "

@@ -27,7 +27,8 @@
             <a style="text-decoration: none"
                href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
                 <div class="col-md-6">
-                    <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;letter-spacing: 2px">
+                    <h2 class="no-margin-bottom"
+                        style="font-size: 42px ; color: #4b4b4b;letter-spacing: 0px; font-weight: 700">
                         GIỚI THIỆU CHUNG
                     </h2>
                     <a style="text-decoration: none"
@@ -44,7 +45,7 @@
             </a>
 
             <div class="col-md-6">
-                <img class="img-responsive" src="/images/image_about.PNG">
+                <img class="img-responsive" src="/images/image_about.PNG" alt="giới thiệu về hoàng long">
             </div>
         </div>
     </div>
@@ -67,12 +68,13 @@
         <div class="row" style=" margin-top: 30px">
             <?php $count = 0;
             foreach ($why_choose_us as $value): ?>
-                <a href="<?php echo $count == 0 ? url_for('doctor') : url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>"
+                <a href="<?php echo $value['idnews'] == 4 ? url_for('doctor') : url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>"
                    style="color: #000000">
                     <div
                         class="col-md-4 no-padding-left" <?php if ($count++ >= 3) { ?> style="margin-top: 40px; height: auto" <?php } else { ?> style="height: 220px;" <?php } ?>>
                         <div class="row">
                             <img src="/uploads/news/<?php echo $value['images'] ?>" class="img img-responsive "
+                                 alt="hoàng long <?php echo $value['title'] ?>"
                                  style="height: 120px; margin: 0px auto; border-radius: 5px; box-shadow: 7px 7px 14px;">
                         </div>
                         <div class="row">
@@ -104,8 +106,10 @@
     <div class="container">
         <div class="row infomation_doctor" style="/*margin-top: 40px*/">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
-                <a href="<?php echo url_for('doctor') ?>"
-                   style="color: #000000; text-decoration: none"><?php echo sfConfig::get('app_our_doctors') ?></a>
+                <!--                <a href="--><?php //echo url_for('doctor') ?><!--"-->
+                <!--                   style="color: #000000; text-decoration: none">-->
+                <?php echo sfConfig::get('app_our_doctors') ?>
+                <!--                </a>-->
             </h2>
 
             <!--            <p style="font-size: 16px ; color: #85a92a ; margin-top: 10px;margin-bottom: 30px;">-->
@@ -119,6 +123,7 @@
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
                             <img src="/uploads/doctors/<?php echo $value['avatar'] ?>" class="img-circle img-responsive"
+                                 alt="bác sĩ phòng khám hoàng long: <?php echo $value['name'] ?>"
                                  style="height: auto">
                         </div>
                     </div>
@@ -160,7 +165,8 @@
 
 <div class="section   ">
     <div class="container">
-        <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>" style="color: black; text-decoration: none;">
+        <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>"
+           style="color: black; text-decoration: none;">
             <div class="row" style="/*margin-top: 40px*/">
                 <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
                     Thư viện
@@ -248,11 +254,11 @@
                 }
             </style>
             <div id="carousel">
-                <a href="#"><img src="/images/gallery.jpg" id="item-1"/></a>
-                <a href="#"><img src="/images/gallery2.jpg" id="item-2"/></a>
-                <a href="#"><img src="/images/gallery3.jpg" id="item-3"/></a>
-                <a href="#"><img src="/images/gallery4.jpg" id="item-4"/></a>
-                <a href="#"><img src="/images/gallery5.jpg" id="item-5"/></a>
+                <a href="#"><img src="/images/gallery.jpg" id="item-1" alt="phòng khám đa khoa hoàng long"/></a>
+                <a href="#"><img src="/images/gallery2.jpg" id="item-2" alt="phòng khám đa khoa hoàng long"/></a>
+                <a href="#"><img src="/images/gallery3.jpg" id="item-3" alt="phòng khám đa khoa hoàng long"/></a>
+                <a href="#"><img src="/images/gallery4.jpg" id="item-4" alt="phòng khám đa khoa hoàng long"/></a>
+                <a href="#"><img src="/images/gallery5.jpg" id="item-5" alt="phòng khám đa khoa hoàng long"/></a>
 
             </div>
         </div>
@@ -279,7 +285,7 @@
                         <img src="/uploads/feedback/<?php echo $value['avatar'] ?>"
                              class="img-circle img-responsive customer-avatar"
                              id="customer-avatar-id-<?php echo $value['idfeed_back'] ?>"
-                             style="height: 95px; width: 95px">
+                             style="height: 95px; width: 95px" alt="khách hàng của hoàng long">
                     </div>
                 <?php endforeach ?>
             </div>
@@ -288,7 +294,7 @@
 
         <div class="row" style="margin-left: 50px; margin-right: 50px">
             <div class="col-xs-1 no-padding" style="width: 5%">
-                <img src="/images/keo_mo.png" style="margin-top: 5px">
+                <img src="/images/keo_mo.png" style="margin-top: 5px" alt="hoàng long">
             </div>
             <?php foreach ($feed_backs as $value): ?>
                 <div class="col-xs-10 no-padding text-center idfeed_back"
@@ -307,7 +313,7 @@
                 </div>
             <?php endforeach ?>
             <div class="col-xs-1 no-padding" style="width: 5%">
-                <img src="/images/keo_dong.png" style="margin-top: 5px">
+                <img src="/images/keo_dong.png" style="margin-top: 5px" alt="hoàng long">
             </div>
         </div>
     </div>
@@ -329,7 +335,7 @@
             <?php foreach ($news as $value): ?>
                 <div class="col-xs-3 no-padding-right">
                     <img src="/uploads/news/<?php echo $value['images'] ?>" class=" img-responsive"
-                         style="height: 245px; width: 285px">
+                         style="height: 245px; width: 285px" alt="hoàng long <?php echo $value['title']?>">
 
                     <div class="row" style="margin-left: 5px">
                         <p class="no-margin"

@@ -33,7 +33,7 @@ class ajaxActions extends sfActions
             $content.="<div>Số điện thoại:$phone</div>";
             $content.="<div>Ngày hẹn thăm khám:$date</div>";
             $content.="<div>Miêu tả:$description</div>";
-            VtHelper::sendAEmail("Thông tin đặt hẹn",$content,"hotrohoanglong@gmail.com");
+            VtHelper::sendAEmail("Thông tin đặt hẹn",$content,"hotro.hoanglong.web@gmail.com");
             return $this->renderText(json_encode(array('status' => 1, 'message' => 'Đã gửi lịch hẹn thành công. Chúng tôi sẽ sớm liên lạc với bạn!')));
         }else{
             return $this->renderText(json_encode(array('status' => 1, 'message' => 'Đã gửi lịch hẹn thất bại. Vui lòng liên lạc với chúng tôi qua số 04 628 11 331 - 04 628 11 337')));
