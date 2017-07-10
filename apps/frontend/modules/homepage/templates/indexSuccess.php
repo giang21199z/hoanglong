@@ -279,9 +279,11 @@
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <?php foreach ($feed_backs as $value): ?>
-                    <div class="col-xs-4 no-padding-right">
+            <div class="col-md-4 col-md-offset-4" id="avatar-feed-back">
+                <?php
+                $count = 0;
+                foreach ($feed_backs as $value): ?>
+                    <div class="col-xs-4 no-padding-right avatar-class" id="avatar-feed-back-<?php echo $count++ ?>">
                         <img src="/uploads/feedback/<?php echo $value['avatar'] ?>"
                              class="img-circle img-responsive customer-avatar"
                              id="customer-avatar-id-<?php echo $value['idfeed_back'] ?>"
@@ -335,7 +337,7 @@
             <?php foreach ($news as $value): ?>
                 <div class="col-xs-3 no-padding-right">
                     <img src="/uploads/news/<?php echo $value['images'] ?>" class=" img-responsive"
-                         style="height: 245px; width: 285px" alt="hoàng long <?php echo $value['title']?>">
+                         style="height: 245px; width: 285px" alt="hoàng long <?php echo $value['title'] ?>">
 
                     <div class="row" style="margin-left: 5px">
                         <p class="no-margin"
@@ -395,6 +397,7 @@
 
 <!-- section end -->
 <script>
+    var current_customer = 0;
     $(document).ready(function () {
         $(".mega-dropdown").removeClass('menu-active');
         $(".mega-dropdown:nth-child(1)").addClass('menu-active');
@@ -405,5 +408,13 @@
             $('.idfeed_back').hide();
             $("#idfeed_back-" + id).show();
         });
+        setInterval(function () {
+                current_customer++;
+                if (current_customer == 3) {
+                    current_customer == 0;
+                }
+                $("#avatar-feed-back-" + current_customer).css("transform","scale(2)");
+            }, 3000
+        );
     });
 </script>

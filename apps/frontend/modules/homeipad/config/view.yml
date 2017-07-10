@@ -6,7 +6,7 @@ default:
     content-type: text/html
 
   metas:
-    title:        Phòng khám Đa Khoa Hoàng Long: Sức khỏe là khởi nguồn của hạnh phúc
+    title:        Phòng khám đa khoa nhưng chuyên sâu về tiêu hóa và gan mật
     description:  Phòng khám Hoàng Long do giáo sư Đào Văn Long sáng lập là phòng khám Đa khoa nhưng chuyên sâu về Tiêu Hóa & Gan Mật với thế mạnh là nội soi và siêu âm nội soi.
     keywords:     nội soi, đường tiêu hóa, gan mật, đào văn long, siêu âm nội soi
     language:     vi

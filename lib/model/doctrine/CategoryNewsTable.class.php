@@ -23,6 +23,7 @@ class CategoryNewsTable extends Doctrine_Table
             ->createQuery('c')
             ->select('c.*')
             ->where('c.idcategory_news != 0')
+            ->addWhere('c.idcategory_news != 4')
             ->fetchArray();
         return $query;
     }

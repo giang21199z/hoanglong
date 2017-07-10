@@ -128,7 +128,7 @@
                                             $about_us = AboutUsTable::getAboutUsMenu();
                                             foreach ($about_us as $value): ?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"], "title" => $value['title'])) ?>">
+                                                        href="<?php echo url_for('detail_about_us', array("idaboutus" => $value["idnews"], "title" => VtHelper::write_url_english($value['title']))) ?>">
                                                         <p class="text-uppercase"><?php echo $value['title'] ?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -152,7 +152,7 @@
                                             $services = ServiceTable::getAllService();
                                             foreach ($services as $value):?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('detail_service', array('idservice' => $value['idnews'], 'title' => $value['title']))?>">
+                                                        href="<?php echo url_for('detail_service', array('idservice' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title'])))?>">
                                                         <p
                                                             class="text-uppercase"><?php echo $value['title']?></p></a>
                                                 </li>
@@ -167,7 +167,7 @@
                                             $category_news = CategoryNewsTable::getAllCategory();
                                             foreach ($category_news as $value):?>
                                                 <li class="col-xs-3 no-padding">
-                                                    <a href="<?php echo url_for('list_news', array('idcategory' => $value['idcategory_news'], 'name' => $value['name']))?>">
+                                                    <a href="<?php echo url_for('list_news', array('idcategory' => $value['idcategory_news'], 'name' => VtHelper::write_url_english($value['name'])))?>">
                                                         <p
                                                             class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
