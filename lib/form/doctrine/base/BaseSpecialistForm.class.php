@@ -17,6 +17,7 @@ abstract class BaseSpecialistForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'idspecialist' => new sfWidgetFormInputHidden(),
       'name'         => new sfWidgetFormTextarea(),
+      'order_item'   => new sfWidgetFormInputText(),
       'created_at'   => new sfWidgetFormDateTime(),
       'updated_at'   => new sfWidgetFormDateTime(),
     ));
@@ -24,6 +25,7 @@ abstract class BaseSpecialistForm extends BaseFormDoctrine
     $this->setValidators(array(
       'idspecialist' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idspecialist')), 'empty_value' => $this->getObject()->get('idspecialist'), 'required' => false)),
       'name'         => new sfValidatorString(array('required' => false)),
+      'order_item'   => new sfValidatorInteger(array('required' => false)),
       'created_at'   => new sfValidatorDateTime(),
       'updated_at'   => new sfValidatorDateTime(),
     ));

@@ -33,9 +33,12 @@ class NewsTable extends Doctrine_Table
             ->createQuery('c')
             ->select('c.*')
             ->limit($limit)
-            ->where('c.priority = 3')
+            ->offset(0)
+            ->where('c.priority != 2')
+            ->addWhere('c.priority != 4')
             ->orderBy('c.updated_at desc')
             ->fetchArray();
+        $query = array_reverse($query);
         return $query;
     }
 
@@ -57,20 +60,22 @@ class NewsTable extends Doctrine_Table
             $query = NewsTable::getInstance()
                 ->createQuery('c')
                 ->select('c.*')
+                ->where('c.priority != 2')
+                ->addWhere('c.priority != 4')
                 ->limit($limit)
                 ->offset($offset)
-                ->orderBy("c.idnews")
-                ->groupBy('c.idnews')
+                ->orderBy("c.updated_at desc")
                 ->fetchArray();
         } else {
             $query = NewsTable::getInstance()
                 ->createQuery('c')
                 ->select('c.*')
+                ->where('c.priority != 2')
+                ->addWhere('c.priority != 4')
+                ->addWhere('c.category_news_idcategory = ?', $category)
                 ->limit($limit)
                 ->offset($offset)
-                ->where('c.category_news_idcategory = ?', $category)
-                ->orderBy("c.idnews")
-                ->groupBy('c.idnews')
+                ->orderBy("c.updated_at desc")
                 ->fetchArray();
         }
         return $query;

@@ -86,7 +86,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch hẹn</p>
                             </button>
                         </div>
                     </div>

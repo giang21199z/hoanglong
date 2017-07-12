@@ -71,7 +71,7 @@
 
                     <div class="row text-center ">
                         <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                            <p class="text-center no-margin">SCHEDULE</p>
+                            <p class="text-center no-margin">Đặt lịch hẹn</p>
                         </button>
                     </div>
                 </div>

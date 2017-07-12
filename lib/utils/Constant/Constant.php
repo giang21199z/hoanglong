@@ -12,6 +12,7 @@ class Constant
     public static $Status_Booking_Filter = array(0 => "Chưa liên lạc", 1 => "Đã liên lạc");
     public static $Status_Booking = [ 0 => ["label" => "Chưa liên lạc", "class" => "label label-warning"], 1 => ["label" => "Đã liên lạc", "class" => "label label-success"]];
     public static $Number_Menu = 10;
-    public static $Display_Homepage = array(1 => ["label" => "Không ưu tiên", "class" => "label label-warning"], 2 => ["label" => "Hiển thị Why Choose US", "class" => "label label-success"], 3 => ["label" => "Hiển thị tin mới nhất", "class" => "label label-info"]);
-    public static $Display_Homepage_Cbx = array(1 => "Không ưu tiên", 2 => "Hiển thị Why Choose US", 3 => "Hiển thị tin mới nhất");
+    public static $Display_Homepage = array(1 => ["label" => "Không ưu tiên", "class" => "label label-warning"], 2 => ["label" => "Hiển thị Why Choose US", "class" => "label label-success"], 3 => ["label" => "Hiển thị tin mới nhất", "class" => "label label-info"], 4 => ["label" => "Nháp - Không hiển thị trang chủ", "class" => "label label-danger"]);
+    public static $Display_Homepage_Cbx = array(1 => "Không ưu tiên", 2 => "Hiển thị Why Choose US", 3 => "Hiển thị tin mới nhất", 4 => "Nháp - Không hiển thị trang chủ");
+    public static $FilterNews = array(0=> "Tất cả", 1 => "Không ưu tiên", 2 => "Hiển thị Why Choose US", 3 => "Hiển thị tin mới nhất", 4 => "Nháp - Không hiển thị trang chủ");
 }

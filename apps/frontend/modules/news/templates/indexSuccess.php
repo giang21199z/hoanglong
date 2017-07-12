@@ -23,17 +23,17 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > <?php echo $category?></p>
+                    <p style="font-size: 18px ; color: #85a92a ;"> <a style="color: #85a92a; text-decoration: none" href="<?php echo url_for('homepage')?>">Trang chủ</a> > Tin tức</p>
                 </div>
                 <?php foreach ($news as $value): ?>
                     <div class="row items-new">
                         <div class="img-items">
                             <img src="/uploads/news/<?php echo $value['images'] ?>"
-                                 style="width: 220px; height: 220px"/>
+                                 style="width: 220px; height: auto"/>
                         </div>
                         <div class="content-items" style="position: relative;">
                             <a style="text-decoration: none; color: black"
-                               href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                               href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
                                 <p style="font-size: 20px ; color: #85a92a ;">
                                     <?php echo $value['title'] ?>
                                 </p>
@@ -97,7 +97,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch hẹn</p>
                             </button>
                         </div>
                     </div>
@@ -111,5 +111,4 @@
 <script>
     $(".mega-dropdown").removeClass('menu-active');
     $(".mega-dropdown:nth-child(4)").addClass('menu-active');
-    $(".mega-dropdown:nth-child(4)").click();
 </script>

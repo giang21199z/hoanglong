@@ -28,7 +28,8 @@
                             Trang chủ
                         </a>
                         >
-                        <a href="<?php echo url_for('doctor') ?>" style="text-decoration: none; color: #8DAF39">Đội ngũ bác sĩ</a>
+                        <a href="<?php echo url_for('doctor') ?>" style="text-decoration: none; color: #8DAF39">Đội ngũ
+                            bác sĩ</a>
                     </p>
                 </div>
 
@@ -50,9 +51,10 @@
                                         <?php echo $doctors[$j]['degree']?>
                                     </p>
 
-<!--                                    <p class="description">-->
-<!--                                        --><?php //echo VtHelper::truncate($doctors[$j]['summary'], 50)?>
-<!--                                    </p>-->
+                                    <!--                                    <p class="description">-->
+                                    <!--                                        --><?php //echo VtHelper::truncate($doctors[$j]['summary'], 50)
+                                    ?>
+                                    <!--                                    </p>-->
                                     <a href="<?php echo url_for('detail_doctor', array('iddoctor' => $doctors[$j]['iddoctor']))?>">
                                         <button style="background: #ffffff; border:  1px solid #85a92a">
                                             <p class="no-margin" style="color: #85a92a ; font-size: 12px;">
@@ -70,19 +72,23 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        OUR TEAM </p>
+                        CHUYÊN KHOA </p>
 
-                    <div class="right-menu right-item">
-                        <p class=" "
-                           style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                            All </p>
-                    </div>
-                    <?php foreach ($spacialist as $value): ?>
+                    <a href="<?php echo url_for('doctor') ?>" style="text-decoration: none; color: #000000">
                         <div class="right-menu right-item">
                             <p class=" "
                                style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
-                                <?php echo $value['name'] ?> </p>
+                                Tất cả chuyên khoa </p>
                         </div>
+                    </a>
+                    <?php foreach ($spacialist as $value): ?>
+                        <a href="<?php echo url_for('doctor', array( 'specialist_id' => $value['idspecialist'])) ?>" style="text-decoration: none; color: #000000">
+                            <div class="right-menu right-item">
+                                <p class=" "
+                                   style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
+                                    <?php echo $value['name'] ?> </p>
+                            </div>
+                        </a>
                     <?php endforeach ?>
                 </div>
                 <div class="row make-shu" style=" background: #b9d96a">
@@ -104,7 +110,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch hẹn</p>
                             </button>
                         </div>
                     </div>

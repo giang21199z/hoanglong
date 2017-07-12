@@ -23,7 +23,7 @@
                             <i class="fa fa-google-plus"></i>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;">Home > Tin tức > <?php echo VtHelper::truncate($news->getTitle())  ?></p>
+                    <p style="font-size: 18px ; color: #85a92a ;"><a style="color: #85a92a; text-decoration: none" href="<?php echo url_for('homepage')?>">Trang chủ</a> > Tin tức > <?php echo $news->getTitle() ?></p>
                 </div>
                 <div class="row">
                     <p class="tille">
@@ -39,13 +39,13 @@
                     <div class="col-md-5 col-md-offset-1 arr-left">
                         <img class="arrow-img" src="/images/left.png">
                         <span>
-                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_news', array('idnews' => $news_related[0]['idnews'], 'title'=> $news_related[0]['title']))?>"><?php echo VtHelper::truncate($news_related[0]['title'],25) ?></a>
+                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_news', array('idnews' => $news_related[0]['idnews'], 'title'=> VtHelper::write_url_english($news_related[0]['title'])))?>"><?php echo VtHelper::truncate($news_related[0]['title'],25) ?></a>
                         </span>
                     </div>
                     <div class="col-md-5 arr-right">
                         <img class="arrow-img" src="/images/right.png">
                         <span>
-                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_news', array('idnews' => $news_related[0]['idnews'], 'title'=> $news_related[1]['title']))?>"><?php echo VtHelper::truncate($news_related[1]['title'],25) ?></a>
+                            <a style="text-decoration: none; color: #85A92A" href="<?php echo url_for('detail_news', array('idnews' => $news_related[0]['idnews'], 'title'=> VtHelper::write_url_english($news_related[1]['title'])))?>"><?php echo VtHelper::truncate($news_related[1]['title'],25) ?></a>
                         </span>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         TIN TỨC KHÁC </p>
                     <?php foreach ($news_related as $value): ?>
                         <a style="text-decoration: none; color: black"
-                           href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                           href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
                             <div class="right-menu right-item">
                                 <div class="row item">
                                     <div class="col-md-4 no-padding">
@@ -97,7 +97,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch khám</p>
                             </button>
                         </div>
                     </div>
@@ -111,5 +111,4 @@
 <script>
     $(".mega-dropdown").removeClass('menu-active');
     $(".mega-dropdown:nth-child(4)").addClass('menu-active');
-    $(".mega-dropdown:nth-child(4)").click();
 </script>

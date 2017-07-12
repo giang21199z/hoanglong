@@ -96,7 +96,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch hẹn</p>
                             </button>
                         </div>
                     </div>
@@ -124,4 +124,7 @@
         $('#detail-src').attr('src', $(img).attr('src'));
         $('#name-img').text($(img).attr('alt'));
     }
+    $(".mega-dropdown").removeClass('menu-active');
+    $(".mega-dropdown:nth-child(5)").addClass('menu-active');
 </script>
+<!-- section end -->

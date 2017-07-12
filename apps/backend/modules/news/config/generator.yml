@@ -31,7 +31,7 @@ generator:
           _delete:  {label: Del}
         display: [title, summary, images, updated_at, priority]
       filter:
-        display:  [title]
+        display:  [title, priority]
       form:
         display: [title, summary, content, images, category_news_idcategory, priority]
       edit:    ~

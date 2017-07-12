@@ -32,5 +32,4 @@
 <script>
     $(".mega-dropdown").removeClass('menu-active');
     $(".mega-dropdown:nth-child(3)").addClass('menu-active');
-    $(".mega-dropdown:nth-child(3)").click();
 </script>

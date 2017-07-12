@@ -27,7 +27,7 @@
                 </div>
                 <?php foreach ($news as $value): ?>
                     <a style="text-decoration: none; color: black"
-                       href="<?php echo url_for('detail_about_us', array('idaboutus' => $value['idnews'], 'title' => $value['title'])) ?>">
+                       href="<?php echo url_for('detail_about_us', array('idaboutus' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
                         <div class="row items-new">
                             <div class="img-items">
                                 <img src="/uploads/aboutus/<?php echo $value['images'] ?>"
@@ -99,7 +99,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch hẹn</p>
                             </button>
                         </div>
                     </div>

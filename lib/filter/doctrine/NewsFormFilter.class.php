@@ -13,23 +13,39 @@ class NewsFormFilter extends BaseNewsFormFilter
     public function configure()
     {
         $this->setWidgets(array(
-            'title' => new sfWidgetFormFilterInput(),
+            'title' => new sfWidgetFormInput(),
+            'priority' => new sfWidgetFormChoice(
+                array(
+                    'choices' => Constant::$FilterNews
+                )
+            ),
         ));
 
         $this->setValidators(array(
-            'title' => new sfValidatorString(),
+            'title' => new sfValidatorString(array('required' => false)),
+            'priority' => new sfValidatorInteger(array('required' => false)),
         ));
-
-        foreach ($this->getWidgetSchema()->getFields() as $field) {
-            $field->setAttribute('class', 'form-control');
-            $field->setAttribute('style', 'width: 50%');
-            $field->addOption('with_empty', false);
-        }
 
         $this->widgetSchema->setNameFormat('news_filters[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
         $this->setupInheritance();
+        foreach ($this->getWidgetSchema()->getFields() as $field) {
+            $field->setAttribute('class', 'form-control');
+            $field->setAttribute('style', 'width: 50%');
+            $field->addOption('with_empty', false);
+        }
+    }
+    public function doBuildQuery(array $values)
+    {
+        $query = parent::doBuildQuery($values);
+        if (array_key_exists('title', $values)) {
+            $query->andWhere('title LIKE ?', "%".$values['title']."%");
+        }
+        if (array_key_exists('priority', $values) && $values['priority'] != 0) {
+            $query->andWhere('priority = ?', $values['priority']);
+        }
+        return $query;
     }
 }

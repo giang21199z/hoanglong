@@ -13,7 +13,7 @@
             || navigator.userAgent.match(/BlackBerry/i)
             || navigator.userAgent.match(/Windows Phone/i)
         ) {
-            window.location.replace("<?php echo url_for('homepage_m', array('xteam' => 'mobile'))?>");
+            window.location.replace("<?php echo url_for('homepage_m')?>");
         }
     </script>
     <?php include_http_metas() ?>
@@ -96,7 +96,7 @@
                             <div class="col-xs-10 no-padding">
                                 <b> ĐỊA CHỈ </b>
 
-                                <p class="no-margin-bottom"> Tầng 10, tòa nhà VCCI <br>Số 9, Đào Duy Anh, HN
+                                <p class="no-margin-bottom"> Tầng 10, tháp VCCI <br>Số 9, Đào Duy Anh, HN
                                 </p>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                             $about_us = CategoryAboutUsTable::getAllCategoryExceptRoot();
                                             foreach ($about_us as $value):?>
                                                 <li class="col-xs-3 no-padding"><a
-                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us'], 'xteam' => 'hoanglong'))?>">
+                                                        href="<?php echo url_for('list_about_us', array('idcategory' => $value['idcategory_about_us']))?>">
                                                         <p class="text-uppercase"><?php echo $value['name']?></p></a>
                                                 </li>
                                             <?php endforeach; ?>
@@ -179,19 +179,19 @@
                                         <ul class="  dropdown-menu mega-dropdown-menu no-padding"
                                             style="border: 0px ; border-radius: 0px;">
                                             <li class="col-xs-3 no-padding">
-                                                <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>">
+                                                <a href="<?php echo url_for('list_gallery') ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện ảnh</p></a>
                                             </li>
                                             <li class="col-xs-3 no-padding">
-                                                <a href="<?php echo url_for('list_video', array('xteam' => 'hoanglong')) ?>">
+                                                <a href="<?php echo url_for('list_video') ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện video</p></a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown mega-dropdown">
-                                        <a href="<?php echo url_for('contact', array('xteam' => 'hoanglong')) ?>">LIÊN
+                                        <a href="<?php echo url_for('contact') ?>">LIÊN
                                             HỆ </a>
                                     </li>
                                 </ul>
@@ -290,7 +290,7 @@
                         <img src="/images/location.png" class="img-location" alt="location hoàng long">
                     </div>
                     <div class="col-xs-10 no-padding ">
-                        <p class="text">Tầng 10, Tòa nhà VCCI <br> Số 9, Đào Duy Anh, Hà Nội</p>
+                        <p class="text">Tầng 10, tháp VCCI <br> Số 9, Đào Duy Anh, Hà Nội</p>
                     </div>
                 </div>
                 <br>
@@ -363,21 +363,25 @@
             if (fullname.length == 0) {
                 $("#fullname").val('');
                 $("#fullname").prop({'placeholder': 'Vui lòng nhập đúng tên'});
+                $("#fullname").addClass("alert-danger");
                 is_validate = false;
             }
             if (age < 0 || age > 150) {
                 $("#age").val('');
                 $("#age").prop({'placeholder': 'Vui lòng nhập đúng tuổi'});
+                $("#age").addClass("alert-danger");
                 is_validate = false;
             }
             if (phone.length < 10 || !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone)) {
                 $("#phone").val('');
                 $("#phone").prop({'placeholder': 'Vui lòng nhập đúng số điện thoại'});
+                $("#phone").addClass("alert-danger");
                 is_validate = false;
             }
             if (address.length == 0) {
                 $("#address").val('');
                 $("#address").prop({'placeholder': 'Vui lòng nhập đúng địa chỉ'});
+                $("#address").addClass("alert-danger");
                 is_validate = false;
             }
             if (!is_validate) {
@@ -428,21 +432,25 @@
             if (fullname.length == 0) {
                 $("#fullname_").val('');
                 $("#fullname_").prop({'placeholder': 'Vui lòng nhập đúng tên'});
+                $("#fullname_").addClass("alert-danger");
                 is_validate = false;
             }
-            if (age < 0 || age > 150) {
+            if (age.length == 0 || age < 0 || age > 150) {
                 $("#age_").val('');
                 $("#age_").prop({'placeholder': 'Vui lòng nhập đúng tuổi'});
+                $("#age_").addClass("alert-danger");
                 is_validate = false;
             }
             if (phone.length < 10 || !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone)) {
                 $("#phone_").val('');
                 $("#phone_").prop({'placeholder': 'Vui lòng nhập đúng số điện thoại'});
+                $("#phone_").addClass("alert-danger");
                 is_validate = false;
             }
             if (address.length == 0) {
                 $("#address_").val('');
                 $("#address_").prop({'placeholder': 'Vui lòng nhập đúng địa chỉ'});
+                $("#address_").addClass("alert-danger");
                 is_validate = false;
             }
             if (!is_validate) {

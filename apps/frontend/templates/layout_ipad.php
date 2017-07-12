@@ -186,7 +186,7 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li style="background-color: #86a92b; height: 50px; border-radius: 0px 0px 10px 10px">
                                         <a type="button" data-toggle="modal"
-                                           data-target="#myModal"><span> SCHEDULE</span></a>
+                                           data-target="#myModal"><span> Đặt lịch hẹn</span></a>
                                     </li>
                                 </ul>
                             </div>

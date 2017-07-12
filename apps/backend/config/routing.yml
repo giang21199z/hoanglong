@@ -52,6 +52,9 @@ category_gallery:
 update_status_schedule:
   url:   /cap-nhat-trang-thai
   param: { module: ajax, action: changeStatusSchedule }
+ajax_order_specialist:
+  url:   /update-order-specialist
+  param: { module: ajax, action: updateOrderSpecialist }
 menu:
   url:   /quan-ly-menu
   param: { module: menu, action: index }

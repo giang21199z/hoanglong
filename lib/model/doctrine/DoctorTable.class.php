@@ -24,6 +24,15 @@ class DoctorTable extends Doctrine_Table
             ->fetchArray();
         return $query;
     }
+    public static function getAllDoctorBySpecialist($id)
+    {
+        $query = DoctorTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.specialist_idspecialist = ?', $id)
+            ->fetchArray();
+        return $query;
+    }
     public static function getAllDoctorMobile()
     {
         $query = DoctorTable::getInstance()

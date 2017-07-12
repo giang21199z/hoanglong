@@ -88,8 +88,7 @@ class AboutUsTable extends Doctrine_Table
                 ->addWhere('c.idnews != 2')
                 ->limit($limit)
                 ->offset($offset)
-                ->orderBy("c.idnews")
-                ->groupBy('c.idnews')
+                ->orderBy("c.updated_at desc")
                 ->fetchArray();
         } else {
             $query = AboutUsTable::getInstance()
@@ -100,8 +99,7 @@ class AboutUsTable extends Doctrine_Table
                 ->where('c.category_about_us_idcategory_about_us = ?', $category)
                 ->addWhere('c.idnews != 1')
                 ->addWhere('c.idnews != 2')
-                ->orderBy("c.idnews")
-                ->groupBy('c.idnews')
+                ->orderBy("c.updated_at desc")
                 ->fetchArray();
         }
         return $query;

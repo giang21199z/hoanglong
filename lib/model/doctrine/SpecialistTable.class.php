@@ -22,6 +22,7 @@ class SpecialistTable extends Doctrine_Table
         $query = SpecialistTable::getInstance()
             ->createQuery('c')
             ->select('c.*')
+            ->orderBy('c.order_item')
             ->fetchArray();
         return $query;
     }

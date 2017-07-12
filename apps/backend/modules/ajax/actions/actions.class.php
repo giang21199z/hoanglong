@@ -21,4 +21,16 @@ class ajaxActions extends sfActions
         return $this->renderText(json_encode(array('status' => 1, 'message' => 'Cập nhật thành công')));
 
     }
+
+    public function executeUpdateOrderSpecialist(sfWebRequest $request)
+    {
+        $items = $request->getPostParameter("data");
+        $items = json_decode($items, true);
+        foreach ($items as $value) {
+            $specialist = Doctrine::getTable('specialist')->find($value["id"]);
+            $specialist->setOrderItem((int)$value["index"]);
+            $specialist->save();
+        }
+        return $this->renderText(json_encode(array('status' => 1, 'message' => 'Cập nhật thành công')));
+    }
 }

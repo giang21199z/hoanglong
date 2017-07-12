@@ -67,7 +67,7 @@
                             </div>
                             <div class="col-xs-10">
                                 <i>Trụ sở</i><br>
-                                Tầng 10, tòa nhà VCCI số 9 Đào Duy Anh, Hà Nội
+                                Tầng 10, tháp VCCI số 9 Đào Duy Anh, Hà Nội
                             </div>
                         </div>
                         <br><br>
@@ -99,7 +99,7 @@
 
                         <div class="row text-center ">
                             <button class="btn text-center schedule-btn" id="btn-make-schedule">
-                                <p class="text-center">SCHEDULE</p>
+                                <p class="text-center">Đặt lịch khám</p>
                             </button>
                         </div>
                     </div>
@@ -113,5 +113,4 @@
 <script>
     $(".mega-dropdown").removeClass('menu-active');
     $(".mega-dropdown:nth-child(6)").addClass('menu-active');
-    $(".mega-dropdown:nth-child(6)").click();
 </script>

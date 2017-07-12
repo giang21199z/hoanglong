@@ -49,22 +49,22 @@ list_about_us_mobile:
   url:   /m/cac-bai-viet-theo-chu-de/:idcategory
   param: { module: aboutusm, action: index, idcategory: '' }
 contact:
-  url:   /lien-he-voi-chung-toi-ngay-nhe
+  url:   /lien-he
   param: { module: site, action: contact }
 contact_ipad:
-  url:   /ipad/lien-he-voi-chung-toi
+  url:   /ipad/lien-he
   param: { module: siteipad, action: contact}
 contact_mobile:
-  url:   /m/lien-he-voi-chung-toi
+  url:   /m/lien-he
   param: { module: sitemobile, action: contact }
 make_schedue:
   url:   /make-schedule
   param: { module: ajax, action: createSchedule }
 doctor:
-  url:   /bac-si
+  url:   /doi-ngu-chuyen-gia
   param: { module: doctors, action: index}
 detail_doctor:
-  url:   /bac-si/:iddoctor/:name
+  url:   /chuyen-gia/:iddoctor/:name
   param: { module: doctors, action: detail, iddoctor: '', name: '' }
 doctor_ipad:
   url:   /ipad/bac-si

@@ -713,6 +713,13 @@ Specialist:
       primary: false
       notnull: false
       autoincrement: false
+    order_item:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
     created_at:
       type: timestamp(25)
       fixed: false

@@ -11,7 +11,15 @@ class doctorsActions extends sfActions
 
     public function executeIndex(sfWebRequest $request)
     {
-        $this->doctors = DoctorTable::getAllDoctor();
+        $specialist_id = $request->getParameter("specialist_id");
+        if($specialist_id != NULL){
+            $this->doctors = DoctorTable::getAllDoctorBySpecialist($specialist_id);
+        }else{
+            $this->doctors = DoctorTable::getAllDoctor();
+        }
+        if(count($this->doctors) == 0){
+            $this->doctors = DoctorTable::getDoctorHomepage(1);
+        }
         $this->spacialist = SpecialistTable::getAllCategory();
     }
     public function executeDetail(sfWebRequest $request)

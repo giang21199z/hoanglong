@@ -9,17 +9,20 @@ Doctrine_Manager::getInstance()->bindComponent('Specialist', 'doctrine');
  * 
  * @property integer $idspecialist
  * @property string $name
+ * @property integer $order_item
  * @property timestamp $created_at
  * @property timestamp $updated_at
  * @property Doctrine_Collection $Doctor
  * 
  * @method integer             getIdspecialist() Returns the current record's "idspecialist" value
  * @method string              getName()         Returns the current record's "name" value
+ * @method integer             getOrderItem()    Returns the current record's "order_item" value
  * @method timestamp           getCreatedAt()    Returns the current record's "created_at" value
  * @method timestamp           getUpdatedAt()    Returns the current record's "updated_at" value
  * @method Doctrine_Collection getDoctor()       Returns the current record's "Doctor" collection
  * @method Specialist          setIdspecialist() Sets the current record's "idspecialist" value
  * @method Specialist          setName()         Sets the current record's "name" value
+ * @method Specialist          setOrderItem()    Sets the current record's "order_item" value
  * @method Specialist          setCreatedAt()    Sets the current record's "created_at" value
  * @method Specialist          setUpdatedAt()    Sets the current record's "updated_at" value
  * @method Specialist          setDoctor()       Sets the current record's "Doctor" collection
@@ -50,6 +53,15 @@ abstract class BaseSpecialist extends sfDoctrineRecord
              'notnull' => false,
              'autoincrement' => false,
              'length' => '',
+             ));
+        $this->hasColumn('order_item', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
              ));
         $this->hasColumn('created_at', 'timestamp', 25, array(
              'type' => 'timestamp',

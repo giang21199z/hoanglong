@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row" style="margin-bottom: 50px">
             <a style="text-decoration: none"
-               href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => $about_us->getTitle())) ?>">
+               href="<?php echo url_for('detail_about_us', array('idaboutus' => $about_us->getIdnews(), 'title' => VtHelper::write_url_english($about_us->getTitle()))) ?>">
                 <div class="col-md-6">
                     <h2 class="no-margin-bottom"
                         style="font-size: 42px ; color: #4b4b4b;letter-spacing: 0px; font-weight: 700">
@@ -52,7 +52,7 @@
 </div>
 
 
-<div class="section   " style="background: #f5f5f5">
+<div class="section" style="background: #f5f5f5">
     <div class="container" style="margin-bottom: 50px">
         <div class="row">
             <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b;">
@@ -68,7 +68,7 @@
         <div class="row" style=" margin-top: 30px">
             <?php $count = 0;
             foreach ($why_choose_us as $value): ?>
-                <a href="<?php echo $value['idnews'] == 4 ? url_for('doctor') : url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>"
+                <a href="<?php echo $value['idnews'] == 4 ? url_for('doctor') : url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>"
                    style="color: #000000">
                     <div
                         class="col-md-4 no-padding-left" <?php if ($count++ >= 3) { ?> style="margin-top: 40px; height: auto" <?php } else { ?> style="height: 220px;" <?php } ?>>
@@ -163,7 +163,7 @@
     </div>
 </div>
 
-<div class="section   ">
+<div class="section" style="background: #f5f5f5; height: 100%;">
     <div class="container">
         <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>"
            style="color: black; text-decoration: none;">
@@ -279,11 +279,9 @@
             <hr style="border-bottom-color: #cacaca; width: 342px ; margin-left: 0px ; margin-top: 10px">
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4" id="avatar-feed-back">
-                <?php
-                $count = 0;
-                foreach ($feed_backs as $value): ?>
-                    <div class="col-xs-4 no-padding-right avatar-class" id="avatar-feed-back-<?php echo $count++ ?>">
+            <div class="col-md-4 col-md-offset-4">
+                <?php foreach ($feed_backs as $value): ?>
+                    <div class="col-xs-4 no-padding-right">
                         <img src="/uploads/feedback/<?php echo $value['avatar'] ?>"
                              class="img-circle img-responsive customer-avatar"
                              id="customer-avatar-id-<?php echo $value['idfeed_back'] ?>"
@@ -320,7 +318,7 @@
         </div>
     </div>
 </div>
-<div class="section   ">
+<div class="section   " style="background: #f5f5f5; height: auto">
     <div class="container">
         <div class="row" style="/*margin-top: 40px*/">
             <h2 class="no-margin-bottom"
@@ -336,13 +334,15 @@
         <div class="row">
             <?php foreach ($news as $value): ?>
                 <div class="col-xs-3 no-padding-right">
-                    <img src="/uploads/news/<?php echo $value['images'] ?>" class=" img-responsive"
-                         style="height: 245px; width: 285px" alt="hoàng long <?php echo $value['title'] ?>">
+                    <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
+                        <img src="/uploads/news/<?php echo $value['images'] ?>" class=" img-responsive"
+                             style="height: 245px; width: 285px" alt="hoàng long <?php echo $value['title'] ?>">
+                    </a>
 
                     <div class="row" style="margin-left: 5px">
                         <p class="no-margin"
-                           style="font-size: 16px ; color: #85a92a ; margin-top: 15px ; height: 50px;">
-                            <?php echo VtHelper::truncate($value['title'], 100) ?>
+                           style="font-size: 16px ; color: #85a92a ; margin-top: 15px ; height: 70px;">
+                            <?php echo VtHelper::truncate($value['title'], 200) ?>
                         </p>
 
                         <p style="font-size: 14px">
@@ -353,7 +353,7 @@
                         <!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
                         <!--                        </p>-->
                         <button style="background: #ffffff; border:  1px solid #85a92a">
-                            <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => $value['title'])) ?>">
+                            <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
                                     XEM THÊM
                                 </p>
@@ -408,13 +408,5 @@
             $('.idfeed_back').hide();
             $("#idfeed_back-" + id).show();
         });
-        setInterval(function () {
-                current_customer++;
-                if (current_customer == 3) {
-                    current_customer == 0;
-                }
-                $("#avatar-feed-back-" + current_customer).css("transform","scale(2)");
-            }, 3000
-        );
     });
 </script>
