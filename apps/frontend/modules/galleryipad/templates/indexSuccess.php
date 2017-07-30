@@ -23,7 +23,7 @@
     <div class="row list-news">
         <?php foreach ($categories as $value): ?>
             <div class="col-xs-6 no-padding-left" style="margin-bottom: 10px">
-                <a href="<?php echo url_for('detail_list_gallery_ipad', array('id' => $value['idcategory_gallery'], 'total' => $value['number'], 'xteam' => 'ipad')) ?>"
+                <a href="<?php echo url_for('detail_list_gallery_ipad', array('id' => $value['idcategory_gallery'], 'total' => $value['number'])) ?>"
                    style="text-decoration: none">
                     <div class="row" style="border-radius: 4px;border: 1px solid #ddd">
                         <div class="row"

@@ -5,14 +5,34 @@
     <div id="wowslider-container1">
         <div class="ws_images">
             <ul>
-                <li><img src="/data1/images/<?php echo $slides[0]['images'] ?>" alt="hoanglonghospital.vn" title=""
-                         id="wows1_0"/></li>
-                <li><img src="/data1/images/<?php echo $slides[1]['images'] ?>" alt="hoanglonghospital.vn" title=""
-                         id="wows1_1"/></li>
-                <li><img src="/data1/images/<?php echo $slides[2]['images'] ?>" alt="hoanglonghospital.vn" title=""
-                         id="wows1_2"/></li>
+                <li>
+                    <img data-toggle="modal" data-target="#myModal"
+                         src="/data1/images/<?php echo $slides[0]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                         id="wows1_0"/>
+                </li>
+                <li>
+                    <!--                    cai slide 2 va 3 tao dang de redirect sang tin tuc chu sao-->
+                    <a href="<?php echo url_for('detail_news', array('idnews' => $sales->getIdnews(), 'title' => 'tin-tuc-khuyen-mai-' . VtHelper::write_url_english($sales->getTitle()))) ?>">
+                        <img src="/data1/images/<?php echo $slides[1]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                             id="wows1_1"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo url_for('detail_news', array('idnews' => $sales->getIdnews(), 'title' => 'tin-tuc-khuyen-mai-' . VtHelper::write_url_english($sales->getTitle()))) ?>">
+                        <img src="/data1/images/<?php echo $slides[2]['images'] ?>" alt="hoanglonghospital.vn" title=""
+                             id="wows1_2"/>
+                    </a>
+                </li>
             </ul>
         </div>
+        <div class="ws_bullets">
+            <div>
+                <a href="#" title=""><span>1</span></a>
+                <a href="#" title=""><span>2</span></a>
+                <a href="#" title=""><span>3</span></a>
+            </div>
+        </div>
+
     </div>
     <script type="text/javascript" src="/engine1/wowslider.js"></script>
     <script type="text/javascript" src="/engine1/script.js"></script>
@@ -68,14 +88,14 @@
         <div class="row" style=" margin-top: 30px">
             <?php $count = 0;
             foreach ($why_choose_us as $value): ?>
-                <a href="<?php echo $value['idnews'] == 4 ? url_for('doctor') : url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>"
-                   style="color: #000000">
+                <a href="<?php if($value['idnews'] == 4) echo  url_for('doctor'); else if($value['idnews'] == 10) echo '#'; else echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))); ?>"
+                   style="color: #000000" <?php if($value['idnews'] == 10):?> data-toggle="modal" data-target="#myModal2"<?php endif;?>>
                     <div
                         class="col-md-4 no-padding-left" <?php if ($count++ >= 3) { ?> style="margin-top: 40px; height: auto" <?php } else { ?> style="height: 220px;" <?php } ?>>
                         <div class="row">
                             <img src="/uploads/news/<?php echo $value['images'] ?>" class="img img-responsive "
                                  alt="hoàng long <?php echo $value['title'] ?>"
-                                 style="height: 120px; margin: 0px auto; border-radius: 5px; box-shadow: 7px 7px 14px;">
+                                 style="height: 150px; margin: 0px auto; border-radius: 5px; box-shadow: 7px 7px 14px;">
                         </div>
                         <div class="row">
                             <p style="font-size: 18px ; margin-top: 30px ; color:#85a92a; text-align: center">
@@ -165,7 +185,7 @@
 
 <div class="section" style="background: #f5f5f5; height: 100%;">
     <div class="container">
-        <a href="<?php echo url_for('list_gallery', array('xteam' => 'hoanglong')) ?>"
+        <a href="<?php echo url_for('list_gallery') ?>"
            style="color: black; text-decoration: none;">
             <div class="row" style="/*margin-top: 40px*/">
                 <h2 class="no-margin-bottom" style="font-size: 42px ; color: #4b4b4b ; letter-spacing: 2px">
@@ -281,10 +301,10 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <?php foreach ($feed_backs as $value): ?>
-                    <div class="col-xs-4 no-padding-right">
+                    <div class="col-xs-4 no-padding-right col-xs-offset-4"
+                         id="customer-avatar-id-<?php echo $value['idfeed_back'] ?>" style="display: none">
                         <img src="/uploads/feedback/<?php echo $value['avatar'] ?>"
                              class="img-circle img-responsive customer-avatar"
-                             id="customer-avatar-id-<?php echo $value['idfeed_back'] ?>"
                              style="height: 95px; width: 95px" alt="khách hàng của hoàng long">
                     </div>
                 <?php endforeach ?>
@@ -340,18 +360,21 @@
                     </a>
 
                     <div class="row" style="margin-left: 5px">
-                        <p class="no-margin"
-                           style="font-size: 16px ; color: #85a92a ; margin-top: 15px ; height: 70px;">
-                            <?php echo VtHelper::truncate($value['title'], 200) ?>
-                        </p>
+                        <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>" style="text-decoration: none;">
+                            <p class="no-margin"
+                               style="font-size: 16px ; color: #85a92a ; margin-top: 15px ; height: 70px;">
+                                <?php echo VtHelper::truncate($value['title'], 70) ?>
+                            </p>
 
-                        <p style="font-size: 14px">
-                            <?php echo $value['updated_at'] ?>
-                        </p>
+                            <p style="font-size: 14px; color: black">
+                                <?php echo $value['updated_at'] ?> <span class="fa fa-eye"
+                                                                         style="float: right"> <?php echo $value['views'] ?></span>
+                            </p>
 
-                        <!--                        <p style="font-size: 14px">-->
-                        <!--                            --><?php //echo VtHelper::truncate($value['summary'], 100) ?>
-                        <!--                        </p>-->
+                            <p style="font-size: 14px; color: black">
+                                <?php echo VtHelper::truncate($value['summary'], 100) ?>
+                            </p>
+                        </a>
                         <button style="background: #ffffff; border:  1px solid #85a92a">
                             <a href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
                                 <p class="no-margin" style="color: #85a92a ; font-size: 10px;">
@@ -399,6 +422,8 @@
 <script>
     var current_customer = 0;
     $(document).ready(function () {
+        $("#customer-avatar-id-1").css("display", "block");
+        $("#idfeed_back-1").css("display", "block");
         $(".mega-dropdown").removeClass('menu-active');
         $(".mega-dropdown:nth-child(1)").addClass('menu-active');
         $(".idfeed_back:nth-child(2)").hide();
@@ -408,5 +433,63 @@
             $('.idfeed_back').hide();
             $("#idfeed_back-" + id).show();
         });
+        var index = 1;
+        setInterval(function () {
+            index++;
+            if (index == 1) {
+                $("#customer-avatar-id-1").fadeIn("slow");
+                $("#idfeed_back-1").fadeIn("slow");
+                $("#customer-avatar-id-2").css("display", "none");
+                $("#idfeed_back-2").css("display", "none");
+                $("#customer-avatar-id-3").css("display", "none");
+                $("#idfeed_back-3").css("display", "none");
+            }
+            if (index == 2) {
+                $("#customer-avatar-id-1").css("display", "none");
+                $("#idfeed_back-1").css("display", "none");
+                $("#customer-avatar-id-2").fadeIn("slow");
+                $("#idfeed_back-2").fadeIn("slow");
+                $("#customer-avatar-id-3").css("display", "none");
+                $("#idfeed_back-3").css("display", "none");
+            }
+            if (index == 3) {
+                $("#customer-avatar-id-1").css("display", "none");
+                $("#idfeed_back-1").css("display", "none");
+                $("#customer-avatar-id-2").css("display", "none");
+                $("#idfeed_back-2").css("display", "none");
+                $("#customer-avatar-id-3").fadeIn("slow");
+                $("#idfeed_back-3").fadeIn("slow");
+                index = 0;
+            }
+        }, 3000);
     });
 </script>
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="row make-shu" style=" background: #b9d96a; width: 360px ; margin: 0px auto; border-radius: 10px">
+            <p style=" color :#ffffff;padding-top: 25px ; padding-left: 20px ; letter-spacing: 2px; font-size: 26px">
+                Đặt lịch hẹn</p>
+
+            <div class="row"
+                 style="font-size: 16px;padding-left: 25px;padding-right: 25px ; letter-spacing: 1px;">
+                <p style="color: #ffffff">
+                    Đặt trước 1 ngày có ngay lịch khám
+                </p>
+                <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
+                <input type="number" class="form-control" id="age" placeholder="Tuổi">
+                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại">
+                <input type="text" class="form-control" id="address" placeholder="Địa chỉ">
+                <input type="text" class="form-control" id="date" placeholder="Ngày bạn có thể tới khám">
+                <textarea class="form-control" style="height: 140px" id="description"
+                          placeholder="Miêu tả triệu chứng"></textarea>
+
+                <div class="row text-center ">
+                    <button class="btn text-center schedule-btn" id="btn-make-schedule">
+                        <p class="text-center">Đặt lịch khám</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -33,4 +33,19 @@ class ajaxActions extends sfActions
         }
         return $this->renderText(json_encode(array('status' => 1, 'message' => 'Cập nhật thành công')));
     }
+    public function executeChangePassword(sfWebRequest $request)
+    {
+        $username = $request->getParameter('username');
+
+        $password = $request->getParameter('password');
+
+        $user = AdminTable::getByUsername($username);
+
+        $user->setPassword($password);
+
+        $user->save();
+
+        return $this->renderText(json_encode(array('status' => 1, 'message' => 'Cập nhật thành công')));
+
+    }
 }

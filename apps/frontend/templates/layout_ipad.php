@@ -172,7 +172,7 @@
                                                         class="text-uppercase">Thư viện ảnh</p></a>
                                             </li>
                                             <li class="col-xs-4 no-padding">
-                                                <a href="<?php echo url_for('list_video', array('xteam' => 'ipad')) ?>">
+                                                <a href="<?php echo url_for('list_video', array('idvideo' => 1)) ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện video</p></a>
                                             </li>

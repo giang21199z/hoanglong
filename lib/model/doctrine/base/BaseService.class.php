@@ -15,6 +15,7 @@ Doctrine_Manager::getInstance()->bindComponent('Service', 'doctrine');
  * @property timestamp $created_at
  * @property timestamp $updated_at
  * @property integer $priority
+ * @property integer $views
  * @property integer $category_service_idcategory_service
  * @property CategoryService $CategoryService
  * 
@@ -26,6 +27,7 @@ Doctrine_Manager::getInstance()->bindComponent('Service', 'doctrine');
  * @method timestamp       getCreatedAt()                           Returns the current record's "created_at" value
  * @method timestamp       getUpdatedAt()                           Returns the current record's "updated_at" value
  * @method integer         getPriority()                            Returns the current record's "priority" value
+ * @method integer         getViews()                               Returns the current record's "views" value
  * @method integer         getCategoryServiceIdcategoryService()    Returns the current record's "category_service_idcategory_service" value
  * @method CategoryService getCategoryService()                     Returns the current record's "CategoryService" value
  * @method Service         setIdnews()                              Sets the current record's "idnews" value
@@ -36,6 +38,7 @@ Doctrine_Manager::getInstance()->bindComponent('Service', 'doctrine');
  * @method Service         setCreatedAt()                           Sets the current record's "created_at" value
  * @method Service         setUpdatedAt()                           Sets the current record's "updated_at" value
  * @method Service         setPriority()                            Sets the current record's "priority" value
+ * @method Service         setViews()                               Sets the current record's "views" value
  * @method Service         setCategoryServiceIdcategoryService()    Sets the current record's "category_service_idcategory_service" value
  * @method Service         setCategoryService()                     Sets the current record's "CategoryService" value
  * 
@@ -113,6 +116,16 @@ abstract class BaseService extends sfDoctrineRecord
              'length' => 25,
              ));
         $this->hasColumn('priority', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '1',
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('views', 'integer', 4, array(
              'type' => 'integer',
              'fixed' => 0,
              'unsigned' => false,

@@ -48,7 +48,7 @@ body{
     margin-left: 0px;
 }
 .infomation{
-    margin-top: 32px;
+    margin-top: 18px;
 }
 .infomation b {
     color: #7c7c7c;
@@ -74,16 +74,16 @@ body{
 }
 .menu-header ul li:hover{
     /*background: #99cc33;*/
-    height: 45px;
+    height: 60px;
 }
 .navbar{
-    height: 45px !important;
+    height: 60px !important;
 }
 .title-banner h2{
     font-size: 50px;
 }
 .menu-header ul li{
-    height: 45px;
+    height: 60px;
     color: #86a92b;
     font-weight: 700;
     text-align: center;
@@ -101,6 +101,8 @@ body{
     background: #0a0a0a;
 }
 .left-content{
+    position: relative;
+    z-index: 999;
     width: 840px;
     float: left;
     display: inline;
@@ -242,6 +244,7 @@ margin-top: 25px;
     margin-left:15px;
     color: #85a92a;
     letter-spacing: 0.5px;
+    width: 80%
 }
 
 .new-detail2 .arr-right .arrow-img{
@@ -258,9 +261,10 @@ margin-top: 25px;
     margin-left:15px;
     color: #85a92a;
     letter-spacing: 0.5px;
+    width: 80%;
 }
 .pre{
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 30px;
 }
 .new-detail2 .right-item{

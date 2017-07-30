@@ -23,6 +23,7 @@ abstract class BaseServiceForm extends BaseFormDoctrine
       'created_at'                          => new sfWidgetFormDateTime(),
       'updated_at'                          => new sfWidgetFormDateTime(),
       'priority'                            => new sfWidgetFormInputText(),
+      'views'                               => new sfWidgetFormInputText(),
       'category_service_idcategory_service' => new sfWidgetFormInputHidden(),
     ));
 
@@ -35,6 +36,7 @@ abstract class BaseServiceForm extends BaseFormDoctrine
       'created_at'                          => new sfValidatorDateTime(),
       'updated_at'                          => new sfValidatorDateTime(),
       'priority'                            => new sfValidatorInteger(array('required' => false)),
+      'views'                               => new sfValidatorInteger(array('required' => false)),
       'category_service_idcategory_service' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('category_service_idcategory_service')), 'empty_value' => $this->getObject()->get('category_service_idcategory_service'), 'required' => false)),
     ));
 

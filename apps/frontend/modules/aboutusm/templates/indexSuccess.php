@@ -1,7 +1,7 @@
 ﻿<div class="content_page ">
     <div class="row">
         <p class="no-margin" style="vertical-align: middle">
-            <span class="text-header ">About Us</span>
+            <span class="text-header ">Báo chí</span>
             <span class="icon-contact" style="float: right">
               <i class="fa fa-facebook"></i>
               <i class="fa fa-twitter"></i>
@@ -9,7 +9,7 @@
               <i class="fa fa-google-plus"></i>
              </span>
         </p>
-        <p class="sub-text-header">Home > About us</p>
+        <p class="sub-text-header">Trang chủ > Báo chí</p>
     </div>
     <div class="row news">
         <?php foreach ($news as $value): ?>

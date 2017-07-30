@@ -347,7 +347,13 @@ hr{
     color: #ffffff;
 }
 .booking .modal-content input ,textarea , .schedule-btn{
-    margin-top: 12px;
+    box-shadow: -1px 3px 3px 0px #aaa;
+    border-radius:10px;
+    margin-bottom:30px;
+    letter-spacing: 1px;
+    background: #ffffff;
+    color:#b9d96a ;
+    font-size: 18px
 }
 .booking .modal-content .schedule-btn{
     background: #ffffff;

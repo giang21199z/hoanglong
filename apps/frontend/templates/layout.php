@@ -5,7 +5,7 @@
     <script>
         var is_iPad = navigator.userAgent.match(/iPad/i) != null;
         if (is_iPad) {
-            window.location.replace("<?php echo url_for('homepage_ip', array('xteam' => 'ipad')) ?>");
+            window.location.replace("<?php echo url_for('homepage_ip') ?>");
         }
         else if (navigator.userAgent.match(/Android/i)
             || navigator.userAgent.match(/webOS/i)
@@ -184,7 +184,7 @@
                                                         class="text-uppercase">Thư viện ảnh</p></a>
                                             </li>
                                             <li class="col-xs-3 no-padding">
-                                                <a href="<?php echo url_for('list_video') ?>">
+                                                <a href="<?php echo url_for('list_video', array('idvideo' => 1)) ?>">
                                                     <p
                                                         class="text-uppercase">Thư viện video</p></a>
                                             </li>
@@ -197,9 +197,9 @@
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li style="background-color: #86a92b; height: 50px; border-radius: 0px 0px 10px 10px">
+                                    <li style="background-color: #86a92b; height: 70px; border-radius: 0px 0px 10px 10px">
 
-                                        <a type="button" data-toggle="modal"
+                                        <a type="button" data-toggle="modal" style="margin-top: 8px"
                                            data-target="#myModal"><span
                                                 class="glyphicon glyphicon-calendar"></span><span> ĐẶT LỊCH KHÁM</span></a>
                                     </li>
@@ -213,6 +213,11 @@
     </div>
 </header>
 
+<div class="row" style="position: fixed; top: 70%; right: 0px; z-index: 99999999">
+    <a type="button" data-toggle="modal"  data-target="#myModal">
+        <img src="/images/icon_hotline.png" style="width: 100px;" alt="Đặt lịch hoàng long"/>
+    </a>
+</div>
 
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -260,9 +265,11 @@
                     <div class="row text-center" style="font-size: 23px; margin-top: 10px ">
                         <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: white"><i
                                 class="fa fa-facebook" style="margin-right: 10px;"></i></a>
-                        <i class="fa fa-twitter" style="margin-right: 10px;"></i>
-                        <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
-                        <i class="fa fa-google-plus"></i>
+                        <a href="https://www.youtube.com/channel/UCSY56RWgn7BsoWYcuneZJPw" style="color: white">
+                            <i class="fa fa-youtube-play" style="margin-right: 10px;"></i></a>
+                        <a href="https://plus.google.com/u/3/107088174740791028286?hl=vi" style="color: white"><i class="fa fa-google-plus"></i></a>
+                        <a href="https://www.linkedin.com/in/hoanglongclinic/" style="color: white">
+                            <i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -405,7 +412,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo url_for("make_schedue",array("xteam" => "hoanglong"))?>',
+                    url: '<?php echo url_for("make_schedue")?>',
                     data: data,
                     success: function ($msg) {
                         swal(JSON.parse($msg).message, "", "success");
@@ -474,7 +481,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo url_for("make_schedue",array("xteam" => "hoanglong"))?>',
+                    url: '<?php echo url_for("make_schedue")?>',
                     data: data,
                     success: function ($msg) {
                         console.log("msg",$msg);

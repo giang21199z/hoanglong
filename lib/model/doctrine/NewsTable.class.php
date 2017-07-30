@@ -27,6 +27,16 @@ class NewsTable extends Doctrine_Table
         return $query;
     }
 
+    public static function getNewSale()
+    {
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.priority = 5')
+            ->fetchOne();
+        return $query;
+    }
+
     public static function getNewsHomepage($limit = 4)
     {
         $query = NewsTable::getInstance()
@@ -34,9 +44,8 @@ class NewsTable extends Doctrine_Table
             ->select('c.*')
             ->limit($limit)
             ->offset(0)
-            ->where('c.priority != 2')
-            ->addWhere('c.priority != 4')
-            ->orderBy('c.updated_at desc')
+            ->where('c.priority = 3')
+            ->orderBy('c.created_at desc')
             ->fetchArray();
         $query = array_reverse($query);
         return $query;
@@ -49,7 +58,7 @@ class NewsTable extends Doctrine_Table
             ->select('c.*')
             ->limit($limit)
             ->where('c.priority = 2')
-            ->orderBy('c.updated_at desc')
+            ->orderBy('c.created_at')
             ->fetchArray();
         return $query;
     }
@@ -81,22 +90,40 @@ class NewsTable extends Doctrine_Table
         return $query;
     }
 
+    public static function search($keyword = "")
+    {
+
+        $query = NewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.priority != 2')
+            ->addWhere('c.priority != 4')
+            ->addWhere('c.title LIKE ?', '%'.$keyword.'%')
+            ->orderBy("c.updated_at desc")
+            ->fetchArray();
+        return $query;
+    }
+
     public static function getTotalPages($category)
     {
         if ($category == NULL) {
             $count = NewsTable::getInstance()
                 ->createQuery('c')
-                ->select('count(c.idnews) as count')
+                ->select('c.*')
+                ->where('c.priority != 2')
+                ->addWhere('c.priority != 4')
                 ->fetchArray();
         } else {
             $count = NewsTable::getInstance()
                 ->createQuery('c')
-                ->select('count(c.idnews) as count')
-                ->where('c.category_news_idcategory = ?', $category)
+                ->select('c.*')
+                ->where('c.priority != 2')
+                ->addWhere('c.priority != 4')
+                ->addWhere('c.category_news_idcategory = ?', $category)
                 ->fetchArray();
         }
 
-        return $count[0]['count'];
+        return count($count);
     }
 
     public static function getNewsById($id)
@@ -115,6 +142,9 @@ class NewsTable extends Doctrine_Table
             ->createQuery('c')
             ->select('c.*')
             ->where('c.idnews != ?', $id)
+            ->addWhere('c.priority != 5')
+            ->addWhere('c.priority != 4')
+            ->addWhere('c.priority != 2')
             ->limit($limit)
             ->orderBy('RAND()')
             ->fetchArray();

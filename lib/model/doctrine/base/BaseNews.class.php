@@ -16,6 +16,7 @@ Doctrine_Manager::getInstance()->bindComponent('News', 'doctrine');
  * @property timestamp $updated_at
  * @property integer $category_news_idcategory
  * @property integer $priority
+ * @property integer $views
  * @property CategoryNews $CategoryNews
  * 
  * @method integer      getIdnews()                   Returns the current record's "idnews" value
@@ -27,6 +28,7 @@ Doctrine_Manager::getInstance()->bindComponent('News', 'doctrine');
  * @method timestamp    getUpdatedAt()                Returns the current record's "updated_at" value
  * @method integer      getCategoryNewsIdcategory()   Returns the current record's "category_news_idcategory" value
  * @method integer      getPriority()                 Returns the current record's "priority" value
+ * @method integer      getViews()                    Returns the current record's "views" value
  * @method CategoryNews getCategoryNews()             Returns the current record's "CategoryNews" value
  * @method News         setIdnews()                   Sets the current record's "idnews" value
  * @method News         setImages()                   Sets the current record's "images" value
@@ -37,6 +39,7 @@ Doctrine_Manager::getInstance()->bindComponent('News', 'doctrine');
  * @method News         setUpdatedAt()                Sets the current record's "updated_at" value
  * @method News         setCategoryNewsIdcategory()   Sets the current record's "category_news_idcategory" value
  * @method News         setPriority()                 Sets the current record's "priority" value
+ * @method News         setViews()                    Sets the current record's "views" value
  * @method News         setCategoryNews()             Sets the current record's "CategoryNews" value
  * 
  * @package    hoanglong
@@ -121,6 +124,16 @@ abstract class BaseNews extends sfDoctrineRecord
              'length' => 4,
              ));
         $this->hasColumn('priority', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'default' => '1',
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('views', 'integer', 4, array(
              'type' => 'integer',
              'fixed' => 0,
              'unsigned' => false,

@@ -19,8 +19,8 @@ list_gallery_mobile:
   url:   /m/thu-muc-anh-phong-kham
   param: { module: gallerymobile, action: index}
 list_video:
-  url:   /thu-muc-video-phong-kham
-  param: { module: video, action: index}
+  url:   /thu-muc-video-phong-kham/:idvideo
+  param: { module: video, action: index, idvideo: ''}
 detail_service:
   url:   /dich-vu/:idservice/:title
   param: { module: news, action: service, idservice: '', title: '' }
@@ -94,8 +94,8 @@ list_news_mobile:
   url:   /m/danh-sach-tin-tuc
   param: { module: newsmobile, action: index }
 detail_news_mobile:
-  url:   /m/tin-tuc-hoang-long/:idnews
-  param: { module: newsmobile, action: detail, idnews: '' }
+  url:   /m/tin-tuc-hoang-long/:idnews/:title
+  param: { module: newsmobile, action: detail, idnews: '',  title: ''  }
 # default rules
 homepage:
   url:   /

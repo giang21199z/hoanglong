@@ -7,7 +7,7 @@
 
 <!-- section start -->
 <!-- ================ -->
-<div class="row" data-animation-effect="fadeIn">
+<div class="row" >
     <div class="container">
         <div class="row" style="width: 1170px">
             <div class="left-content">
@@ -17,10 +17,13 @@
                             <h1 class="no-padding" style="margin-top: 22px">Thư viện </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
-                            <i class="fa fa-facebook" style="margin-right: 10px;"></i>
-                            <i class="fa fa-twitter" style="margin-right: 10px;"></i>
-                            <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
-                            <i class="fa fa-google-plus"></i>
+                            <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: black"><i
+                                    class="fa fa-facebook" style="margin-right: 10px;"></i></a>
+                            <a href="https://www.youtube.com/channel/UCSY56RWgn7BsoWYcuneZJPw" style="color: black">
+                                <i class="fa fa-youtube-play" style="margin-right: 10px;"></i></a>
+                            <a href="https://plus.google.com/u/3/107088174740791028286?hl=vi" style="color: black"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/in/hoanglongclinic/" style="color: black">
+                                <i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                     <p style="font-size: 18px ; color: #85a92a ; margin-top: 10px;"><a href="<?php echo url_for('homepage') ?>" style="text-decoration: none; color: #8DAF39">
@@ -31,7 +34,7 @@
                     <div class="row">
                         <?php foreach ($categories as $value): ?>
                             <div class="col-xs-6 no-padding-left" style="margin-bottom: 10px">
-                                <a href="<?php echo url_for('detail_list_gallery', array('id' => $value['idcategory_gallery'], 'total' => $value['number'], 'xteam' => 'hoanglong')) ?>"
+                                <a href="<?php echo url_for('detail_list_gallery', array('id' => $value['idcategory_gallery'], 'total' => $value['number'])) ?>"
                                    style="text-decoration: none">
                                     <div class="row" style="border-radius: 4px;border: 1px solid #ddd">
                                         <div class="row"
@@ -77,7 +80,7 @@
                         </a>
                     </div>
                     <div class="right-menu right-item">
-                        <a href="<?php echo url_for('list_video') ?>" style="text-decoration: none">
+                        <a href="<?php echo url_for('list_video', array('idvideo' => 1)) ?>" style="text-decoration: none">
                             <p class=" "
                                style="border-bottom : 1px solid #a0a0a0;letter-spacing: 1px; color:#4b4b4b ;height: 60px ; width:330px;padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle;">
                                 Video </p>

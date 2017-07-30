@@ -542,6 +542,14 @@ News:
       default: '1'
       notnull: false
       autoincrement: false
+    views:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '1'
+      notnull: false
+      autoincrement: false
   relations:
     CategoryNews:
       local: category_news_idcategory
@@ -677,6 +685,14 @@ Service:
       notnull: true
       autoincrement: false
     priority:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '1'
+      notnull: false
+      autoincrement: false
+    views:
       type: integer(4)
       fixed: false
       unsigned: false

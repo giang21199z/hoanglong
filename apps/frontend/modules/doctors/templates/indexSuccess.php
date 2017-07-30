@@ -7,7 +7,7 @@
 
 <!-- section start -->
 <!-- ================ -->
-<div class="row page-ourteam" data-animation-effect="fadeIn">
+<div class="row page-ourteam" >
     <div class="container">
         <div class="row" style="width: 1170px">
             <div class="left-content">
@@ -17,10 +17,13 @@
                             <h1 class="no-padding" style="margin-top: 22px"> Đội ngũ bác sĩ </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
-                            <i class="fa fa-facebook" style="margin-right: 10px;"></i>
-                            <i class="fa fa-twitter" style="margin-right: 10px;"></i>
-                            <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
-                            <i class="fa fa-google-plus"></i>
+                            <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: black"><i
+                                    class="fa fa-facebook" style="margin-right: 10px;"></i></a>
+                            <a href="https://www.youtube.com/channel/UCSY56RWgn7BsoWYcuneZJPw" style="color: black">
+                                <i class="fa fa-youtube-play" style="margin-right: 10px;"></i></a>
+                            <a href="https://plus.google.com/u/3/107088174740791028286?hl=vi" style="color: black"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/in/hoanglongclinic/" style="color: black">
+                                <i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                     <p class="p-title" style="margin-top: 10px;">

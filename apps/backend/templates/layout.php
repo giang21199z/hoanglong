@@ -38,16 +38,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Account
+                        hoanglonghospital.vn
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="dropdown-header">
-                            Welcome
+                            Xin chào
                         </li>
                         <li class="divider"></li>
-                        <li class="" id="change-pass"><a href="#">Change password</a></li>
+                        <li class="" id="change-pass"><a href="#" data-toggle="modal" data-target="#changePass">Đổi mật
+                                khẩu</a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo url_for('logout') ?>">Logout</a></li>
+                        <li><a href="<?php echo url_for('logout') ?>">Đăng xuất</a></li>
                     </ul>
                 </li>
             </ul>
@@ -194,5 +195,40 @@
         </p>
     </footer>
 </div>
+<div id="changePass" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Đổi mật khẩu</h4>
+            </div>
+            <div class="modal-body">
+                <input type="password" class="form-control" name="password" id="password">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="update-pass" data-dismiss="modal">Save and close
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $("#update-pass").click(function () {
+        var username = '<?php echo $sf_user->getAttribute('USER_BE')->getUsername();?>';
+        var password = $("#password").val();
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo url_for("ajax_change_pass")?>',
+            data: {
+                username: username,
+                password: password
+            }
+        }).done(function () {
+            swal("Cập nhật mật khẩu thành công", "", "success");
+        });
+    });
+</script>
 </body>
 </html>

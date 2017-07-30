@@ -7,7 +7,7 @@
 
 <!-- section start -->
 <!-- ================ -->
-<div class="row" data-animation-effect="fadeIn">
+<div class="row">
     <div class="container">
         <div class="row" style="width: 1170px">
             <div class="left-content">
@@ -17,51 +17,68 @@
                             <h1 class="no-padding" style="margin-top: 22px">TIN TỨC </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
-                            <i class="fa fa-facebook" style="margin-right: 10px;"></i>
-                            <i class="fa fa-twitter" style="margin-right: 10px;"></i>
-                            <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
-                            <i class="fa fa-google-plus"></i>
+                            <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: black"><i
+                                    class="fa fa-facebook" style="margin-right: 10px;"></i></a>
+                            <a href="https://www.youtube.com/channel/UCSY56RWgn7BsoWYcuneZJPw" style="color: black">
+                                <i class="fa fa-youtube-play" style="margin-right: 10px;"></i></a>
+                            <a href="https://plus.google.com/u/3/107088174740791028286?hl=vi" style="color: black"><i
+                                    class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/in/hoanglongclinic/" style="color: black">
+                                <i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <p style="font-size: 18px ; color: #85a92a ;"> <a style="color: #85a92a; text-decoration: none" href="<?php echo url_for('homepage')?>">Trang chủ</a> > Tin tức</p>
+                    <p style="font-size: 18px ; color: #85a92a ;"><a style="color: #85a92a; text-decoration: none"
+                                                                     href="<?php echo url_for('homepage') ?>">Trang
+                            chủ</a> > Tin tức</p>
                 </div>
-                <?php foreach ($news as $value): ?>
-                    <div class="row items-new">
-                        <div class="img-items">
-                            <img src="/uploads/news/<?php echo $value['images'] ?>"
-                                 style="width: 220px; height: auto"/>
-                        </div>
-                        <div class="content-items" style="position: relative;">
-                            <a style="text-decoration: none; color: black"
-                               href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
-                                <p style="font-size: 20px ; color: #85a92a ;">
-                                    <?php echo $value['title'] ?>
-                                </p>
-                            </a>
+                <?php
+                if (count($news) > 0):
+                    foreach ($news as $value): ?>
+                        <div class="row items-new">
+                            <div class="img-items">
+                                <img src="/uploads/news/<?php echo $value['images'] ?>"
+                                     style="width: 220px; height: auto"/>
+                            </div>
+                            <div class="content-items" style="position: relative;">
+                                <a style="text-decoration: none; color: black"
+                                   href="<?php echo url_for('detail_news', array('idnews' => $value['idnews'], 'title' => VtHelper::write_url_english($value['title']))) ?>">
+                                    <p style="font-size: 20px ; color: #85a92a ;">
+                                        <?php echo $value['title'] ?>
+                                    </p>
+                                </a>
 
-                            <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
-                                <?php echo VtHelper::truncate($value['summary'], 200) ?>
-                            </p>
-                            <i style=" position: absolute;bottom: 0;left: 0; font-size: 16px; font-weight: bold">
-                                <?php echo $value['updated_at'] ?>
-                            </i>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-<!--                pagination-->
-                <div class="row text-center">
-                    <?php for ($i = 1; $i <= $total / $page_size + 1; $i++): ?>
-                        <a href="<?php echo url_for('list_news', array('idcategory' => $id_category, 'name' => $category, 'page' => $i - 1))?>">
-                            <button
-                                <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
-                                <p class="no-margin" style=" font-size: 12px;">
-                                    <?php echo $i; ?>
+                                <p style="letter-spacing: 1px;font-size: 14px;line-height: 25px;">
+                                    <?php echo VtHelper::truncate($value['summary'], 200) ?>
                                 </p>
-                            </button>
-                        </a>
-                    <?php endfor; ?>
-                </div>
-<!--                end pagination-->
+                                <i style=" position: absolute;bottom: 0;left: 0; font-size: 16px; font-weight: bold">
+                                    <?php echo $value['updated_at'] ?>
+                                </i>
+                            <span class="fa fa-eye"
+                                  style="position: absolute;bottom: 0;font-size: 16px;font-weight: bold;float: left;right: 0;"> <?php echo $value['views'] ?></span>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                    <!--                pagination-->
+                    <?php if ($search == false): ?>
+                    <div class="row text-center">
+                        <?php
+                        $len = $total % $page_size != 0 ? $total / $page_size + 1 : $total / $page_size;
+                        for ($i = 1; $i <= $len; $i++): ?>
+                            <a href="<?php echo url_for('list_news', array('idcategory' => $id_category, 'name' => $category, 'page' => $i - 1)) ?>">
+                                <button
+                                    <?php if ($i == $active + 1): ?>class="pagination-active" <?php else: ?> class="pagination-deactive"<?php endif; ?>>
+                                    <p class="no-margin" style=" font-size: 12px;">
+                                        <?php echo $i; ?>
+                                    </p>
+                                </button>
+                            </a>
+                        <?php endfor; ?>
+                    </div>
+                <?php endif;?>
+                    <!--                end pagination-->
+                <?php else: ?>
+                    <h2>Không tìm thấy bài viết</h2>
+                <?php endif; ?>
             </div>
             <div class="right-menu">
                 <div class="row" style="background:#f6f6f6 ">
@@ -77,6 +94,21 @@
                             </p>
                         </div>
                     <?php endforeach; ?>
+                </div>
+                <div class="row" style="background:#f6f6f6 ">
+                    <p class=""
+                       style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
+                        Tìm kiếm tin tức </p>
+
+                    <div class="right-menu right-item" style="margin-bottom: 15px;">
+                        <form method="post" action="<?php echo url_for('list_news') ?>">
+                            <input type="text" class="form-control" name="keyword">
+                            <button class="btn" style="background: #85a92a; color: white">
+                                <p class="text-center">Tìm kiếm</p>
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
                 <div class="row make-shu" style=" background: #b9d96a">
                     <p style=" color :#ffffff;padding-top: 25px ; padding-left: 10px ; letter-spacing: 2px; font-size: 26px">
@@ -102,6 +134,22 @@
                         </div>
                     </div>
                 </div>
+                <a href="<?php echo url_for('detail_news', array('idnews' => $sales->getIdnews(), 'title' => 'tin-tuc-khuyen-mai-' . VtHelper::write_url_english($sales->getTitle()))) ?>"
+                   style="text-decoration: none">
+                    <div class="row" style="background:#F6F6F6">
+                        <p class=""
+                           style="letter-spacing: 1px; color:#ff0000 ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; text-align: center">
+                            <marquee><?php echo $sales->getTitle() ?> </marquee>
+                        </p>
+                        <div class="row">
+                            <img src="/uploads/news/<?php echo $sales->getImages() ?>" class="img img-thumbnail"
+                                 alt="<?php echo $sales->getTitle() ?>">
+                        </div>
+                        <div class="row">
+                            <p style="color:red ;height: 60px ; width:330px; padding-left: 15px ; font-size: 18px ;display: table-cell; vertical-align: middle; text-align: center"><?php echo $sales->getSummary() ?></p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

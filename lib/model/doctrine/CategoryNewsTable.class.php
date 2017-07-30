@@ -27,6 +27,15 @@ class CategoryNewsTable extends Doctrine_Table
             ->fetchArray();
         return $query;
     }
+    public static function getAllCategoryWhenCreate()
+    {
+        $query = CategoryNewsTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.idcategory_news != 0')
+            ->fetchArray();
+        return $query;
+    }
 
     public static function getOneCategoryById($id)
     {

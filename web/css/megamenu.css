@@ -67,7 +67,7 @@
 }
 .mega-dropdown .col-xs-3{
     float: left !important;
-    height: 50px !important;
+    height: 60px !important;
 }
 .navbar-right a{
     color: #FFFFFF !important;
@@ -85,4 +85,7 @@
 }
 .mega-dropdown:hover{
     background: #85A92A;
+}
+.mega-dropdown a {
+    margin-top: 8px;
 }

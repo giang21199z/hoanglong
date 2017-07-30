@@ -121,11 +121,11 @@ blockquote {
 	transition: all 0.2s ease-in-out;
 }
 .logo-header{
-	height: 120px;
+	height: 90px;
 	background: #ffffff;
 }
 .menu-header{
-	height: 45px;
+	height: 60px;
 }
 .content{
 	width: 1170px;
@@ -516,7 +516,7 @@ blockquote {
 .logo,
 .site-name-and-slogan {
 	float: left;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .site-name {
 	font-size: 36px;
@@ -650,7 +650,7 @@ blockquote {
 nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
 	/*background-color: #86a92b !important;*/
 	border-color: #428bca;
-    height: 45px;
+    height: 60px;
 }
 
 .menu-active{

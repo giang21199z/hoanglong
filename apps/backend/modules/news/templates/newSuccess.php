@@ -22,6 +22,7 @@
     CKEDITOR.replace("news_content",{
         filebrowserUploadUrl: "<?php echo url_for('upload_file')?>",
         "extraPlugins": "imagebrowser",
-        "imageBrowser_listUrl": "<?php echo url_for('browser_image')?>"
+        "imageBrowser_listUrl": "<?php echo url_for('browser_image')?>",
+        resize_dir: 'vertical'
     });
 </script>

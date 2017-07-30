@@ -7,7 +7,7 @@
 
 <!-- section start -->
 <!-- ================ -->
-<div class="row" data-animation-effect="fadeIn">
+<div class="row" >
     <div class="container">
         <div class="row" style="width: 1170px">
             <div class="left-content">
@@ -17,10 +17,13 @@
                             <h1 class="no-padding" style="margin-top: 22px">GIỚI THIỆU </h1>
                         </div>
                         <div class="col-xs-2 no-padding" style="font-size: 20px; margin-top: 30px; color: #6f6f6f">
-                            <i class="fa fa-facebook" style="margin-right: 10px;"></i>
-                            <i class="fa fa-twitter" style="margin-right: 10px;"></i>
-                            <i class="fa fa-youtube-play" style="margin-right: 10px;"></i>
-                            <i class="fa fa-google-plus"></i>
+                            <a href="https://www.facebook.com/phongkhamdakhoahoanglong/" style="color: black"><i
+                                    class="fa fa-facebook" style="margin-right: 10px;"></i></a>
+                            <a href="https://www.youtube.com/channel/UCSY56RWgn7BsoWYcuneZJPw" style="color: black">
+                                <i class="fa fa-youtube-play" style="margin-right: 10px;"></i></a>
+                            <a href="https://plus.google.com/u/3/107088174740791028286?hl=vi" style="color: black"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/in/hoanglongclinic/" style="color: black">
+                                <i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                     <p style="font-size: 18px ; color: #85a92a ;"><a href="<?php echo url_for('homepage')?>" style="text-decoration: none; color: #B4CA7B">Trang chủ </a> > <a href="<?php echo url_for('list_about_us')?>" style="text-decoration: none; color: #B4CA7B">Giới thiệu </a> > <b>Báo chí</b></p>
@@ -67,7 +70,7 @@
                 <div class="row" style="background:#f6f6f6 ">
                     <p class=""
                        style=" letter-spacing: 1px; color:#ffffff ;height: 60px ; width:330px;padding-left: 15px ; font-size: 22px ;display: table-cell; vertical-align: middle; background: #b9d96a">
-                        INTRODUCTION </p>
+                        Tin liên quan </p>
                     <?php foreach ($news_related as $value): ?>
                         <div class="right-menu right-item">
                             <a style="text-decoration: none"

@@ -27,4 +27,14 @@ class AdminTable extends Doctrine_Table
             ->fetchOne();
         return $query;
     }
+
+    public static function getByUsername($username)
+    {
+        $query = AdminTable::getInstance()
+            ->createQuery('c')
+            ->select('c.*')
+            ->where('c.username = ?', $username)
+            ->fetchOne();
+        return $query;
+    }
 }

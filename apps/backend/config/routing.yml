@@ -1,3 +1,6 @@
+ajax_change_pass:
+  url:   /doi-mat-khau
+  param: { module: ajax, action: changePassword }
 video:
   class: sfDoctrineRouteCollection
   options:

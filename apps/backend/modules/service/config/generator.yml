@@ -25,7 +25,7 @@ generator:
         object_actions:
           _edit:  {label: Detail}
           _delete:  {label: Del}
-        display: [title, summary, content, images, updated_at]
+        display: [title, summary, images, updated_at]
       filter:
         display:  [title]
       form:

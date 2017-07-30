@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="<?php echo url_for('homepage_m', array('xteam' => 'mobile'))?>" class="navbar-brand">
+        <a href="<?php echo url_for('homepage_m')?>" class="navbar-brand">
             <img class="logo" src="/images/logo.png">
             <img class="text-logo" src="/images/text-logo.png">
         </a>
@@ -95,7 +95,7 @@
                                 class="text-uppercase">Thư viện ảnh</p></a>
                     </li>
                     <li>
-                        <a href="<?php echo url_for('list_video') ?>">
+                        <a href="<?php echo url_for('list_video' , array('idvideo' => 1)) ?>">
                             <p
                                 class="text-uppercase">Thư viện video</p></a>
                     </li>

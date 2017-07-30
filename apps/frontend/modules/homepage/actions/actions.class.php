@@ -18,5 +18,6 @@ class homepageActions extends sfActions
         $this->news = NewsTable::getNewsHomepage();
         $this->why_choose_us = NewsTable::getNewsWhyChooseUs(6);
         $this->slides = SlideTable::getAllSlide();
+        $this->sales = NewsTable::getNewSale();
     }
 }

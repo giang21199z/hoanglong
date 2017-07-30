@@ -1,7 +1,7 @@
 ﻿<div class="content_page ">
     <div class="row">
         <p class="no-margin" style="vertical-align: middle">
-            <span class="text-header ">OUR TEAM </span>
+            <span class="text-header ">Đội ngũ bác sĩ </span>
             <span class="icon-contact" style="float: right">
               <i class="fa fa-facebook"></i>
               <i class="fa fa-twitter"></i>
@@ -10,7 +10,7 @@
              </span>
         </p>
 
-        <p class="sub-text-header">Home > Our Team> <?php echo $doctor->getName() ?></p>
+        <p class="sub-text-header">Trang chủ > Đội ngũ bác sĩ> <?php echo $doctor->getName() ?></p>
     </div>
     <div class="row text-center doctor-details">
         <div class="col-xs-5 no-padding img-doctor text-center">
